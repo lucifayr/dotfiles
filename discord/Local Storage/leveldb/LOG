@@ -1,0 +1,6 @@
+2022/08/15-00:23:04.898 2f71 Reusing MANIFEST /home/jackboxx/.config/discord/Local Storage/leveldb/MANIFEST-000001
+2022/08/15-00:23:04.898 2f71 Recovering log #23
+2022/08/15-00:23:04.898 2f71 Reusing old log /home/jackboxx/.config/discord/Local Storage/leveldb/000023.log 
+2022/08/15-00:25:06.289 2f7f Level-0 table #27: started
+2022/08/15-00:25:06.311 2f7f Level-0 table #27: 1096963 bytes OK
+2022/08/15-00:25:06.315 2f7f Delete type=0 #23
