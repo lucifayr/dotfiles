@@ -68,9 +68,10 @@ bindsym $mod+a focus parent
 set $ws1 "programming"
 set $ws2 "research"
 set $ws3 "communication"
-set $ws4 "monitoring"
+set $ws4 "testing"
 set $ws5 "media"
-set $ws6 "other"
+set $ws6 "monitoring"
+set $ws7 "other"
 
 # switch to workspace
 bindsym $mod+Right workspace next
@@ -82,6 +83,7 @@ bindsym $mod+3 workspace $ws3
 bindsym $mod+4 workspace $ws4
 bindsym $mod+5 workspace $ws5
 bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
 
 # move focused container to workspace
 bindsym $mod+Shift+Right move container to workspace next
@@ -93,6 +95,7 @@ bindsym $mod+Shift+3 move container to workspace $ws3
 bindsym $mod+Shift+4 move container to workspace $ws4
 bindsym $mod+Shift+5 move container to workspace $ws5
 bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
 
 # reload the configuration file
 bindsym $mod+Shift+p reload
@@ -161,4 +164,4 @@ exec xrandr --output eDP-1 --brightness 0.8
 exec setxkbmap -layout gb 
 exec nitrogen --restore
 exec picom &
-exec sleep 1s && wal -i ~/backgrounds/vaporwave-simple.jpg -n && polybar -c ~/.config/polybar/config.ini
+exec sleep 1s && wal -i $(cat ~/.config/nitrogen/bg-saved.cfg | grep file | head -n1 |cut -d= -f2) -n && polybar -c ~/.config/polybar/config.ini
