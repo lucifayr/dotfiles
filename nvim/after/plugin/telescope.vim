@@ -7,3 +7,5 @@ nnoremap <leader>gb <cmd>lua require('telescope.builtin').git_branches()<cr>
 nnoremap <leader>gs <cmd>lua require('telescope.builtin').git_status()<cr>	
 nnoremap <leader>gwt <cmd>lua require('telescope').extensions.git_worktree.git_worktrees()<cr>
 nnoremap <leader>gwc <cmd>lua require('telescope').extensions.git_worktree.create_git_worktree()<cr>
+
+nnoremap <leader>tr <cmd>lua require('telescope.builtin').treesitter()<cr>

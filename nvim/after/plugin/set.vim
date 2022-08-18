@@ -17,3 +17,4 @@ set incsearch
 set scrolloff=10
 set signcolumn=yes
 set colorcolumn=100
+set encoding=UTF-8
