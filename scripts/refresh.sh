@@ -32,3 +32,5 @@ then
         git add . && git commit -m "$MESSAGE" && git push
     fi
 fi
+
+cd $CURRENT
