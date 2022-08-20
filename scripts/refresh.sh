@@ -23,6 +23,12 @@ then
     read -p "Push Changes [y/n]" CONTINUE 
     if [ $CONTINUE = "y" ]
     then 
-        git add . && git commit -m 'config files changed' && git push
+        read -p "Commit Message: " MESSAGE
+        if [ $MESSAGE = "" ]
+        then 
+            MESSAGE="config files changed"
+        fi
+
+        git add . && git commit -m '$MESSAGE' && git push
     fi
 fi
