@@ -29,6 +29,6 @@ then
             MESSAGE="config files changed"
         fi
 
-        git add . && git commit -m '$MESSAGE' && git push
+        git add . && git commit -m "$MESSAGE" && git push
     fi
 fi
