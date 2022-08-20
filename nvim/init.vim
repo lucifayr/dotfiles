@@ -14,6 +14,10 @@ Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'saadparwaiz1/cmp_luasnip' 
 Plug 'L3MON4D3/LuaSnip' 
 Plug 'onsails/lspkind.nvim'
+Plug 'terrortylor/nvim-comment'
+Plug 'glepnir/dashboard-nvim'
+Plug 'nvim-lualine/lualine.nvim'
+Plug 'kyazdani42/nvim-web-devicons'
 Plug 'ghifarit53/tokyonight-vim'
 call plug#end()
 
