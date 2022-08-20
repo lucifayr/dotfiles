@@ -20,11 +20,11 @@ UPDATE=$(git diff | wc -l)
 if [ $UPDATE -gt 0 ]
 then
     git status 
-    read -p "Push Changes [y/n]" CONTINUE 
+    read -p "Push Changes [y/n] " CONTINUE 
     if [ $CONTINUE = "y" ]
     then 
         read -p "Commit Message: " MESSAGE
-        if [ $MESSAGE = "" ]
+        if [ -z $MESSAGE ]
         then 
             MESSAGE="config files changed"
         fi
