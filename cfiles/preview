@@ -1,4 +1,6 @@
-if [ -f $1-copy ]
-then
-    rm -f $1-copy
-fi
+# To Do
+    * Check out TMUX 🕑
+    * Setup MR viewer in neovim
+
+# Done
+    * Setup auto update ✓ 

@@ -2,5 +2,6 @@
 .config/i3
 .config/polybar
 .config/rofi
-.config/nnn
+.config/cfiles
 .config/alacritty
+.config/tmux
