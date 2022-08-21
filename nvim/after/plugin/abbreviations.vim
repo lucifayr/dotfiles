@@ -7,5 +7,4 @@ ab ./h ♥
 ab ./s ☠
 ab ./f ⚑
 ab ./a ➜ 
-ab ./42 ⬡  
-ab ./god ⬡  
+ab ./g ⬡  
