@@ -144,7 +144,7 @@ bindsym $mod+f exec firefox
 bindsym $mod+d exec discord
 
 bindsym $mod+b exec i3-sensible-terminal -e bashtop 
-bindsym $mod+p exec i3-sensible-terminal -e vifm
+bindsym $mod+p exec i3-sensible-terminal -e nnn
 
 bindsym $mod+Shift+o exec betterlockscreen -l dim
 bindsym $mod+Control+q exec shutdown now
