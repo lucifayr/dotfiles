@@ -150,8 +150,6 @@ bindsym $mod+Shift+o exec betterlockscreen -l dim
 bindsym $mod+Control+q exec shutdown now
 bindsym $mod+Control+w exec reboot 
 
-
-
 # class                 border  backgr. text indicator child_border
 client.focused          $bg     $bg     $fg  $bg       $bg
 client.focused_inactive $bg     $bg     $fg  $bg       $bg
@@ -163,8 +161,8 @@ client.background       $bg
 
 
 for_window [class=".*"] border pixel 0 
-gaps outer 8
-gaps inner 8
+gaps outer 6 
+gaps inner 6
 border_radius 8
 
 

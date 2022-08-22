@@ -26,10 +26,19 @@ ENABLE_CORRECTION="true"
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
+
+# Aliasses
 alias vim="nvim"
 alias wa="wal -Re"
-eval $(thefuck --alias)
+alias v+="pactl set-sink-volume 0 +5%"
+alias v-="pactl set-sink-volume 0 -5%"
+alias g="git"
+alias gs="git status"
+alias ..="cd .."
+alias rm="rm -i"
+alias mv="mv -i"
 
+eval $(thefuck --alias)
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
