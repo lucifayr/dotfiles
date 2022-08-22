@@ -27,7 +27,7 @@ plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
-# Aliasses
+# Aliases
 alias vim="nvim"
 alias wa="wal -Re"
 alias v+="pactl set-sink-volume 0 +5%"
@@ -37,6 +37,9 @@ alias gs="git status"
 alias ..="cd .."
 alias rm="rm -i"
 alias mv="mv -i"
+alias la="ls -A"
+alias ll="ls -l"
+alias lla="ls -Al"
 
 eval $(thefuck --alias)
 
