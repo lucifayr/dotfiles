@@ -11,3 +11,8 @@ nnoremap <leader>pv <cmd>Ex<cr>
 nnoremap <leader>fm <cmd>lua vim.lsp.buf.formatting_sync(nil, 1000)<cr>
 nnoremap <leader>se <cmd>lua vim.lsp.diagnostic.goto_next{ wrap = true }<cr>
 nnoremap <leader>ee <cmd>lua vim.lsp.diagnostic.show_line_diagnostic()<cr>
+
+" Fugitive 
+nnoremap <leader>ga <cmd>:Git add %<cr>
+nnoremap <leader>gc <cmd>:Git commit<cr>
+nnoremap <leader>gm <cmd>:Git mergetool<cr>

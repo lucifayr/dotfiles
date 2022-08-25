@@ -40,6 +40,7 @@ alias mv="mv -i"
 alias la="ls -A"
 alias ll="ls -l"
 alias lla="ls -Al"
+alias lsn="lsnotes"
 
 eval $(thefuck --alias)
 
@@ -61,3 +62,5 @@ then
     PATH_TO_BG=$(cat ~/.config/nitrogen/bg-saved.cfg | grep file | head -n1 |cut -d= -f2)
     wal -i $PATH_TO_BG -ne
 fi
+
+clear
