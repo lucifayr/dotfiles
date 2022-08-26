@@ -35,11 +35,9 @@ alias v-="pactl set-sink-volume 0 -5%"
 alias g="git"
 alias gs="git status"
 alias ..="cd .."
-alias rm="rm -i"
+alias rm="rm -I"
 alias mv="mv -i"
-alias la="ls -A"
-alias ll="ls -l"
-alias lla="ls -Al"
+alias ls="exa --color=always --all --group-directories-first --long"
 alias lsn="lsnotes"
 
 eval $(thefuck --alias)
