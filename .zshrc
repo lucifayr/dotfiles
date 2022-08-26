@@ -8,6 +8,7 @@ fi
 
 # Set Path to personal Notes
 export PATH_TO_NOTES="$HOME/my-notes/main/notes"
+export PATH_TO_NOTE_TEMPLATE="$HOME/my-notes/main/note-template.md"
 export PATH_TO_NOTE_UTILS="$HOME/my-notes/main/scripts"
 
 # Set Path to config files
