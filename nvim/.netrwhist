@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =0
+let g:netrw_dirhist_0='/home/moritzgschwantner/.config/nvim'
+let g:netrw_dirhist_9='/home/moritzgschwantner/.config'
+let g:netrw_dirhist_8='/home/moritzgschwantner/.config/nvim'
+let g:netrw_dirhist_7='/home/moritzgschwantner/.config'
+let g:netrw_dirhist_6='/home/moritzgschwantner/.config/nvim'
+let g:netrw_dirhist_5='/home/moritzgschwantner/.config/nvim/after'
+let g:netrw_dirhist_4='/home/moritzgschwantner/.config/nvim/after/plugin'
+let g:netrw_dirhist_3='/home/moritzgschwantner/.config/nvim/after'
+let g:netrw_dirhist_2='/home/moritzgschwantner/.config/nvim/after/plugin'
+let g:netrw_dirhist_1='/home/moritzgschwantner/my-notes/main/notes'

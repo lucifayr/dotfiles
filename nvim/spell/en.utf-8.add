@@ -9,3 +9,6 @@ bashrc
 usr
 neovim
 unix
+eslint
+ts
+js
