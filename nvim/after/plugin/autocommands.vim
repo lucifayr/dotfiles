@@ -1,7 +1,7 @@
 autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()
 
 " Run Prettier in .js and .ts
-autocmd BufWritePre *.js Neoformat
+autocmd BufWritePre *.{js,ts,jsx,tsx} Neoformat
 
 " Manage personal notes
 autocmd BufWinEnter,BufEnter,BufNewFile $PATH_TO_NOTES/* :!cd $PATH_TO_NOTES && git pull

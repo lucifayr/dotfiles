@@ -163,7 +163,7 @@ client.background       $bg
 for_window [class=".*"] border pixel 0 
 gaps outer 6 
 gaps inner 6
-border_radius 8
+border_radius 0
 
 
 # Autostart apps
