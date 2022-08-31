@@ -16,3 +16,5 @@ scrollback
 DateTime
 Utc
 postgresSQL
+Gitlens
+GitLens

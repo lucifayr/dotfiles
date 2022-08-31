@@ -8,6 +8,7 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
+Plug 'APZelos/blamer.nvim'
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'ryanoasis/vim-devicons'
@@ -24,5 +25,19 @@ Plug 'sbdchd/neoformat'
 Plug 'ghifarit53/tokyonight-vim'
 call plug#end()
 
+" Vim
 let mapleader = " "
+
+" Prettier
 let g:neoformat_try_node_exe = 1
+
+" GitLens
+let g:blamer_enabled = 1
+let g:blamer_delay = 500
+let g:blamer_show_in_visual_modes = 0
+let g:blamer_show_in_insert_modes = 0
+let g:blamer_prefix = ' ^*^ '
+let g:blamer_template = '<committer> <summary>'
+
+highlight Blamer guifg=lightgrey
+
