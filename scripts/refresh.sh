@@ -4,6 +4,7 @@ DIRECTORIES=$(cat $PATH_TO_CONFIG_DIRECTORIES)
 CURRENT=$(pwd)
 
 cd $PATH_TO_CONFIG 
+git pull
 
 for file in $FILES
 do
