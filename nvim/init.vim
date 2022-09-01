@@ -22,6 +22,7 @@ Plug 'glepnir/dashboard-nvim'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'sbdchd/neoformat'
+Plug 'nvim-treesitter/nvim-treesitter-context'
 Plug 'ghifarit53/tokyonight-vim'
 call plug#end()
 
@@ -37,7 +38,8 @@ let g:blamer_delay = 500
 let g:blamer_show_in_visual_modes = 0
 let g:blamer_show_in_insert_modes = 0
 let g:blamer_prefix = ' ^*^ '
-let g:blamer_template = '<committer> <summary>'
+let g:blamer_date_format = '%H:%M on the %d of %B, %Y'
+let g:blamer_template = '<committer> <summary> at <committer-time> '
 
 highlight Blamer guifg=lightgrey
 

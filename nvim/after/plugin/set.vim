@@ -14,7 +14,7 @@ set noswapfile
 set undofile
 set undodir=~/.vim/undodir
 set incsearch
-set scrolloff=10
+set scrolloff=15
 set signcolumn=yes
 set colorcolumn=100
 set encoding=UTF-8
