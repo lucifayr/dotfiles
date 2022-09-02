@@ -1,3 +1,7 @@
 awk
 sed
 curl
+xargs
+xdg
+nmcli
+pactl

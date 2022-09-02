@@ -34,3 +34,7 @@ treesitter
 fzf
 msg
 match
+xargs
+pactl
+nmcli
+xdg
