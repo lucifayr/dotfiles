@@ -1,7 +1,8 @@
 #!/bin/sh
-projects=~/projects/*
+projects=$HOME/projects/*
+config="$HOME/.config/custom $HOME/.config/nvim $HOME/.config/polybar $HOME/.config/i3 $HOME/.config/tmux"
 
-selection=$(echo $projects | tr " " "\n" | fzf)
+selection=$(echo $projects $config | tr " " "\n" | fzf)
 
 if [ -z $selection ] 
 then
