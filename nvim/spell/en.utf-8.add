@@ -38,3 +38,8 @@ xargs
 pactl
 nmcli
 xdg
+healthcheck
+steve
+postgres
+lary
+emma

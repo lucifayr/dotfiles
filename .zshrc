@@ -63,3 +63,6 @@ then
 fi
 
 clear
+
+# setup funky
+command -v funky &>/dev/null && eval "$(funky --init zsh)"
