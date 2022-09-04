@@ -43,3 +43,6 @@ let g:blamer_date_format = '%H:%M on the %d of %B, %Y'
 let g:blamer_template = '<committer> <summary> at <committer-time> '
 
 highlight Blamer guifg=lightgrey
+
+" NerdTree
+let NERDTreeQuitOnOpen=1

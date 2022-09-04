@@ -5,7 +5,7 @@ nnoremap <leader>= <cmd>:vertical resize +5<cr>
 nnoremap <leader>- <cmd>:vertical resize -5<cr>
 nnoremap <leader><Left> :silent bp<cr>
 nnoremap <leader><Right> :silent bn<cr>
-nnoremap <leader>pv <cmd>Ex<cr>
+nnoremap <leader>pv :NERDTreeFind<cr>:wincmd l<cr>:wincmd q<cr>
 
 " Fugitive 
 nnoremap <leader>ga <cmd>:Git add %<cr>
