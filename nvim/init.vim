@@ -23,7 +23,7 @@ Plug 'nvim-lualine/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'sbdchd/neoformat'
 Plug 'nvim-treesitter/nvim-treesitter-context'
-Plug 'ghifarit53/tokyonight-vim'
+Plug 'tanvirtin/monokai.nvim'
 call plug#end()
 
 " Vim
