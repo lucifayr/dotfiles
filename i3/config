@@ -169,6 +169,5 @@ border_radius 0
 # Autostart apps
 exec xrandr --output eDP-1 --brightness 0.8  
 exec setxkbmap -layout gb 
-exec nitrogen --restore
+exec nitrogen --restore && wal -i $(cat ~/.config/nitrogen/bg-saved.cfg | grep file | head -n1 |cut -d= -f2) -nq && polybar -c ~/.config/polybar/config.ini
 exec picom &
-exec sleep 1s && wal -i $(cat ~/.config/nitrogen/bg-saved.cfg | grep file | head -n1 |cut -d= -f2) -n && polybar -c ~/.config/polybar/config.ini

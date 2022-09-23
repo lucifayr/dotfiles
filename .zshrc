@@ -29,7 +29,8 @@ plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 # Aliases
-alias vim="nvim"
+alias v="nvim"
+alias v.="nvim ."
 alias wa="wal -Re"
 alias v+="pactl set-sink-volume 0 +5%"
 alias v-="pactl set-sink-volume 0 -5%"
@@ -60,7 +61,7 @@ if [[ ! -z $DISPLAY ]]
 then 
     # Automatically sets the terminals theme
     PATH_TO_BG=$(cat ~/.config/nitrogen/bg-saved.cfg | grep file | head -n1 |cut -d= -f2)
-    wal -i $PATH_TO_BG -ne
+    wal -i $PATH_TO_BG -neq
 fi
 
 clear
