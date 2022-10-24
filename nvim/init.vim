@@ -26,7 +26,8 @@ Plug 'nvim-lualine/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'sbdchd/neoformat'
 Plug 'nvim-treesitter/nvim-treesitter-context'
-Plug 'tanvirtin/monokai.nvim'
+Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
+Plug 'navarasu/onedark.nvim'
 call plug#end()
 
 " Vim
@@ -49,3 +50,9 @@ highlight Blamer guifg=lightgrey
 
 " NerdTree
 let NERDTreeQuitOnOpen=1
+
+" Colorscheme
+let g:onedark_config = {
+  \ 'style': 'deep',
+\ }
+colorscheme onedark
