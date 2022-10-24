@@ -50,9 +50,3 @@ highlight Blamer guifg=lightgrey
 
 " NerdTree
 let NERDTreeQuitOnOpen=1
-
-" Colorscheme
-let g:onedark_config = {
-  \ 'style': 'deep',
-\ }
-colorscheme onedark
