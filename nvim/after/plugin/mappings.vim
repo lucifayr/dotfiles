@@ -12,3 +12,6 @@ nnoremap <leader>fc  :exec ":normal i start\nend"<cr>:normal Vk<cr>:s/ start/===
 nnoremap <leader>ga <cmd>:Git add %<cr>
 nnoremap <leader>gc <cmd>:Git commit<cr>
 noremap <leader>gm <cmd>:Git mergetool<cr>
+
+" LaTex
+noremap <leader>lp :StartLatexPreview<cr>

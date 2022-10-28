@@ -28,6 +28,7 @@ Plug 'sbdchd/neoformat'
 Plug 'nvim-treesitter/nvim-treesitter-context'
 Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 Plug 'navarasu/onedark.nvim'
+Plug 'conornewton/vim-latex-preview'
 call plug#end()
 
 " Vim
@@ -50,3 +51,7 @@ highlight Blamer guifg=lightgrey
 
 " NerdTree
 let NERDTreeQuitOnOpen=1
+
+" LaTex
+let g:latex_preview_clean = 1
+
