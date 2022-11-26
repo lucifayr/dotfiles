@@ -18,6 +18,7 @@ export PATH_TO_CONFIG_DIRECTORIES="$HOME/projects/arch_config/main/scripts/direc
 
 # Path exports
 export PATH=$HOME/.cargo/bin:/home/jackboxx/.local/bin:$PATH
+export PATH=$PATH:/usr/local/go/bin
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -42,7 +43,6 @@ alias rm="rm -I"
 alias mv="mv -i"
 alias ls="exa --color=always --all --group-directories-first --long"
 alias lsn="lsnotes"
-alias mscon="mysql --host=containers-us-west-88.railway.app --user=root --port=6910 --password railway"
 
 eval $(thefuck --alias)
 
@@ -69,7 +69,3 @@ clear
 
 # setup funky
 command -v funky &>/dev/null && eval "$(funky --init zsh)"
-
-export PATH=/home/jackboxx/bin:$PATH
-
-[[ -e "/home/jackboxx/lib/oracle-cli/lib/python3.10/site-packages/oci_cli/bin/oci_autocomplete.sh" ]] && source "/home/jackboxx/lib/oracle-cli/lib/python3.10/site-packages/oci_cli/bin/oci_autocomplete.sh"

@@ -3,8 +3,11 @@ if type "xrandr"; then
     if [ $m = "DP-0" ]
     then
         MONITOR=$m polybar -c ~/.config/polybar/config.ini &
-    else
-        MONITOR=$m polybar -c ~/.config/polybar/config-secondary.ini &
+    elif [ $m = "DP-2" ]
+    then 
+        MONITOR=$m polybar -c ~/.config/polybar/config-left.ini &
+    else  
+        MONITOR=$m polybar -c ~/.config/polybar/config-right.ini &
     fi 
   done
 else

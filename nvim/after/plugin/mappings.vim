@@ -15,3 +15,6 @@ noremap <leader>gm <cmd>:Git mergetool<cr>
 
 " LaTex
 noremap <leader>lp :StartLatexPreview<cr>
+
+" Spelling
+noremap <leader>sc :terminal gramma check %<cr>
