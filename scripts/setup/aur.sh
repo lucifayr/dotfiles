@@ -7,4 +7,4 @@ cd yay
  
 makepkg -si
 
-yay -S gscreenshot ttf-jetbrains-mono postman-bin
+yay -S gscreenshot ttf-jetbrains-mono postman-bin betterlockscreen
