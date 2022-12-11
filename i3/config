@@ -3,7 +3,6 @@ set_from_resource $bg i3wm.color2 #470a5b
 
 
 set $mod Mod4
-font pango:Source Code Pro 0
 
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
@@ -20,7 +19,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec gnome-terminal
+bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+Shift+c kill
@@ -154,7 +153,7 @@ bindsym $mod+Control+r mode "resize"
 # App start kebindings
 bindsym $mod+f exec firefox
 
-bindsym $mod+b exec gnome-terminal -e bashtop 
+bindsym $mod+b exec i2-sensible-terminal -e bashtop 
 bindsym $mod+p exec files
 
 bindsym $mod+Shift+a exec xlock -mode rain
@@ -170,16 +169,8 @@ client.placeholder      $bg     $bg     $fg  $bg       $bg
 
 client.background       $bg
 
-new_window pixel 4
+gaps outer 8 
+gaps inner 8
 
-gaps outer 6 
-gaps inner 6
-
-# Autostart apps
-exec setxkbmap -layout us
-
-exec xrandr --output DP-0 --brightness 0.7
-exec xrandr --output HDMI-0 --brightness 0.7
-
-exec xrandr --output DP-0 --primary && xrandr --output DP-2 --left-of DP-0 && xrandr --output DP-4 --right-of DP-0 && nitrogen --restore && wal -i /home/jackboxx/backgrounds/lofi_synthwave.png -n && sh ~/.config/custom/start-polybar.sh
+exec xrandr --output DP-0 --primary && xrandr --output DP-2 --left-of DP-0 && xrandr --output DP-4 --right-of DP-0 && nitrogen --restore && wal -i /home/jackboxx/projects/arch-config/images/background.jpg -n && sh ~/.config/custom/start-polybar.sh
 exec picom --config ~/.config/picom.conf &
