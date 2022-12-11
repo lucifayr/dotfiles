@@ -175,4 +175,5 @@ gaps outer 8
 gaps inner 8
 
 exec xrandr --output DP-0 --primary && xrandr --output DP-2 --left-of DP-0 && xrandr --output DP-4 --right-of DP-0 && nitrogen --restore && wal -i $(cat ~/.config/nitrogen/bg-saved.cfg| grep file | head -n1 | cut -d= -f2) -nq && sh ~/.config/custom/start-polybar.sh
+exec xrandr --output DP-4 --right-of DP-0
 exec picom --config ~/.config/picom.conf &
