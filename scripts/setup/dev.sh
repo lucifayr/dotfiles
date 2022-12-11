@@ -1,6 +1,9 @@
 #!/bin/sh
 
-sudo pacman -S cargo python python-pip imagemagic picom go
+sudo pacman -S cargo python python-pip imagemagic picom go nodejs-lts-hydrogen npm \
+    gopls rust-analyzer 
+
+sudo npm i -g svelte-language-server typescript-language-server typescript
 
 cargo install exa
 pip3 install --user pywal

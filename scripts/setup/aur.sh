@@ -7,3 +7,4 @@ cd yay
  
 makepkg -si
 
+yay -S gscreenshot ttf-jetbrains-mono
