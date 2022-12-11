@@ -1,6 +1,6 @@
 #!/bin/sh
 
-sudo pacman -S cargo python python-pip
+sudo pacman -S cargo python python-pip imagemagic picom go
 
 cargo install exa
 pip3 install --user pywal
