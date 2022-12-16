@@ -43,6 +43,7 @@ alias rm="rm -I"
 alias mv="mv -i"
 alias ls="exa --color=always --all --group-directories-first --long"
 alias lsn="lsnotes"
+alias nr="npm run"
 
 eval $(thefuck --alias)
 
