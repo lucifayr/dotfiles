@@ -39,11 +39,13 @@ alias g="git"
 alias gs="git status"
 alias gl="git log"
 alias gw="git worktree"
+alias gst="git stash"
+alias gstd="git stash clear"
+alias nr="npm run"
 alias rm="rm -I"
 alias mv="mv -i"
 alias ls="exa --color=always --all --group-directories-first --long"
 alias lsn="lsnotes"
-alias nr="npm run"
 
 eval $(thefuck --alias)
 
