@@ -23,6 +23,7 @@ Plug 'ThePrimeagen/git-worktree.nvim'
 Plug 'rhysd/conflict-marker.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'hrsh7th/nvim-cmp' 
+Plug 'tzachar/cmp-tabnine', { 'do': './install.sh' }
 Plug 'hrsh7th/cmp-nvim-lsp' 
 Plug 'terrortylor/nvim-comment'
 Plug 'glepnir/dashboard-nvim'
@@ -61,4 +62,3 @@ let NERDTreeQuitOnOpen=1
 
 " LaTex
 let g:latex_preview_clean = 1
-
