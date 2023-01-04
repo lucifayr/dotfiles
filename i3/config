@@ -157,7 +157,7 @@ bindsym $mod+f exec firefox
 bindsym $mod+b exec gnome-terminal -e bashtop 
 bindsym $mod+p exec files
 
-bindsym $mod+Shift+a exec xlock -mode rain
+bindsym $mod+Shift+a exec xlock 
 bindsym $mod+Control+q exec shutdown now
 bindsym $mod+Control+w exec reboot 
 

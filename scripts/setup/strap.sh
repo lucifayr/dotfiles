@@ -1,5 +1,5 @@
 #!/bin/sh
 
 pacstrap /mnt base linux linux-firmware grub efibootmgr xorg-server xorg-apps xorg-xinit xclip nvidia \ 
-    man-db sudo networkmanager git github-cli \
+    man-db sudo networkmanager git github-cli fzf \
     neovim i3-gaps zsh curl
