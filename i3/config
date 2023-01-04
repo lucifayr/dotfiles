@@ -3,7 +3,7 @@ set_from_resource $bg i3wm.color2 #470a5b
 
 
 set $mod Mod4
-font pango:Source Code Pro 0
+font pango:JetBrains Mono 12
 
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
@@ -20,7 +20,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec gnome-terminal
+bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+Shift+c kill
@@ -51,9 +51,6 @@ bindsym $mod+i split v
 bindsym $mod+Shift+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -153,11 +150,12 @@ bindsym $mod+Control+r mode "resize"
 
 # App start kebindings
 bindsym $mod+f exec firefox
+bindsym $mod+d exec discord
 
-bindsym $mod+b exec gnome-terminal -e bashtop 
-bindsym $mod+p exec files
+bindsym $mod+b exec i3-sensible-terminal -e bashtop 
 
-bindsym $mod+Shift+a exec xlock 
+bindsym $mod+Shift+a exec betterlockscreen -l --display 1
+bindsym $mod+Shift+u exec betterlockscreen -u $(cat ~/.config/nitrogen/bg-saved.cfg| grep file | head -n1 | cut -d= -f2)
 bindsym $mod+Control+q exec shutdown now
 bindsym $mod+Control+w exec reboot 
 
@@ -170,16 +168,11 @@ client.placeholder      $bg     $bg     $fg  $bg       $bg
 
 client.background       $bg
 
-new_window pixel 4
+new_window pixel 0
 
-gaps outer 6 
-gaps inner 6
+gaps outer 8 
+gaps inner 8
 
-# Autostart apps
-exec setxkbmap -layout us
+exec xrandr --output DP-0 --primary && xrandr --output DP-2 --left-of DP-0 && xrandr --output DP-4 --right-of DP-0 && xrandr --output DP-4 --left-of DP-0 && xrandr --output DP-4 --right-of DP-0 && nitrogen --restore && wal -i $(cat ~/.config/nitrogen/bg-saved.cfg| grep file | head -n1 | cut -d= -f2) -nq && sh ~/.config/custom/start-polybar.sh
 
-exec xrandr --output DP-0 --brightness 0.7
-exec xrandr --output HDMI-0 --brightness 0.7
-
-exec xrandr --output DP-0 --primary && xrandr --output DP-2 --left-of DP-0 && xrandr --output DP-4 --right-of DP-0 && nitrogen --restore && wal -i /home/jackboxx/backgrounds/lofi_synthwave.png -n && sh ~/.config/custom/start-polybar.sh
 exec picom --config ~/.config/picom.conf &

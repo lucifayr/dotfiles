@@ -1,6 +1,8 @@
 " General
 nnoremap J :m+<cr>==
 nnoremap K :m-2<cr>==
+nnoremap <leader>off <cmd>:set nonu nornu<cr>
+nnoremap <leader>on <cmd>:set nu rnu<cr>
 nnoremap <leader>= <cmd>:vertical resize +5<cr>
 nnoremap <leader>- <cmd>:vertical resize -5<cr>
 nnoremap <leader><Left> :silent bp<cr>

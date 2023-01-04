@@ -33,16 +33,18 @@ source $ZSH/oh-my-zsh.sh
 alias v="nvim"
 alias v.="nvim ."
 alias wa="wal -Re"
-alias v+="pactl set-sink-volume 0 +5%"
-alias v-="pactl set-sink-volume 0 -5%"
 alias g="git"
 alias gs="git status"
 alias gl="git log"
 alias gw="git worktree"
+alias gst="git stash"
+alias gstd="git stash clear"
+alias nr="npm run"
 alias rm="rm -I"
 alias mv="mv -i"
+alias setclip="xclip -selection c"
+alias getclip="xclip -selection c -o"
 alias ls="exa --color=always --all --group-directories-first --long"
-alias lsn="lsnotes"
 
 eval $(thefuck --alias)
 

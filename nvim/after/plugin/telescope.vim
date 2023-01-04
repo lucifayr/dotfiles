@@ -1,6 +1,7 @@
 nnoremap <leader>ws <cmd>lua require('telescope.builtin').grep_string({hidden = true})<cr>
 nnoremap <leader>ls <cmd>lua require('telescope.builtin').live_grep({hidden = true})<cr>
 nnoremap <leader>fs <cmd>lua require('telescope.builtin').find_files({hidden = true})<cr>
+nnoremap <leader>gs <cmd>lua require('telescope.builtin').git_files({hidden = true})<cr>
 
 nnoremap <leader>sgc <cmd>lua require('telescope.builtin').git_commits()<cr>
 nnoremap <leader>sgb <cmd>lua require('telescope.builtin').git_branches()<cr>

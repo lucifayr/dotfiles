@@ -13,6 +13,7 @@ Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'tpope/vim-fugitive'
+Plug 'mbbill/undotree'
 Plug 'tpope/vim-surround'
 Plug 'APZelos/blamer.nvim'
 Plug 'preservim/nerdtree'
@@ -22,6 +23,7 @@ Plug 'ThePrimeagen/git-worktree.nvim'
 Plug 'rhysd/conflict-marker.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'hrsh7th/nvim-cmp' 
+Plug 'tzachar/cmp-tabnine', { 'do': './install.sh' }
 Plug 'hrsh7th/cmp-nvim-lsp' 
 Plug 'terrortylor/nvim-comment'
 Plug 'glepnir/dashboard-nvim'
@@ -60,4 +62,3 @@ let NERDTreeQuitOnOpen=1
 
 " LaTex
 let g:latex_preview_clean = 1
-
