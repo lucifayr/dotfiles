@@ -1,3 +1,3 @@
 #!/bin/sh
 
-sudo pacman -Sy alacritty polybar bashtop rofi tmux nitrogen firefox discord
+sudo pacman -Sy alacritty bashtop tmux firefox discord
