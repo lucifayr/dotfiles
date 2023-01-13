@@ -32,6 +32,7 @@ source $ZSH/oh-my-zsh.sh
 # Aliases
 alias v="nvim"
 alias v.="nvim ."
+alias t="tmux"
 alias wa="wal -Re"
 alias g="git"
 alias gs="git status"
