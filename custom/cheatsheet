@@ -1,6 +1,3 @@
 #!/usr/bin/env bash
 
-read -p "Enter Subject: " subject
-read -p "Enter Question: " question
-
-tmux neww bash -c "curl -s cht.sh/$subject/$question & while [ : ]; do sleep 1; done"
+tmux neww bash -c "cht.sh --shell" 
