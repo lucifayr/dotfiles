@@ -20,3 +20,4 @@ set colorcolumn=100
 set encoding=UTF-8
 set noshowmode
 set spell spelllang=en_gb
+set clipboard+=unnamedplus
