@@ -23,3 +23,21 @@ require'nvim-treesitter.configs'.setup {
 
 local ft_to_parser = require('nvim-treesitter.parsers').filetype_to_parsername
 ft_to_parser.astro = "tsx"
+
+require('neorg').setup {
+    load = {
+        ["core.defaults"] = {}, -- Loads default behaviour
+        ["core.norg.concealer"] = {}, -- Adds pretty icons to your documents
+        ["core.norg.completion"] = {}, -- Adds autocompletion to your documents
+        ["core.norg.dirman"] = { -- Manages Neorg workspaces
+            config = {
+                workspaces = {
+                    drinkUp = "~/notes/drink-up",
+                    vocal = "~/notes/vocal",
+                    school = "~/notes/school",
+                    personal = "~/notes/personal",
+                },
+            },
+        },
+    },
+}

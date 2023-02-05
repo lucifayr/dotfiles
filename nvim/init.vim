@@ -6,6 +6,7 @@ endif
 
 call plug#begin()
 Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-neorg/neorg' | Plug 'nvim-lua/plenary.nvim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'onsails/lspkind.nvim'
 Plug 'L3MON4D3/LuaSnip' 
