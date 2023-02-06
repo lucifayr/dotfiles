@@ -1,4 +1,5 @@
 " General
+nnoremap <leader>a za
 nnoremap J :m+<cr>
 nnoremap K :m-2<cr>
 nnoremap U :redo<cr> 
