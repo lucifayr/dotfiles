@@ -13,7 +13,7 @@ db.custom_header =
     {
     icon = ' ',
     desc = 'go to workspace',
-    action = 'echo WIP',
+    action = 'cd ~/notes | Telescope find_files',
     },
     {
     icon = ' ',
@@ -22,4 +22,4 @@ db.custom_header =
     }
 }
 
-db.custom_footer = { " }
+db.custom_footer = { }
