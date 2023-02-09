@@ -11,10 +11,15 @@ db.custom_header =
 
  db.custom_center = {
     {
+    icon = ' ',
+    desc = 'go to workspace',
+    action = 'echo WIP',
+    },
+    {
     icon = ' ',
-    desc = 'find files                       ',
+    desc = 'find files',
     action = 'Telescope find_files',
     }
 }
 
-db.custom_footer = { "" }
+db.custom_footer = { " }
