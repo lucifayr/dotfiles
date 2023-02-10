@@ -7,4 +7,4 @@ cd yay
  
 makepkg -si
 
-yay -S nerd-fonts-git postman-bin
+yay -S postman-bin
