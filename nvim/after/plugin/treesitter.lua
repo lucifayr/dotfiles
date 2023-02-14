@@ -32,6 +32,7 @@ require('neorg').setup {
             config = {
                 workspaces = {
                     drinkUp = "~/notes/drink-up",
+                    norgToMarkdown = "~/notes/norg-to-markdown",
                     vocal = "~/notes/vocal",
                     school = "~/notes/school",
                     personal = "~/notes/personal",
