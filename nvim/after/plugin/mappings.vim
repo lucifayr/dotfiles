@@ -1,5 +1,6 @@
 " General
 nnoremap <leader>a za
+nnoremap <leader>A <cmd>:set foldlevel=1<cr>
 nnoremap J :m+<cr>
 nnoremap K :m-2<cr>
 nnoremap U :redo<cr> 
