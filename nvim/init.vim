@@ -36,7 +36,6 @@ Plug 'nvim-lualine/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'sbdchd/neoformat'
 Plug 'nvim-treesitter/nvim-treesitter-context'
-Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 Plug 'navarasu/onedark.nvim'
 Plug 'conornewton/vim-latex-preview'
 call plug#end()
