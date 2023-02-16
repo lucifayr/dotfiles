@@ -110,7 +110,7 @@ _G.packer_plugins = {
     url = "https://github.com/rhysd/conflict-marker.vim"
   },
   ["dashboard-nvim"] = {
-    config = { "\27LJ\2\n�\v\0\0\6\0\f\0\0196\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\5\0005\4\4\0=\4\6\0034\4\0\0=\4\a\0034\4\0\0=\4\b\0034\4\3\0005\5\t\0>\5\1\4=\4\n\3=\3\v\2B\0\2\1K\0\1\0\vconfig\rshortcut\1\0\6\ticon\t \ficon_hl\14@variable\bkey\6f\vaction\25Telescope find_files\tdesc\15Find Files\ngroup\nLabel\vfooter\vcenter\vheader\1\0\0\1\a\0\0�\1███╗   ██╗ ██████╗     ███╗   ███╗ █████╗ ██╗██████╗ ███████╗███╗   ██╗███████╗�\1████╗  ██║██╔═══██╗    ████╗ ████║██╔══██╗██║██╔══██╗██╔════╝████╗  ██║██╔════╝�\1██╔██╗ ██║██║   ██║    ██╔████╔██║███████║██║██║  ██║█████╗  ██╔██╗ ██║███████╗�\1██║╚██╗██║██║   ██║    ██║╚██╔╝██║██╔══██║██║██║  ██║██╔══╝  ██║╚██╗██║╚════██║�\1██║ ╚████║╚██████╔╝    ██║ ╚═╝ ██║██║  ██║██║██████╔╝███████╗██║ ╚████║███████║�\1╚═╝  ╚═══╝ ╚═════╝     ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝╚═════╝ ╚══════╝╚═╝  ╚═══╝╚══════╝\1\0\1\ntheme\nhyper\nsetup\14dashboard\frequire\0" },
+    config = { "\27LJ\2\n�\v\0\0\6\0\v\0\0176\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\5\0005\4\4\0=\4\6\0034\4\0\0=\4\a\0034\4\3\0005\5\b\0>\5\1\4=\4\t\3=\3\n\2B\0\2\1K\0\1\0\vconfig\rshortcut\1\0\6\ngroup\nLabel\tdesc\15Find Files\ficon_hl\14@variable\bkey\6f\ticon\t \vaction\25Telescope find_files\vfooter\vheader\1\0\0\1\a\0\0�\1███╗   ██╗ ██████╗     ███╗   ███╗ █████╗ ██╗██████╗ ███████╗███╗   ██╗███████╗�\1████╗  ██║██╔═══██╗    ████╗ ████║██╔══██╗██║██╔══██╗██╔════╝████╗  ██║██╔════╝�\1██╔██╗ ██║██║   ██║    ██╔████╔██║███████║██║██║  ██║█████╗  ██╔██╗ ██║███████╗�\1██║╚██╗██║██║   ██║    ██║╚██╔╝██║██╔══██║██║██║  ██║██╔══╝  ██║╚██╗██║╚════██║�\1██║ ╚████║╚██████╔╝    ██║ ╚═╝ ██║██║  ██║██║██████╔╝███████╗██║ ╚████║███████║�\1╚═╝  ╚═══╝ ╚═════╝     ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝╚═════╝ ╚══════╝╚═╝  ╚═══╝╚══════╝\1\0\1\ntheme\nhyper\nsetup\14dashboard\frequire\0" },
     loaded = false,
     needs_bufread = false,
     only_cond = false,
@@ -138,7 +138,7 @@ _G.packer_plugins = {
     url = "https://github.com/sbdchd/neoformat"
   },
   neorg = {
-    config = { "\27LJ\2\n�\1\0\0\a\0\14\0\0196\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\f\0005\3\3\0004\4\0\0=\4\4\0034\4\0\0=\4\5\0035\4\t\0005\5\a\0005\6\6\0=\6\b\5=\5\n\4=\4\v\3=\3\r\2B\0\2\1K\0\1\0\tload\1\0\0\21core.norg.dirman\vconfig\1\0\0\15workspaces\1\0\0\1\0\1\nnotes\f~/notes\24core.norg.concealer\18core.defaults\1\0\0\nsetup\nneorg\frequire\0" },
+    config = { "\27LJ\2\n�\2\0\0\a\0\14\0\0196\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\f\0005\3\3\0004\4\0\0=\4\4\0034\4\0\0=\4\5\0035\4\t\0005\5\a\0005\6\6\0=\6\b\5=\5\n\4=\4\v\3=\3\r\2B\0\2\1K\0\1\0\tload\1\0\0\21core.norg.dirman\vconfig\1\0\0\15workspaces\1\0\0\1\0\5\vschool\19~/notes/school\19norgToMarkdown\29~/notes/norg-to-markdown\fdrinkUp\21~/notes/drink-up\rpersonal\21~/notes/personal\nvocal\18~/notes/vocal\24core.norg.concealer\18core.defaults\1\0\0\nsetup\nneorg\frequire\0" },
     loaded = true,
     path = "/home/jackboxx/.local/share/nvim/site/pack/packer/start/neorg",
     url = "https://github.com/nvim-neorg/neorg"
@@ -174,6 +174,7 @@ _G.packer_plugins = {
     url = "https://github.com/neovim/nvim-lspconfig"
   },
   ["nvim-treesitter"] = {
+    config = { "\27LJ\2\n�\2\0\0\4\0\14\0\0196\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\0025\3\b\0=\3\t\2B\0\2\0016\0\0\0'\2\n\0B\0\2\0029\0\v\0'\1\r\0=\1\f\0K\0\1\0\btsx\nastro\27filetype_to_parsername\28nvim-treesitter.parsers\14highlight\1\0\2\venable\2&additional_vim_regex_highlighting\1\19ignore_install\1\2\0\0\15javascript\21ensure_installed\1\0\2\17auto_install\2\17sync_install\1\1\b\0\0\6c\blua\trust\ago\15typescript\15javascript\vsvelte\nsetup\28nvim-treesitter.configs\frequire\0" },
     loaded = true,
     path = "/home/jackboxx/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
@@ -251,9 +252,13 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: nvim-treesitter
+time([[Config for nvim-treesitter]], true)
+try_loadstring("\27LJ\2\n�\2\0\0\4\0\14\0\0196\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\0025\3\b\0=\3\t\2B\0\2\0016\0\0\0'\2\n\0B\0\2\0029\0\v\0'\1\r\0=\1\f\0K\0\1\0\btsx\nastro\27filetype_to_parsername\28nvim-treesitter.parsers\14highlight\1\0\2\venable\2&additional_vim_regex_highlighting\1\19ignore_install\1\2\0\0\15javascript\21ensure_installed\1\0\2\17auto_install\2\17sync_install\1\1\b\0\0\6c\blua\trust\ago\15typescript\15javascript\vsvelte\nsetup\28nvim-treesitter.configs\frequire\0", "config", "nvim-treesitter")
+time([[Config for nvim-treesitter]], false)
 -- Config for: neorg
 time([[Config for neorg]], true)
-try_loadstring("\27LJ\2\n�\1\0\0\a\0\14\0\0196\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\f\0005\3\3\0004\4\0\0=\4\4\0034\4\0\0=\4\5\0035\4\t\0005\5\a\0005\6\6\0=\6\b\5=\5\n\4=\4\v\3=\3\r\2B\0\2\1K\0\1\0\tload\1\0\0\21core.norg.dirman\vconfig\1\0\0\15workspaces\1\0\0\1\0\1\nnotes\f~/notes\24core.norg.concealer\18core.defaults\1\0\0\nsetup\nneorg\frequire\0", "config", "neorg")
+try_loadstring("\27LJ\2\n�\2\0\0\a\0\14\0\0196\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\f\0005\3\3\0004\4\0\0=\4\4\0034\4\0\0=\4\5\0035\4\t\0005\5\a\0005\6\6\0=\6\b\5=\5\n\4=\4\v\3=\3\r\2B\0\2\1K\0\1\0\tload\1\0\0\21core.norg.dirman\vconfig\1\0\0\15workspaces\1\0\0\1\0\5\vschool\19~/notes/school\19norgToMarkdown\29~/notes/norg-to-markdown\fdrinkUp\21~/notes/drink-up\rpersonal\21~/notes/personal\nvocal\18~/notes/vocal\24core.norg.concealer\18core.defaults\1\0\0\nsetup\nneorg\frequire\0", "config", "neorg")
 time([[Config for neorg]], false)
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]

@@ -41,12 +41,16 @@ return require('packer').startup(function(use)
         config = function()
             require('neorg').setup {
                 load = {
-                    ["core.defaults"] = {}, -- Loads default behaviour
-                    ["core.norg.concealer"] = {}, -- Adds pretty icons to your documents
-                    ["core.norg.dirman"] = { -- Manages Neorg workspaces
+                    ["core.defaults"] = {},
+                    ["core.norg.concealer"] = {},
+                    ["core.norg.dirman"] = {
                         config = {
                             workspaces = {
-                                notes = "~/notes",
+                                drinkUp = "~/notes/drink-up",
+                                norgToMarkdown = "~/notes/norg-to-markdown",
+                                vocal = "~/notes/vocal",
+                                school = "~/notes/school",
+                                personal = "~/notes/personal",
                             },
                         },
                     },
@@ -62,7 +66,24 @@ return require('packer').startup(function(use)
     use 'L3MON4D3/LuaSnip' 
     use 'saadparwaiz1/cmp_luasnip' 
     use 'nvim-telescope/telescope.nvim'
-    use 'nvim-treesitter/nvim-treesitter'
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        config = function()
+            require'nvim-treesitter.configs'.setup {
+                ensure_installed = { "c", "lua", "rust", "go", "typescript", "javascript", "svelte" },
+                sync_install = false,
+                auto_install = true,
+                ignore_install = { "javascript" },
+                highlight = {
+                  enable = true,
+                  additional_vim_regex_highlighting = false,
+                },
+            }
+
+            local ft_to_parser = require('nvim-treesitter.parsers').filetype_to_parsername
+            ft_to_parser.astro = "tsx"
+        end
+    }
     use 'tpope/vim-fugitive'
     use 'mbbill/undotree'
     use 'mfussenegger/nvim-jdtls'
