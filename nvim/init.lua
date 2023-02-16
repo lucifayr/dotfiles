@@ -77,12 +77,42 @@ return require('packer').startup(function(use)
     use 'hrsh7th/nvim-cmp' 
     use 'hrsh7th/cmp-nvim-lsp' 
     use 'terrortylor/nvim-comment'
-    use 'glepnir/dashboard-nvim'
+    use {
+        'glepnir/dashboard-nvim',
+            event = 'VimEnter',
+            config = function() 
+                require('dashboard').setup({
+                    theme = 'hyper',
+                        config = {
+                            header = {
+                                '███╗   ██╗ ██████╗     ███╗   ███╗ █████╗ ██╗██████╗ ███████╗███╗   ██╗███████╗',
+                                '████╗  ██║██╔═══██╗    ████╗ ████║██╔══██╗██║██╔══██╗██╔════╝████╗  ██║██╔════╝',
+                                '██╔██╗ ██║██║   ██║    ██╔████╔██║███████║██║██║  ██║█████╗  ██╔██╗ ██║███████╗',
+                                '██║╚██╗██║██║   ██║    ██║╚██╔╝██║██╔══██║██║██║  ██║██╔══╝  ██║╚██╗██║╚════██║',
+                                '██║ ╚████║╚██████╔╝    ██║ ╚═╝ ██║██║  ██║██║██████╔╝███████╗██║ ╚████║███████║',
+                                '╚═╝  ╚═══╝ ╚═════╝     ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝╚═════╝ ╚══════╝╚═╝  ╚═══╝╚══════╝',
+                            },
+                            footer = {},
+                            shortcut = {
+                                {
+                                  icon = ' ',
+                                  icon_hl = '@variable',
+                                  desc = 'Find Files',
+                                  group = 'Label',
+                                  action = 'Telescope find_files',
+                                  key = 'f',
+                                },
+                            },
+                        },
+                    })
+            end,
+            requires = {'nvim-tree/nvim-web-devicons'}
+    }
+    use 'nvim-tree/nvim-web-devicons'
     use 'evanleck/vim-svelte'
     use 'pangloss/vim-javascript'
     use 'HerringtonDarkholme/yats.vim'
     use 'nvim-lualine/lualine.nvim'
-    use 'kyazdani42/nvim-web-devicons'
     use 'sbdchd/neoformat'
     use 'nvim-treesitter/nvim-treesitter-context'
     use 'navarasu/onedark.nvim'
