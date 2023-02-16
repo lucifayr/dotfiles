@@ -23,3 +23,6 @@ noremap <leader>lp :StartLatexPreview<cr>
 
 " Spelling
 noremap <leader>sc :terminal gramma check %<cr>
+
+" Neorg
+noremap <leader>W :Neorg workspace 
