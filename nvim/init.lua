@@ -60,12 +60,10 @@ return require('packer').startup(function(use)
         run = ":Neorg sync-parsers",
         requires = "nvim-lua/plenary.nvim",
     }
- 	use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
-    use 'neovim/nvim-lspconfig'
-    use 'onsails/lspkind.nvim'
-    use 'L3MON4D3/LuaSnip' 
-    use 'saadparwaiz1/cmp_luasnip' 
-    use 'nvim-telescope/telescope.nvim'
+    use {
+        "windwp/nvim-autopairs",
+        config = function() require("nvim-autopairs").setup {} end
+    }
     use {
         'nvim-treesitter/nvim-treesitter',
         config = function()
@@ -84,20 +82,6 @@ return require('packer').startup(function(use)
             ft_to_parser.astro = "tsx"
         end
     }
-    use 'tpope/vim-fugitive'
-    use 'mbbill/undotree'
-    use 'mfussenegger/nvim-jdtls'
-    use 'tpope/vim-surround'
-    use 'APZelos/blamer.nvim'
-    use 'preservim/nerdtree'
-    use 'Xuyuanp/nerdtree-git-plugin'
-    use 'ryanoasis/vim-devicons'
-    use 'ThePrimeagen/git-worktree.nvim'
-    use 'rhysd/conflict-marker.vim'
-    use 'jiangmiao/auto-pairs'
-    use 'hrsh7th/nvim-cmp' 
-    use 'hrsh7th/cmp-nvim-lsp' 
-    use 'terrortylor/nvim-comment'
     use {
         'glepnir/dashboard-nvim',
             event = 'VimEnter',
@@ -129,6 +113,25 @@ return require('packer').startup(function(use)
             end,
             requires = {'nvim-tree/nvim-web-devicons'}
     }
+ 	use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
+    use 'neovim/nvim-lspconfig'
+    use 'onsails/lspkind.nvim'
+    use 'L3MON4D3/LuaSnip' 
+    use 'saadparwaiz1/cmp_luasnip' 
+    use 'nvim-telescope/telescope.nvim'
+    use 'tpope/vim-fugitive'
+    use 'mbbill/undotree'
+    use 'mfussenegger/nvim-jdtls'
+    use 'tpope/vim-surround'
+    use 'APZelos/blamer.nvim'
+    use 'preservim/nerdtree'
+    use 'Xuyuanp/nerdtree-git-plugin'
+    use 'ryanoasis/vim-devicons'
+    use 'ThePrimeagen/git-worktree.nvim'
+    use 'rhysd/conflict-marker.vim'
+    use 'hrsh7th/nvim-cmp' 
+    use 'hrsh7th/cmp-nvim-lsp' 
+    use 'terrortylor/nvim-comment'
     use 'nvim-tree/nvim-web-devicons'
     use 'evanleck/vim-svelte'
     use 'pangloss/vim-javascript'
