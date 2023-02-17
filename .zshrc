@@ -46,6 +46,7 @@ alias mv="mv -i"
 alias setclip="xclip -selection c"
 alias getclip="xclip -selection c -o"
 alias ntm="norg-to-markdown"
+alias oof="sudo"
 alias ls="exa --color=always --all --group-directories-first --long"
 alias tmux="TERM=xterm-256color tmux"
 
