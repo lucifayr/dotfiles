@@ -14,4 +14,6 @@ require('onedark').setup {
   }
 }
 
+vim.g.background = dark
+vim.cmd("syntax on")
 vim.cmd("colorscheme onedark")

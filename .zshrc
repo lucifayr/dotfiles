@@ -47,6 +47,7 @@ alias setclip="xclip -selection c"
 alias getclip="xclip -selection c -o"
 alias ntm="norg-to-markdown"
 alias ls="exa --color=always --all --group-directories-first --long"
+alias tmux="TERM=xterm-256color tmux"
 
 eval $(thefuck --alias)
 
