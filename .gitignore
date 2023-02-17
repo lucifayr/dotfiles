@@ -1,2 +1,2 @@
-**/nvim/spell
-**/cfiles/preview
+nvim/spell
+nvim/plugin/packer_compiled.lu
