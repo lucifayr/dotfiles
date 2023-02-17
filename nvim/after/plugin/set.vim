@@ -16,7 +16,7 @@ set undodir=~/.vim/undodir
 set incsearch
 set scrolloff=15
 set signcolumn=yes
-set colorcolumn=100
+set colorcolumn=90
 set encoding=UTF-8
 set noshowmode
 set spell spelllang=en_gb
