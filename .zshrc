@@ -45,6 +45,7 @@ alias rm="rm -I"
 alias mv="mv -i"
 alias setclip="xclip -selection c"
 alias getclip="xclip -selection c -o"
+alias ntm="norg-to-markdown"
 alias ls="exa --color=always --all --group-directories-first --long"
 
 eval $(thefuck --alias)
@@ -63,9 +64,7 @@ export PATH="${PATH}:${HOME}/.local/bin/"
 # Autorun programms
 if [[ ! -z $DISPLAY ]]
 then 
-    # Automatically sets the terminals theme
-    PATH_TO_BG=$(cat ~/.config/nitrogen/bg-saved.cfg | grep file | head -n1 |cut -d= -f2)
-    wal -i $PATH_TO_BG -neq
+    wal -i ~/projects/arch-config/images/background.png || wal -i ~/projects/arch-config/images/background.jpg
 fi
 
 clear

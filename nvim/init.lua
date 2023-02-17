@@ -15,7 +15,7 @@ vim.g.blamer_date_format = '%H:%M on the %d of %B, %Y'
 vim.g.blamer_template = '<committer> <summary> at <committer-time> '
 
 -- NerdTree
--- let NERDTreeQuitOnOpen=1
+vim.g.NERDTreeQuitOnOpen = 1
 
 -- LaTex
 vim.g.latex_preview_clean = 1
