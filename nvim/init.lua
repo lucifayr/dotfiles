@@ -1,6 +1,6 @@
 -- Leader
-vim.g.mapleader = " "
-vim.g.maplocalleader = ";"
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ';'
 
 -- Prettier
 vim.g.neoformat_try_node_exe = 1
@@ -34,54 +34,6 @@ end
 local packer_bootstrap = ensure_packer()
 
 return require('packer').startup(function(use)
-    use 'wbthomason/packer.nvim'
-    use 'nvim-lua/plenary.nvim'
-    use {
-        "nvim-neorg/neorg",
-        config = function()
-            require('neorg').setup {
-                load = {
-                    ["core.defaults"] = {},
-                    ["core.norg.concealer"] = {},
-                    ["core.norg.dirman"] = {
-                        config = {
-                            workspaces = {
-                                drinkUp = "~/notes/drink-up",
-                                norgToMarkdown = "~/notes/norg-to-markdown",
-                                vocal = "~/notes/vocal",
-                                school = "~/notes/school",
-                                personal = "~/notes/personal",
-                            },
-                        },
-                    },
-                },
-            }
-        end,
-        run = ":Neorg sync-parsers",
-        requires = "nvim-lua/plenary.nvim",
-    }
-    use {
-        "windwp/nvim-autopairs",
-        config = function() require("nvim-autopairs").setup {} end
-    }
-    use {
-        'nvim-treesitter/nvim-treesitter',
-        config = function()
-            require'nvim-treesitter.configs'.setup {
-                ensure_installed = { "c", "lua", "rust", "go", "typescript", "javascript", "svelte" },
-                sync_install = false,
-                auto_install = true,
-                ignore_install = { "javascript" },
-                highlight = {
-                  enable = true,
-                  additional_vim_regex_highlighting = false,
-                },
-            }
-
-            local ft_to_parser = require('nvim-treesitter.parsers').filetype_to_parsername
-            ft_to_parser.astro = "tsx"
-        end
-    }
     use {
         'glepnir/dashboard-nvim',
             event = 'VimEnter',
@@ -113,14 +65,66 @@ return require('packer').startup(function(use)
             end,
             requires = {'nvim-tree/nvim-web-devicons'}
     }
- 	use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
+    use {
+        'nvim-neorg/neorg',
+        config = function()
+            require('neorg').setup {
+                load = {
+                    ['core.defaults'] = {},
+                    ['core.norg.concealer'] = {},
+                    ['core.norg.dirman'] = {
+                        config = {
+                            workspaces = {
+                                drinkUp = '~/notes/drink-up',
+                                norgToMarkdown = '~/notes/norg-to-markdown',
+                                vocal = '~/notes/vocal',
+                                school = '~/notes/school',
+                                personal = '~/notes/personal',
+                            },
+                        },
+                    },
+                },
+            }
+        end,
+        run = ':Neorg sync-parsers',
+        requires = 'nvim-lua/plenary.nvim',
+    }
+    use {
+        'windwp/nvim-autopairs',
+        config = function() require('nvim-autopairs').setup {} end
+    }
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        config = function()
+            require'nvim-treesitter.configs'.setup {
+                ensure_installed = { 'c', 'lua', 'rust', 'go', 'typescript', 'javascript', 'svelte' },
+                sync_install = false,
+                auto_install = true,
+                ignore_install = { 'javascript' },
+                highlight = {
+                  enable = true,
+                  additional_vim_regex_highlighting = false,
+                },
+            }
+
+            -- local ft_to_parser = require('nvim-treesitter.parsers').filetype_to_parsername
+            -- ft_to_parser.astro = 'tsx'
+        end
+    }
     use {
         'brenoprata10/nvim-highlight-colors', 
         config = function()
             require('nvim-highlight-colors').setup {}
         end,
     }
-    use 'neovim/nvim-lspconfig'
+    use {
+        'williamboman/mason.nvim',
+        'neovim/nvim-lspconfig',
+        'williamboman/mason-lspconfig.nvim',
+    }
+ 	use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
+    use 'wbthomason/packer.nvim'
+    use 'nvim-lua/plenary.nvim'
     use 'onsails/lspkind.nvim'
     use 'L3MON4D3/LuaSnip' 
     use 'saadparwaiz1/cmp_luasnip' 
