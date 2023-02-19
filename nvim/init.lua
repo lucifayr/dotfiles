@@ -106,9 +106,6 @@ return require('packer').startup(function(use)
                   additional_vim_regex_highlighting = false,
                 },
             }
-
-            -- local ft_to_parser = require('nvim-treesitter.parsers').filetype_to_parsername
-            -- ft_to_parser.astro = 'tsx'
         end
     }
     use {
