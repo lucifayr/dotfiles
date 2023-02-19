@@ -157,7 +157,6 @@ bindsym $mod+b exec i3-sensible-terminal -e bashtop
 bindsym $mod+Shift+s exec flameshot gui
 
 bindsym $mod+Shift+a exec betterlockscreen -l --display 1
-bindsym $mod+Shift+u exec betterlockscreen -u $(cat ~/.config/nitrogen/bg-saved.cfg| grep file | head -n1 | cut -d= -f2)
 bindsym $mod+Control+q exec shutdown now
 bindsym $mod+Control+w exec reboot 
 
