@@ -1,5 +1,5 @@
 require("mason").setup({
-    install_root_dir = "~/lsp",
+    install_root_dir = "/home/jackboxx/mason/data",
     PATH = "prepend",
     pip = {
         upgrade_pip = true,
