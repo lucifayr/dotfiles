@@ -114,6 +114,12 @@ return require('packer').startup(function(use)
             requires = {'nvim-tree/nvim-web-devicons'}
     }
  	use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
+    use {
+        'brenoprata10/nvim-highlight-colors', 
+        config = function()
+            require('nvim-highlight-colors').setup {}
+        end,
+    }
     use 'neovim/nvim-lspconfig'
     use 'onsails/lspkind.nvim'
     use 'L3MON4D3/LuaSnip' 

@@ -32,23 +32,20 @@ source $ZSH/oh-my-zsh.sh
 # Aliases
 alias v="nvim"
 alias v.="nvim ."
-alias t="tmux"
-alias wa="wal -Re"
 alias g="git"
 alias gs="git status"
 alias gl="git log"
 alias gw="git worktree"
 alias gst="git stash"
 alias gstd="git stash clear"
+alias t="tmux"
+alias tmux="TERM=xterm-256color tmux"
 alias nr="npm run"
 alias rm="rm -I"
 alias mv="mv -i"
-alias setclip="xclip -selection c"
-alias getclip="xclip -selection c -o"
 alias ntm="norg-to-markdown"
-alias oof="sudo"
+alias update="sudo pacman -Syu"
 alias ls="exa --color=always --all --group-directories-first --long"
-alias tmux="TERM=xterm-256color tmux"
 
 eval $(thefuck --alias)
 
