@@ -1,6 +1,6 @@
 #!/bin/sh
 
-pacstrap /mnt base linux linux-firmware grub efibootmgr \ 
+pacstrap /mnt base linux linux-firmware grub efibootmgr man-db \ 
     man-db base-devel sudo networkmanager uthash git github-cli fzf \
     neovim zsh curl
 
