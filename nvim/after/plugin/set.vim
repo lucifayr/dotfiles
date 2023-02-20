@@ -17,6 +17,7 @@ set incsearch
 set scrolloff=15
 set signcolumn=yes
 set colorcolumn=90
+set textwidth=90
 set encoding=UTF-8
 set noshowmode
 set updatetime=50
