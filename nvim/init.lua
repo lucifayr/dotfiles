@@ -133,6 +133,7 @@ return require('packer').startup(function(use)
         }
     })
  	use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
+    use 'ryicoh/deepl.vim'
     use 'wbthomason/packer.nvim'
     use 'nvim-lua/plenary.nvim'
     use 'onsails/lspkind.nvim'
