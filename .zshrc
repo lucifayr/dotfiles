@@ -32,6 +32,7 @@ source $ZSH/oh-my-zsh.sh
 # Aliases
 alias v="nvim"
 alias v.="nvim ."
+alias cdt="cd /tmp"
 alias g="git"
 alias gs="git status"
 alias gl="git log"
