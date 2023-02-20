@@ -46,6 +46,7 @@ alias rm="rm -I"
 alias mv="mv -i"
 alias ntm="norg-to-markdown"
 alias update="sudo pacman -Syu"
+alias install="sudo pacman -S"
 alias ls="exa --color=always --all --group-directories-first --long"
 
 eval $(thefuck --alias)

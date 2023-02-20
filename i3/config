@@ -1,6 +1,8 @@
 set_from_resource $fg i3wm.color7 #ea17b5
 set_from_resource $bg i3wm.color2 #470a5b
 
+# Float window rules
+for_window [class="Galculator" instance="galculator"] floating enable
 
 set $mod Mod4
 font pango:JetBrains Mono 12
