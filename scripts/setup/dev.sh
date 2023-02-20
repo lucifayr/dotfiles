@@ -1,6 +1,6 @@
 #!/bin/sh
 
-sudo pacman -S cargo python python-pip imagemagic go nodejs-lts-hydrogen npm gopls rust-analyzer meson ninja 
+sudo pacman -S cargo python python-pip go nodejs-lts-hydrogen npm gopls rust-analyzer meson ninja 
 
 sudo npm i -g svelte-language-server typescript-language-server typescript
 
