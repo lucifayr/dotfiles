@@ -19,5 +19,6 @@ set signcolumn=yes
 set colorcolumn=90
 set encoding=UTF-8
 set noshowmode
+set updatetime=50
 set spell spelllang=en_gb
 set clipboard+=unnamedplus
