@@ -119,6 +119,19 @@ return require('packer').startup(function(use)
         'neovim/nvim-lspconfig',
         'williamboman/mason-lspconfig.nvim',
     }
+    use({
+      "jackMort/ChatGPT.nvim",
+        config = function()
+          require("chatgpt").setup({
+            -- optional configuration
+          })
+        end,
+        requires = {
+          "MunifTanjim/nui.nvim",
+          "nvim-lua/plenary.nvim",
+          "nvim-telescope/telescope.nvim"
+        }
+    })
  	use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
     use 'wbthomason/packer.nvim'
     use 'nvim-lua/plenary.nvim'
