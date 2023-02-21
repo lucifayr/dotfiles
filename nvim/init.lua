@@ -121,16 +121,11 @@ return require('packer').startup(function(use)
     }
     use({
       "jackMort/ChatGPT.nvim",
-        config = function()
-          require("chatgpt").setup({
-            -- optional configuration
-          })
-        end,
-        requires = {
+      requires = {
           "MunifTanjim/nui.nvim",
           "nvim-lua/plenary.nvim",
           "nvim-telescope/telescope.nvim"
-        }
+      }
     })
  	use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
     use 'ryicoh/deepl.vim'
