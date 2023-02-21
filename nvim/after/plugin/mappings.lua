@@ -21,8 +21,13 @@ vim.api.nvim_set_keymap('v', 'J', ':m \'>+1<cr>gv=gv', { noremap = true, silent 
 
 vim.api.nvim_set_keymap('n', 'U', ':redo<cr>', { noremap = true, silent = true })
 
-vim.api.nvim_set_keymap('x', '<C-u>', '<C-u>zz', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('x', '<C-d>', '<C-d>zz', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('x', '<C-u>', '<C-u>zz', { noremap = true, silent = true })
+
+vim.api.nvim_set_keymap('n', '<leader>tn', '<cmd>:TestNearest<cr>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>tf', '<cmd>:TestFile<cr>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>tl', '<cmd>:TestLast<cr>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>ta', '<cmd>:TestSuite<cr>', { noremap = true, silent = true })
 
 vim.keymap.set('n', '<leader>s', [[:%s/\<<C-r><C-w>\>//gI<Left><Left><Left>]])
 
