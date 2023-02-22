@@ -2,3 +2,4 @@ nvim/spell/**
 nvim/plugin/packer_compiled.lua
 nvim/after/plugin/private*.vim
 nvim/after/plugin/private*.lua
+scripts/setup/private*.sh
