@@ -1,9 +1,7 @@
 #!/bin/sh
 
 sudo pacman -S cargo python python-pip go nodejs-lts-hydrogen npm gopls rust-analyzer meson ninja thefuck flatpak
-
 sudo npm i -g svelte-language-server typescript-language-server typescript
-
 cargo install exa
 
 # oh-my-zsh
@@ -14,3 +12,6 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 
 # nix
 curl -L https://nixos.org/nix/install | sh
+
+# nvm
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
