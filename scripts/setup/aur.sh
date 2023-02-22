@@ -7,4 +7,4 @@ cd yay
  
 makepkg -si
 
-yay -S postman-bin
+yay -S postman-bin sioyek

@@ -22,14 +22,14 @@ vim.g.NERDTreeShowHidden = 1
 vim.g.latex_preview_clean = 1
 
 local ensure_packer = function()
-  local fn = vim.fn
-  local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
-  if fn.empty(fn.glob(install_path)) > 0 then
-    fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
-    vim.cmd [[packadd packer.nvim]]
-    return true
-  end
-  return false
+    local fn = vim.fn
+    local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+    if fn.empty(fn.glob(install_path)) > 0 then
+        fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+        vim.cmd [[packadd packer.nvim]]
+        return true
+    end
+    return false
 end
 
 local packer_bootstrap = ensure_packer()
@@ -37,34 +37,34 @@ local packer_bootstrap = ensure_packer()
 return require('packer').startup(function(use)
     use {
         'glepnir/dashboard-nvim',
-            event = 'VimEnter',
-            config = function() 
-                require('dashboard').setup({
-                    theme = 'hyper',
-                        config = {
-                            header = {
-                                '███╗   ██╗ ██████╗     ███╗   ███╗ █████╗ ██╗██████╗ ███████╗███╗   ██╗███████╗',
-                                '████╗  ██║██╔═══██╗    ████╗ ████║██╔══██╗██║██╔══██╗██╔════╝████╗  ██║██╔════╝',
-                                '██╔██╗ ██║██║   ██║    ██╔████╔██║███████║██║██║  ██║█████╗  ██╔██╗ ██║███████╗',
-                                '██║╚██╗██║██║   ██║    ██║╚██╔╝██║██╔══██║██║██║  ██║██╔══╝  ██║╚██╗██║╚════██║',
-                                '██║ ╚████║╚██████╔╝    ██║ ╚═╝ ██║██║  ██║██║██████╔╝███████╗██║ ╚████║███████║',
-                                '╚═╝  ╚═══╝ ╚═════╝     ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝╚═════╝ ╚══════╝╚═╝  ╚═══╝╚══════╝',
-                            },
-                            footer = {},
-                            shortcut = {
-                                {
-                                  icon = ' ',
-                                  icon_hl = '@variable',
-                                  desc = 'Find Files',
-                                  group = 'Label',
-                                  action = 'Telescope find_files',
-                                  key = 'f',
-                                },
-                            },
+        event = 'VimEnter',
+        config = function() 
+            require('dashboard').setup({
+                theme = 'hyper',
+                config = {
+                    header = {
+                        '███╗   ██╗ ██████╗     ███╗   ███╗ █████╗ ██╗██████╗ ███████╗███╗   ██╗███████╗',
+                        '████╗  ██║██╔═══██╗    ████╗ ████║██╔══██╗██║██╔══██╗██╔════╝████╗  ██║██╔════╝',
+                        '██╔██╗ ██║██║   ██║    ██╔████╔██║███████║██║██║  ██║█████╗  ██╔██╗ ██║███████╗',
+                        '██║╚██╗██║██║   ██║    ██║╚██╔╝██║██╔══██║██║██║  ██║██╔══╝  ██║╚██╗██║╚════██║',
+                        '██║ ╚████║╚██████╔╝    ██║ ╚═╝ ██║██║  ██║██║██████╔╝███████╗██║ ╚████║███████║',
+                        '╚═╝  ╚═══╝ ╚═════╝     ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝╚═════╝ ╚══════╝╚═╝  ╚═══╝╚══════╝',
+                    },
+                    footer = {},
+                    shortcut = {
+                        {
+                            icon = ' ',
+                            icon_hl = '@variable',
+                            desc = 'Find Files',
+                            group = 'Label',
+                            action = 'Telescope find_files',
+                            key = 'f',
                         },
-                    })
-            end,
-            requires = {'nvim-tree/nvim-web-devicons'}
+                    },
+                },
+            })
+        end,
+        requires = {'nvim-tree/nvim-web-devicons'}
     }
     use {
         'nvim-neorg/neorg',
@@ -103,8 +103,8 @@ return require('packer').startup(function(use)
                 auto_install = true,
                 ignore_install = { 'javascript' },
                 highlight = {
-                  enable = true,
-                  additional_vim_regex_highlighting = false,
+                    enable = true,
+                    additional_vim_regex_highlighting = false,
                 },
             }
         end
@@ -121,14 +121,14 @@ return require('packer').startup(function(use)
         'williamboman/mason-lspconfig.nvim',
     }
     use({
-      "jackMort/ChatGPT.nvim",
-      requires = {
-          "MunifTanjim/nui.nvim",
-          "nvim-lua/plenary.nvim",
-          "nvim-telescope/telescope.nvim"
-      }
+        "jackMort/ChatGPT.nvim",
+        requires = {
+            "MunifTanjim/nui.nvim",
+            "nvim-lua/plenary.nvim",
+            "nvim-telescope/telescope.nvim"
+        }
     })
- 	use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
+    use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
     use 'ryicoh/deepl.vim'
     use 'vim-test/vim-test'
     use 'wbthomason/packer.nvim'
@@ -158,9 +158,12 @@ return require('packer').startup(function(use)
     use 'sbdchd/neoformat'
     use 'nvim-treesitter/nvim-treesitter-context'
     use 'navarasu/onedark.nvim'
-    use 'conornewton/vim-latex-preview'
+    use {
+        "savq/paq-nvim";
+        "frabjous/knap";
+    }
 
-  if packer_bootstrap then
-    require('packer').sync()
-  end
+    if packer_bootstrap then
+        require('packer').sync()
+    end
 end)

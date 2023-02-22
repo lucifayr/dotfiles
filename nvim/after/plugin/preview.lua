@@ -1,0 +1,11 @@
+vim.g.knap_settings = {
+    textoutputtext = 'pdf',
+    mdoutputext = 'pdf',
+    mdtopdf = "pandoc --from=gfm %docroot% -o %outputfile%",
+    mdtopdfviewerlaunch = "sioyek %outputfile%",
+    textopdf = "pdflatex -interaction=batchmode -halt-on-error %docroot%",
+}
+
+vim.keymap.set({ 'n', 'v', 'i' },'<leader>pm', function() require("knap").process_once() end)
+vim.keymap.set({ 'n', 'v', 'i' },'<leader>pk', function() require("knap").close_viewer() end)
+vim.keymap.set({ 'n', 'v', 'i' },'<leader>pa', function() require("knap").toggle_autopreviewing() end)
