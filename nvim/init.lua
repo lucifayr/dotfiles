@@ -81,6 +81,7 @@ return require('packer').startup(function(use)
                                 vocal = '~/notes/vocal',
                                 school = '~/notes/school',
                                 personal = '~/notes/personal',
+                                timetac = '~/notes/timetac',
                             },
                         },
                     },

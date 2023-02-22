@@ -69,7 +69,7 @@ export PATH="${PATH}:${HOME}/.local/bin/"
 # Autorun programms
 if [[ ! -z $DISPLAY ]]
 then 
-    wal -eq -i ~/projects/arch-config/images/background.png || wal -eq -i ~/projects/arch-config/images/background.jpg
+    wal -enq -i ~/projects/arch-config/images/background.png || wal -enq -i ~/projects/arch-config/images/background.jpg
 fi
 
 clear
