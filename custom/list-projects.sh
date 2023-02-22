@@ -1,18 +1,9 @@
 #!/bin/sh
 projects=$HOME/projects/*
-
 selection=$(echo $projects | tr " " "\n" | fzf)
 
-if [ -z $selection ] 
-then
+if [ -z $selection ]; then
     exit -1
 fi
     
-cd $selection 
-
-if [ -z $TMUX ]
-then
-    tmux
-else 
-    tmux neww
-fi
+cd $selection && $SHELL
