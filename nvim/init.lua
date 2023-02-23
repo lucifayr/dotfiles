@@ -75,6 +75,7 @@ return require('packer').startup(function(use)
             require('neorg').setup {
                 load = {
                     ['core.defaults'] = {},
+                    ['core.syntax'] = {},
                     ['core.norg.concealer'] = {},
                     ['core.norg.dirman'] = {
                         config = {
