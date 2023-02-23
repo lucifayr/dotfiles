@@ -129,7 +129,8 @@ return require('packer').startup(function(use)
             "nvim-telescope/telescope.nvim"
         }
     })
-    use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
+    use { 'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
+    use { 'jbyuki/instant.nvim' }
     use 'ryicoh/deepl.vim'
     use 'vim-test/vim-test'
     use 'wbthomason/packer.nvim'
