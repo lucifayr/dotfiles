@@ -13,7 +13,6 @@ vim.opt.incsearch  =  true
 vim.opt.scrolloff = 15
 vim.opt.signcolumn = 'yes'
 vim.opt.colorcolumn = '90'
-vim.opt.textwidth = 90
 vim.opt.encoding  =  'UTF-8'
 vim.opt.updatetime=50
 vim.opt.spell = true
