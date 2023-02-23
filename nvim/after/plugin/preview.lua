@@ -6,6 +6,6 @@ vim.g.knap_settings = {
     textopdf = "pdflatex -interaction=batchmode -halt-on-error %docroot%",
 }
 
-vim.keymap.set({ 'n', 'v', 'i' },'<leader>pm', function() require("knap").process_once() end)
-vim.keymap.set({ 'n', 'v', 'i' },'<leader>pk', function() require("knap").close_viewer() end)
-vim.keymap.set({ 'n', 'v', 'i' },'<leader>pa', function() require("knap").toggle_autopreviewing() end)
+vim.keymap.set({ 'n' },'<leader>pm', function() require("knap").process_once() end)
+vim.keymap.set({ 'n' },'<leader>pk', function() require("knap").close_viewer() end)
+vim.keymap.set({ 'n' },'<leader>pa', function() require("knap").toggle_autopreviewing() end)

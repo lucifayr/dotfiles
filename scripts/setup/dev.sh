@@ -1,7 +1,9 @@
 #!/bin/sh
 
 sudo pacman -S cargo python python-pip go nodejs-lts-hydrogen npm gopls rust-analyzer meson ninja thefuck flatpak
-sudo npm i -g svelte-language-server typescript-language-server typescript
+yay -S postman-bin 
+
+sudo npm i -g svelte-language-server typescript-language-server typescript yarn
 cargo install exa
 
 # oh-my-zsh

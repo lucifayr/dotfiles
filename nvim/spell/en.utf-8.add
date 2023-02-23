@@ -95,9 +95,17 @@ DrinkUp
 Meli
 https
 auth
+<<<<<<< HEAD
 WMC
 Jira
 TimeTac
 uncommen
 DBs
 ChatGPT
+=======
+CORS
+Jira
+PoC
+TimeTac
+WMC
+>>>>>>> d5ad094b109826050b1523d94a41f2563c12ae50
