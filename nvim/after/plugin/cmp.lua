@@ -5,18 +5,20 @@ capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 local lspconfig = require('lspconfig')
 
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
-local servers = { 
+local servers = {
     'rust_analyzer',
     'pyright',
     'tsserver',
     'gopls',
-    'html',
-    'cssls',
     'marksman',
     'astro',
     'lua_ls',
     'svelte',
-    'texlab'
+    'html',
+    'cssls',
+    'tailwindcss',
+    'texlab',
+    'yamlls',
 }
 for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup {
@@ -60,7 +62,7 @@ cmp.setup {
         end,
     },
     mapping = cmp.mapping.preset.insert({
-        ['<C-k>'] = cmp.mapping.scroll_docs(-4),
+        ['<C-k>'] = cmp.mapping.scroll_docs( -4),
         ['<C-j>'] = cmp.mapping.scroll_docs(4),
         ['<C-Space>'] = cmp.mapping.complete(),
         ['<CR>'] = cmp.mapping.confirm {
@@ -77,7 +79,7 @@ cmp.setup {
         format = function(entry, vim_item)
             -- if you have lspkind installed, you can use it like
             -- in the following line:
-            vim_item.kind = lspkind.symbolic(vim_item.kind, {mode = "symbol"})
+            vim_item.kind = lspkind.symbolic(vim_item.kind, { mode = "symbol" })
             vim_item.menu = source_mapping[entry.source.name]
             if entry.source.name == "cmp_tabnine" then
                 local detail = (entry.completion_item.data or {}).detail
@@ -95,4 +97,4 @@ cmp.setup {
             return vim_item
         end,
     },
-} 
+}
