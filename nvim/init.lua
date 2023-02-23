@@ -21,6 +21,9 @@ vim.g.NERDTreeShowHidden = 1
 -- LaTex
 vim.g.latex_preview_clean = 1
 
+-- Instant
+vim.g.instant_username = 'jackboxx'
+
 local ensure_packer = function()
     local fn = vim.fn
     local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
