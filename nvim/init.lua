@@ -26,9 +26,9 @@ vim.g.instant_username = 'jackboxx'
 
 local ensure_packer = function()
     local fn = vim.fn
-    local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+    local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
     if fn.empty(fn.glob(install_path)) > 0 then
-        fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+        fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
         vim.cmd [[packadd packer.nvim]]
         return true
     end
@@ -41,7 +41,7 @@ return require('packer').startup(function(use)
     use {
         'glepnir/dashboard-nvim',
         event = 'VimEnter',
-        config = function() 
+        config = function()
             require('dashboard').setup({
                 theme = 'hyper',
                 config = {
@@ -67,7 +67,7 @@ return require('packer').startup(function(use)
                 },
             })
         end,
-        requires = {'nvim-tree/nvim-web-devicons'}
+        requires = { 'nvim-tree/nvim-web-devicons' }
     }
     use {
         'nvim-neorg/neorg',
@@ -101,7 +101,7 @@ return require('packer').startup(function(use)
     use {
         'nvim-treesitter/nvim-treesitter',
         config = function()
-            require'nvim-treesitter.configs'.setup {
+            require 'nvim-treesitter.configs'.setup {
                 ensure_installed = { 'c', 'lua', 'rust', 'go', 'typescript', 'javascript', 'svelte' },
                 sync_install = false,
                 auto_install = true,
@@ -114,7 +114,7 @@ return require('packer').startup(function(use)
         end
     }
     use {
-        'brenoprata10/nvim-highlight-colors', 
+        'brenoprata10/nvim-highlight-colors',
         config = function()
             require('nvim-highlight-colors').setup {}
         end,
@@ -132,15 +132,15 @@ return require('packer').startup(function(use)
             "nvim-telescope/telescope.nvim"
         }
     })
-    use { 'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
+    use { 'tzachar/cmp-tabnine', run = './install.sh', requires = 'hrsh7th/nvim-cmp' }
     use { 'jbyuki/instant.nvim' }
     use 'ryicoh/deepl.vim'
     use 'vim-test/vim-test'
     use 'wbthomason/packer.nvim'
     use 'nvim-lua/plenary.nvim'
     use 'onsails/lspkind.nvim'
-    use 'L3MON4D3/LuaSnip' 
-    use 'saadparwaiz1/cmp_luasnip' 
+    use 'L3MON4D3/LuaSnip'
+    use 'saadparwaiz1/cmp_luasnip'
     use 'nvim-telescope/telescope.nvim'
     use 'tpope/vim-fugitive'
     use 'mbbill/undotree'
@@ -152,8 +152,8 @@ return require('packer').startup(function(use)
     use 'ryanoasis/vim-devicons'
     use 'ThePrimeagen/git-worktree.nvim'
     use 'rhysd/conflict-marker.vim'
-    use 'hrsh7th/nvim-cmp' 
-    use 'hrsh7th/cmp-nvim-lsp' 
+    use 'hrsh7th/nvim-cmp'
+    use 'hrsh7th/cmp-nvim-lsp'
     use 'terrortylor/nvim-comment'
     use 'nvim-tree/nvim-web-devicons'
     use 'evanleck/vim-svelte'
@@ -164,8 +164,8 @@ return require('packer').startup(function(use)
     use 'nvim-treesitter/nvim-treesitter-context'
     use 'navarasu/onedark.nvim'
     use {
-        "savq/paq-nvim";
-        "frabjous/knap";
+        "savq/paq-nvim",
+        "frabjous/knap",
     }
 
     if packer_bootstrap then
