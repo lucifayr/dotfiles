@@ -17,6 +17,7 @@ local servers = {
     'html',
     'cssls',
     'tailwindcss',
+    'eslint',
     'texlab',
     'yamlls',
 }
