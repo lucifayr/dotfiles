@@ -52,7 +52,13 @@ alias mv="mv -i"
 alias ntm="norg-to-markdown"
 alias update="sudo pacman -Syu"
 alias install="sudo pacman -S"
+alias cinstall="RUSTC_WRAPPER=sccache cargo install"
 alias ls="exa --color=always --all --group-directories-first --long"
+alias cat="bat"
+alias grep="rg"
+alias du="dust"
+alias speedtest="speedtest-rs"
+alias wiki="wiki-tui"
 
 eval $(thefuck --alias)
 

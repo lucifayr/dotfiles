@@ -4,7 +4,9 @@ sudo pacman -S cargo python python-pip go nodejs-lts-hydrogen npm gopls rust-ana
 yay -S postman-bin 
 
 sudo npm i -g svelte-language-server typescript-language-server typescript yarn
-cargo install exa
+
+cargo install sccache 
+RUSTC_WRAPPER=sccache cargo install exa bat ripgrep du-dust cargo-info speedtest-rs wiki-tui
 
 # oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"

@@ -1,0 +1,26 @@
+2023-02-25T00:00:44.787507143+01:00 INFO wiki_tui::logging - successfully initialized the logging system
+2023-02-25T00:00:54.638878919+01:00 INFO wiki_tui::ui::search::display - displaying '10' search results
+2023-02-25T00:00:54.638973766+01:00 INFO wiki_tui::ui::search - selecting the item 'C (programming language)', page id: '6021'
+2023-02-25T00:00:54.639031431+01:00 INFO wiki_tui::ui::search - selecting the item 'History of programming languages', page id: '896120'
+2023-02-25T00:01:00.691854649+01:00 INFO wiki_tui::ui::search - selecting the item 'C (programming language)', page id: '6021'
+2023-02-25T00:01:00.915707059+01:00 INFO wiki_tui::ui::search - selecting the item 'Genetic programming', page id: '12424'
+2023-02-25T00:01:01.420862488+01:00 INFO wiki_tui::ui::search - selecting the item 'C (programming language)', page id: '6021'
+2023-02-25T00:01:04.983312009+01:00 INFO wiki_tui::ui::search - selecting the item 'Genetic programming', page id: '12424'
+2023-02-25T00:01:05.266291629+01:00 INFO wiki_tui::ui::search - selecting the item 'Evolution', page id: '9236'
+2023-02-25T00:01:05.771191179+01:00 INFO wiki_tui::ui::search - selecting the item 'Genetic programming', page id: '12424'
+2023-02-25T00:01:07.433684142+01:00 INFO wiki_tui::ui::search - selecting the item 'C (programming language)', page id: '6021'
+2023-02-25T00:01:08.624647441+01:00 INFO wiki_tui::ui::search - selecting the item 'Genetic programming', page id: '12424'
+2023-02-25T00:01:08.910293040+01:00 INFO wiki_tui::ui::search - selecting the item 'Evolution', page id: '9236'
+2023-02-25T00:01:10.510191928+01:00 INFO wiki_tui::ui::search - selecting the item 'Computer program', page id: '5783'
+2023-02-25T00:01:35.026423679+01:00 INFO wiki_tui::ui::article::view - opening the link '76' with the target '/wiki/%22Hello,_World!%22_program'
+2023-02-25T00:01:35.026611859+01:00 INFO wiki_tui::ui::article - requesting confirmation to open the link '%22Hello,_World!%22_program'
+2023-02-25T00:01:38.253685436+01:00 INFO wiki_tui::ui::article - opening the link '%22Hello,_World!%22_program'
+2023-02-25T00:01:38.686421044+01:00 WARN wiki_tui::ui::article - failed fetching the article
+
+Caused by:
+    missing the title
+2023-02-25T00:01:43.389227878+01:00 INFO wiki_tui::ui::article::view - opening the link '78' with the target '/wiki/Syntax_(programming_languages)'
+2023-02-25T00:01:43.389307577+01:00 INFO wiki_tui::ui::article - requesting confirmation to open the link 'Syntax_(programming_languages)'
+2023-02-25T00:01:45.036908903+01:00 INFO wiki_tui::ui::article - opening the link 'Syntax_(programming_languages)'
+2023-02-25T00:01:50.745658147+01:00 INFO wiki_tui::ui::article::view - opening the link '2' with the target '/wiki/Internet'
+2023-02-25T00:01:50.745719597+01:00 INFO wiki_tui::ui::article - requesting confirmation to open the link 'Internet'
