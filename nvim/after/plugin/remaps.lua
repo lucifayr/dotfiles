@@ -2,7 +2,8 @@ vim.api.nvim_set_keymap('n', '<leader>a', 'za', { noremap = true, silent = true 
 vim.api.nvim_set_keymap('n', '<leader>A', '<cmd>:set foldlevel=0<cr>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader><C-a>', '<cmd>:set foldlevel=255<cr>', { noremap = true, silent = true })
 
-vim.api.nvim_set_keymap('n', '<leader>pv', ':NERDTreeFind<cr>:wincmd l<cr>:wincmd q<cr>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>pv', ':NERDTreeFind<cr>:wincmd l<cr>:wincmd q<cr>',
+    { noremap = true, silent = true })
 
 vim.api.nvim_set_keymap('n', '<leader>ga', '<cmd>:Git add %<cr>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>gc', '<cmd>:Git commit<cr>', { noremap = true, silent = true })
@@ -30,6 +31,7 @@ vim.api.nvim_set_keymap('n', '<leader>tl', '<cmd>:TestLast<cr>', { noremap = tru
 vim.api.nvim_set_keymap('n', '<leader>ta', '<cmd>:TestSuite<cr>', { noremap = true, silent = true })
 
 vim.keymap.set('n', '<leader>s', [[:%s/\<<C-r><C-w>\>//gI<Left><Left><Left>]])
+vim.keymap.set('v', '<leader>s', [[:%s/\<<C-r><C-W>\>//gI<Left><Left><Left>]])
 
 vim.keymap.set('n', '<leader>ch', ':ChatGPT<cr>')
 vim.keymap.set('v', '<leader>ch', '<cmd>:ChatGPTEditWithInstructions<cr>')
