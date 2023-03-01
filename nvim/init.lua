@@ -137,6 +137,7 @@ return require('packer').startup(function(use)
     use { 'tzachar/cmp-tabnine', run = './install.sh', requires = 'hrsh7th/nvim-cmp' }
     use { 'jbyuki/instant.nvim' }
     use 'ryicoh/deepl.vim'
+    use 'ThePrimeagen/harpoon'
     use 'vim-test/vim-test'
     use 'wbthomason/packer.nvim'
     use 'nvim-lua/plenary.nvim'
