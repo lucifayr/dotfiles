@@ -86,6 +86,7 @@ return require('packer').startup(function(use)
                                 school = '~/notes/school',
                                 personal = '~/notes/personal',
                                 timetac = '~/notes/timetac',
+                                progressive = '~/notes/progressive',
                             },
                         },
                     },
