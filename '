@@ -76,17 +76,8 @@ return require('packer').startup(function(use)
                 load = {
                     ['core.defaults'] = {},
                     ['core.syntax'] = {},
-                    ["core.presenter"] = {
-                        config = {
-                            zen_mode = "truezen",
-                        },
-                    },
-                    ["core.integrations.truezen"] = {},
-                    ["core.export"] = {},
-                    ["core.export.markdown"] = {
-                        config = {
-                            extensions = "all",
-                        }
+                    ['core.export'] = {
+                        enable = true,
                     },
                     ['core.norg.concealer'] = {},
                     ['core.norg.dirman'] = {
@@ -100,7 +91,6 @@ return require('packer').startup(function(use)
                                 timetac = '~/notes/timetac',
                                 progressive = '~/notes/progressive',
                             },
-                            index = "index.norg",
                         },
                     },
                 },
@@ -149,7 +139,6 @@ return require('packer').startup(function(use)
     })
     use { 'tzachar/cmp-tabnine', run = './install.sh', requires = 'hrsh7th/nvim-cmp' }
     use { 'jbyuki/instant.nvim' }
-    use 'Pocco81/true-zen.nvim'
     use 'ryicoh/deepl.vim'
     use 'ThePrimeagen/harpoon'
     use 'vim-test/vim-test'
