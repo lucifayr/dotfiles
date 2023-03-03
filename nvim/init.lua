@@ -74,22 +74,22 @@ return require('packer').startup(function(use)
         config = function()
             require('neorg').setup {
                 load = {
-                    ['core.defaults'] = {},
-                    ['core.syntax'] = {},
-                    ["core.presenter"] = {
+                        ['core.defaults'] = {},
+                        ['core.syntax'] = {},
+                        ["core.presenter"] = {
                         config = {
                             zen_mode = "truezen",
                         },
                     },
-                    ["core.integrations.truezen"] = {},
-                    ["core.export"] = {},
-                    ["core.export.markdown"] = {
+                        ["core.integrations.truezen"] = {},
+                        ["core.export"] = {},
+                        ["core.export.markdown"] = {
                         config = {
                             extensions = "all",
                         }
                     },
-                    ['core.norg.concealer'] = {},
-                    ['core.norg.dirman'] = {
+                        ['core.norg.concealer'] = {},
+                        ['core.norg.dirman'] = {
                         config = {
                             workspaces = {
                                 drinkUp = '~/notes/drink-up',
@@ -98,7 +98,7 @@ return require('packer').startup(function(use)
                                 school = '~/notes/school',
                                 personal = '~/notes/personal',
                                 timetac = '~/notes/timetac',
-                                progressive = '~/notes/progressive',
+                                progressed = '~/notes/progressed',
                             },
                             index = "index.norg",
                         },
