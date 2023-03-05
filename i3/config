@@ -157,6 +157,7 @@ bindsym $mod+d exec discord
 bindsym $mod+b exec i3-sensible-terminal -e bashtop 
 
 bindsym $mod+Shift+s exec flameshot gui
+bindsym $mod+Control+s exec flameshot gui && ocrdesktop -C
 
 bindsym $mod+Shift+a exec betterlockscreen -l --display 1
 bindsym $mod+Control+q exec shutdown now
