@@ -1,4 +1,5 @@
-vim.api.nvim_set_keymap('n', '<leader>pv', ':NERDTreeFind<cr>:wincmd l<cr>:wincmd q<cr>',
+vim.api.nvim_set_keymap('n', '<leader>pv',
+    ':NERDTreeFind<cr>:wincmd l<cr>:wincmd q<cr>:set number<cr>:set relativenumber<cr>',
     { noremap = true, silent = true })
 
 vim.keymap.set('n', '<leader>nt', '<cmd>NERDTreeToggle<cr>')
