@@ -1,1 +1,1 @@
-sudo pacman -S xorg-server xorg-apps xorg-xinit xdg-utils xclip i3-gaps nitrogen polybar
+sudo pacman -S xorg-server xorg-apps xorg-xinit xdg-utils xclip xsel i3-gaps nitrogen polybar
