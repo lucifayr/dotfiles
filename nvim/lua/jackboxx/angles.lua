@@ -2,20 +2,32 @@ Angles = {}
 
 local selection = require("jackboxx.selection")
 
-local PHI = 3.1415926535897
-
 function Angles.radiansToDegrees()
-    print(selection.getSelection())
-    local x = 10
-    local out = x * (180 / PHI)
-    print(out)
+    local s = selection.getSelection()
+    local x = tonumber(s)
+
+    if (type(x) ~= "number") then
+        print('Selection is not a number')
+        return
+    end
+
+    local out = x * (180 / math.pi)
+    vim.fn.setreg('v', string.format(out))
+    vim.cmd('normal! "vp"')
 end
 
 function Angles.degreesToRadians()
-    print(selection.getSelection())
-    local x = 10
-    local out = x * (PHI / 180)
-    print(out)
+    local s = selection.getSelection()
+    local x = tonumber(s)
+
+    if (type(x) ~= "number") then
+        print('Selection is not a number')
+        return
+    end
+
+    local out = x * (math.pi / 180)
+    vim.fn.setreg('v', string.format(out))
+    vim.cmd('normal! "vp"')
 end
 
 return Angles
