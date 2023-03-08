@@ -37,6 +37,8 @@ end
 
 local packer_bootstrap = ensure_packer()
 
+require('jackboxx')
+
 return require('packer').startup(function(use)
     use {
         'glepnir/dashboard-nvim',
