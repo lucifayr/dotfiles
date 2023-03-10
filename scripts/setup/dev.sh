@@ -1,6 +1,6 @@
 #!/bin/sh
 
-sudo pacman -S cargo python python-pip go nodejs-lts-hydrogen npm gopls rust-analyzer meson ninja thefuck flatpak
+sudo pacman -S cargo python python-pip go nodejs-lts-hydrogen npm gopls rust-analyzer meson ninja thefuck flatpak gitui git-delta sad fd
 yay -S postman-bin 
 
 sudo npm i -g svelte-language-server typescript-language-server typescript yarn
