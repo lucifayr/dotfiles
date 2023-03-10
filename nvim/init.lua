@@ -158,6 +158,14 @@ return require('packer').startup(function(use)
             require("sad").setup {}
         end,
     })
+    use { 'uga-rosa/ccc.nvim', config = function() require "ccc".setup() end }
+    use {
+        "folke/twilight.nvim",
+        config = function()
+            require("twilight").setup {}
+        end
+    }
+    use '/Pocco81/true-zen.nvim'
     use 'brneor/gitui.nvim'
     use 'ryicoh/deepl.vim'
     use 'ThePrimeagen/harpoon'
