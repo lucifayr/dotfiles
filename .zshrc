@@ -33,6 +33,7 @@ source $ZSH/oh-my-zsh.sh
 alias v="nvim"
 alias v.="nvim ."
 alias cdt="cd /tmp"
+alias gui="gitui"
 alias g="git"
 alias gs="git status"
 alias gl="git log"
