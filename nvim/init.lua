@@ -17,6 +17,8 @@ vim.g.blamer_template = '<committer> <summary> at <committer-time> '
 -- NerdTree
 vim.g.NERDTreeQuitOnOpen = 1
 vim.g.NERDTreeShowHidden = 1
+vim.g.NERDTreeMapJumpNextSibling = '\\j'
+vim.g.NERDTreeMapJumpPrevSibling = '\\k'
 
 -- LaTex
 vim.g.latex_preview_clean = 1
