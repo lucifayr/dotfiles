@@ -171,6 +171,10 @@ return require('packer').startup(function(use)
         "akinsho/toggleterm.nvim",
         tag = '*',
     }
+    use {
+        'ggandor/leap.nvim',
+        requires = { 'tpope/vim-repeat' },
+    }
     use 'Pocco81/true-zen.nvim'
     use 'brneor/gitui.nvim'
     use 'ryicoh/deepl.vim'
