@@ -165,7 +165,11 @@ return require('packer').startup(function(use)
             require("twilight").setup {}
         end
     }
-    use '/Pocco81/true-zen.nvim'
+    use {
+        "akinsho/toggleterm.nvim",
+        tag = '*',
+    }
+    use 'Pocco81/true-zen.nvim'
     use 'brneor/gitui.nvim'
     use 'ryicoh/deepl.vim'
     use 'ThePrimeagen/harpoon'
