@@ -27,5 +27,5 @@ opt.showmode       = false
 opt.clipboard:append('unnamedplus')
 opt.cursorline = true
 opt.splitright = true
-opt.splitbottom = true
+opt.splitbelow = true
 opt.iskeyword:append('-')
