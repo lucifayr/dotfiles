@@ -1,11 +1,15 @@
 require('onedark').setup {
     style = "deep",
     colors = {
+        bg0 = '#121720',
         fg = '#d4e0f5',
-        red = '#88fcf8',
-        blue = '#f5663c',
-        yellow = '#f2c757',
-        orange = '#f58e4c',
+        red = '#1a96dd',
+        green = '#98c379',
+        blue = '#fc0c4c',
+        yellow = '#4ee8d3',
+        orange = '#fc8c0c',
+        purple = '#fc0ca4',
+        cyan = '#3582e8',
         black = '#0c0e15',
     },
     highlights = {
