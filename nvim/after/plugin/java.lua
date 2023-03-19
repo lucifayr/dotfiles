@@ -1,5 +1,3 @@
--- WIP
---
 -- local jdtls_dir = os.getenv("HOME") .. 'mason/data/packages/jdtls'
 -- local config_dir = jdtls_dir .. 'config_linux'
 -- local plugins_dir = jdtls_dir .. 'plugins'
@@ -34,7 +32,7 @@
 --     root_dir = root_dir,
 --     settings = {
 --         java = {
---             home = 'wip',
+--             home = '/usr/bin/java',
 --             eclipse = {
 --                 downloadSources = true,
 --             },
