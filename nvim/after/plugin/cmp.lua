@@ -13,6 +13,7 @@ local servers = {
     'marksman',
     'astro',
     'lua_ls',
+    'jdtls',
     'svelte',
     'sqlls',
     'html',
@@ -63,10 +64,10 @@ cmp.setup {
         end,
     },
     mapping = cmp.mapping.preset.insert({
-            ['<C-k>'] = cmp.mapping.scroll_docs(-4),
-            ['<C-j>'] = cmp.mapping.scroll_docs(4),
-            ['<C-Space>'] = cmp.mapping.complete(),
-            ['<CR>'] = cmp.mapping.confirm {
+        ['<C-k>'] = cmp.mapping.scroll_docs(-4),
+        ['<C-j>'] = cmp.mapping.scroll_docs(4),
+        ['<C-Space>'] = cmp.mapping.complete(),
+        ['<CR>'] = cmp.mapping.confirm {
             behavior = cmp.ConfirmBehavior.Replace,
             select = true,
         },
