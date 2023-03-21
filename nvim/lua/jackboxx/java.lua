@@ -29,6 +29,7 @@ local config = {
         '-configuration', config_dir,
         '-data', workspace_dir,
     },
+    single_file_support = true,
     root_dir = root_dir,
     settings = {
         java = {
@@ -53,7 +54,10 @@ local config = {
             },
             format = {
                 enabled = true,
-            }
+            },
+            signatureHelp = { enabled = true },
+            import = { enabled = true },
+            rename = { enabled = true }
         }
     },
     init_options = {
