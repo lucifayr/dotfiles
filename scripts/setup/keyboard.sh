@@ -1,5 +1,3 @@
-sudo pacman -S zsa-wally 
-
 sudo touch /etc/udev/rules.d/50-zsa.rules
 
 sudo groupadd plugdev

@@ -1,0 +1,64 @@
+- name: Window Manager Setup
+  hosts: localhost
+  connection: local
+  become: true
+
+  vars_prompt:
+    - name: gpu_driver
+      prompt: "What is your GPU(Nvidia, AMD): [N/A]"
+      private: false
+      default: "N"
+
+    - name: use_wayland
+      prompt: "Use Wayland: [Y/N]"
+      private: false
+      default: "N"
+
+  vars:
+    pkgs_wayland:
+      - wayland 
+      - sway 
+      - swaybg 
+      - wofi 
+      - xorg-xwayland 
+      - xorg-xlsclients 
+      - qt5-wayland 
+      - glfw-wayland
+    pkgs_x11:
+      - xorg-server 
+      - xorg-apps 
+      - xorg-xinit 
+      - xdg-utils 
+      - xclip 
+      - xsel 
+      - i3-gaps 
+      - nitrogen 
+      - polybar
+
+    tasks:
+    - name: Install AMD GPU Driver
+      community.general.pacman:
+        name: 
+          - mesa 
+          - xf86-video-amdgpu 
+          - vulkan-radeon
+        state: latest
+      when: gpu_driver == "A"
+
+    - name: Install Nvidia GPU Driver
+      community.general.pacman:
+        name: nvidia
+        state: latest
+      when: gpu_driver != "A"
+
+    - name: Install X11
+      community.general.pacman:
+        name: "{{ pkgs_x11 }}"
+        state: latest
+      when: use_wayland != "Y"
+
+    - name: Install Wayland
+      community.general.pacman:
+        name: "{{ pkgs_wayland }}"
+        state: latest
+      when: use_wayland == "Y"

@@ -1,0 +1,184 @@
+- name: Software Setup
+  hosts: localhost
+  connection: local
+
+  vars:
+    pkgs_dev:
+      - neovim
+      - cargo 
+      - python 
+      - typescript
+      - python-pip 
+      - go 
+      - jdk-openjdk 
+      - maven
+      - nodejs-lts-hydrogen 
+      - npm
+      - yarn
+      - nix
+      - github-cli
+      - fzf
+      - meson 
+      - ninja 
+      - thefuck 
+      - flatpak 
+      - gitui 
+      - git-delta 
+      - sad 
+      - fd 
+      - texlive-most 
+      - tesseract-data-eng 
+      - ocrdesktop
+      - picom
+      - python-pywal 
+      - neofetch
+    pkgs_dev_aur:
+      - betterlockscreen
+      - nvm
+    pkgs_dev_cargo:
+      - sccache 
+      - exa 
+      - bat 
+      - ripgrep 
+      - du-dust 
+      - cargo-info 
+      - speedtest-rs 
+    pkgs_application:
+      - zsa-wally 
+      - alacritty 
+      - bashtop 
+      - tmux 
+      - firefox 
+      - discord 
+      - flameshot 
+    pkgs_application_aur:
+      - postman-bin 
+      - gobang-bin 
+    pkgs_audio:
+      - pipewire 
+      - pipewire-alsa 
+      - pipewire-pulse 
+      - bluez 
+      - bluez-utils 
+      - blueberry
+    pkgs_fonts:
+      - nerd-fonts-git 
+      - ttf-jetbrains-mono
+
+  tasks:
+    - name: Install Make Dependencies 
+      community.general.pacman:
+        name: 
+          - autoconf
+          - automake
+          - bison
+          - debugedit
+          - diffutils
+          - fakeroot
+          - flex
+          - gc
+          - guile
+          - m4
+          - make
+          - patch
+          - texinfo
+          - which
+          - base-devel
+        state: present
+      become: yes
+
+    - name: Clone AUR helper 'paru'
+      git:
+        repo: https://aur.archlinux.org/paru.git        
+        dest: "/tmp/paru"
+        update: true
+
+    - name: Build and install 'paru'
+      command:
+        chdir: "/tmp/paru"
+        cmd: "makepkg -si --noconfirm"
+
+    - name: Install Development Applications
+      community.general.pacman:
+        name: "{{ pkgs_dev }}"
+        state: present
+      become: yes
+
+    - name: Install Development Applications [AUR]
+      kewlfft.aur.aur:
+        name: "{{ pkgs_dev_aur }}"
+        use: paru
+        state: present
+
+    # - name: Install Development Applications [Cargo]
+    #   community.general.cargo:
+    #     name: "{{ pkgs_dev_cargo }}"
+    #     state: present
+
+    - name: Install Applications
+      community.general.pacman:
+        name: "{{ pkgs_application }}"
+        state: present
+      become: yes
+
+    - name: Install Applications [AUR]
+      kewlfft.aur.aur:
+        name: "{{ pkgs_application_aur }}"
+        use: paru
+        state: present
+
+    # Update this to work if run more then once
+    # - name: Setup Oh-My-ZSH
+    #   ansible.builtin.shell: |
+    #     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+    #     git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+    #     git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+    #     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
+    - name: Install Audio and Bluetooth
+      community.general.pacman:
+        name: "{{ pkgs_audio }}"
+        state: present
+      become: yes
+
+    - name: Enable Bluetooth
+      command:
+        cmd: sudo systemctl enable bluetooth
+      become: yes
+
+    - name: Install Docker
+      community.general.pacman:
+        name: docker
+        state: present
+      become: yes
+
+    - name: Setup Docker
+      ansible.builtin.shell: |
+        sudo systemctl enable docker
+        sudo systemctl start docker
+        sudo usermod -aG docker $USER
+        DOCKER_CONFIG=${DOCKER_CONFIG:-$HOME/.docker}
+        mkdir -p $DOCKER_CONFIG/cli-plugins
+        curl -SL https://github.com/docker/compose/releases/download/v2.14.0/docker-compose-linux-x86_64 -o $DOCKER_CONFIG/cli-plugins/docker-compose
+        chmod +x $DOCKER_CONFIG/cli-plugins/docker-compose
+
+    - name: Create Group For Keyboard Firmware
+      group:
+        name: plugdev
+        state: present
+
+    - name: Add User To Keyboard Firmware Group
+      ansible.builtin.user:
+        name: "{{ lookup('ansible.builtin.env', 'USER') }}"
+        groups: plugdev
+        append: yes
+
+    - name: Add Keyboard Firmware Configuration File
+      command:
+        cmd: echo WIP
+
+    - name: Install Nerd Fonts
+      kewlfft.aur.aur:
+        name: "{{ pkgs_fonts }}"
+        use: paru
+        state: present
