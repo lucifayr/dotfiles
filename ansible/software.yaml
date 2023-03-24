@@ -110,10 +110,10 @@
         use: paru
         state: present
 
-    # - name: Install Development Applications [Cargo]
-    #   community.general.cargo:
-    #     name: "{{ pkgs_dev_cargo }}"
-    #     state: present
+    - name: Install Development Applications [Cargo]
+      community.general.cargo:
+        name: "{{ pkgs_dev_cargo }}"
+        state: present
 
     - name: Install Applications
       community.general.pacman:
@@ -128,12 +128,12 @@
         state: present
 
     # Update this to work if run more then once
-    # - name: Setup Oh-My-ZSH
-    #   ansible.builtin.shell: |
-    #     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-    #     git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-    #     git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-    #     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+    - name: Setup Oh-My-ZSH
+      ansible.builtin.shell: |
+        sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+        git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+        git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+        git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
     - name: Install Audio and Bluetooth
       community.general.pacman:
@@ -166,12 +166,14 @@
       group:
         name: plugdev
         state: present
+      become: true
 
     - name: Add User To Keyboard Firmware Group
       ansible.builtin.user:
         name: "{{ lookup('ansible.builtin.env', 'USER') }}"
         groups: plugdev
         append: yes
+      become: true
 
     - name: Add Keyboard Firmware Configuration File
       command:
