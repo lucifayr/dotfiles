@@ -1,0 +1,34 @@
+- name: TimeTac Setup
+  hosts: localhost
+  connection: local
+
+  vars: 
+    pkgs_application_aur:
+      - slack-desktop
+    home_dir: "{{ lookup('ansible.builtin.env', 'HOME') }}"
+    project_dir: "{{ home_dir }}/projects"
+    dotfiles_dir: "{{ project_dir }}/dotfiles" 
+
+  tasks:
+    - name: Install applications [AUR]
+      kewlfft.aur.aur:
+        name: "{{ pkgs_application_aur }}"
+        use: paru
+        state: present
+
+    - name: Copy SSH keys 
+      ansible.builtin.copy:
+        src: "{{ dotfiles_dir }}/private/timetac/.ssh"
+        dest: "{{ home_dir }}"
+        decrypt: true
+
+    - name: Copy OpenVPN files
+      ansible.builtin.copy:
+        src: "{{ dotfiles_dir }}/private/timetac/openvpn"
+        dest: "{{ home_dir }}"
+        decrypt: true
+
+    - name: Setup OpenVPN
+      ansible.builtin.shell: |
+        nmcli connection import type openvpn file $HOME/openvpn/go-stage.ovpn 
+        nmcli connection modify go-stage ipv4.never-default true

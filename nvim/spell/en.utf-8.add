@@ -95,20 +95,17 @@ DrinkUp
 Meli
 https
 auth
-<<<<<<< HEAD
 WMC
 Jira
 TimeTac
 uncommen
 DBs
 ChatGPT
-=======
 CORS
 Jira
 PoC
 TimeTac
 WMC
->>>>>>> d5ad094b109826050b1523d94a41f2563c12ae50
 auth
 dotfiles
 Gschwantner
@@ -132,4 +129,29 @@ BWM
 Ansible
 NextJS
 SolidJS
+<<<<<<< ours
 nav
+=======
+<<<<<<< HEAD
+DTLS
+WLC
+CAPWAP
+LWAPP
+APs
+WLANs
+WLAN
+DoS
+palio
+=======
+nav
+IBAN
+PLF
+HW
+HSRP
+EtherChannel
+FHRP
+>>>>>>> main
+Kondratjew
+GPD
+BEC
+>>>>>>> theirs

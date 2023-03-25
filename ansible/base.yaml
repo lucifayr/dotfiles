@@ -1,0 +1,68 @@
+- name: Base Setup Step 1
+  hosts: localhost
+  connection: local
+
+  tasks: 
+    - name: Update
+      community.general.pacman:
+        update_cache: true
+        upgrade: true
+
+    - name: Install Packages
+      community.general.pacman:
+        name: 
+          - base-devel
+          - git
+          - man-db 
+          - sudo
+          - openssh
+          - networkmanager-openvpn
+          - python-passlib
+          - unzip
+          - uthash
+          - zsh
+          - curl
+        state: present
+
+- name: Base Setup Step 2
+  hosts: localhost
+  connection: local
+
+  vars_prompt:
+    - name: username
+      prompt: "Username"
+      private: false
+      default: "jackboxx"
+    - name: password
+      prompt: "Password"
+      private: true
+      encrypt: bcrypt
+      confirm: true
+      salt_size: 22
+
+  tasks:
+    - name: Ensure 'wheel' Group Exists 
+      group:
+        name: wheel
+        state: present
+
+    - name: Add sudo User
+      ansible.builtin.user:
+        name: "{{ username }}"
+        password:  "{{ password }}"
+        shell: /bin/zsh
+        groups: wheel 
+
+    - name: Add 'wheel' group to sudoers
+      lineinfile:
+        dest: /etc/sudoers
+        state: present
+        regexp: '^%wheel'
+        line: '%wheel ALL=(ALL:ALL) ALL'
+        validate: 'visudo -cf %s'
+
+    - name: Install Ansible AUR Helper Plugin
+      command:
+        cmd: ansible-galaxy collection install kewlfft.aur
+      become: true 
+      become_user: "{{ username }}"
