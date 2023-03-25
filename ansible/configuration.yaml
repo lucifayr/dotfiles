@@ -1,3 +1,58 @@
-# TODO: Add projects directory
-# TODO: Symlinks for config files
-# TODO: Install nvim plugins
+# TODO: Configure GitHub access token
+- name: System Configuration
+  hosts: localhost
+  connection: local
+
+  vars:
+    user: "{{ lookup('ansible.builtin.env', 'USER') }}"
+    home_dir: "{{ lookup('ansible.builtin.env', 'HOME') }}"
+    config_dir: "{{ home_dir }}/.config"
+    project_dir: "{{ home_dir }}/projects"
+    dotfiles_dir: "{{ project_dir }}/dotfiles" 
+
+  tasks: 
+    - name: Create 'projects' directory
+      ansible.builtin.file:
+        path: "{{ project_dir }}"
+        owner: "{{ user }}"
+        state: directory
+
+    - name: Create '.config' directory
+      ansible.builtin.file:
+        path: "{{ config_dir }}"
+        owner: "{{ user }}"
+        state: directory
+
+    - name: Clone 'dotfiles' repo
+      git: 
+        repo: "https://github.com/jackboxx/dotfiles"
+        dest: "{{ dotfiles_dir }}"
+
+    - name: Create symbolic links for dotfiles
+      ansible.builtin.file:
+        src: "{{ dotfiles_dir }}/{{ item }}"
+        dest:  "{{ config_dir }}/{{ item }}"
+        owner: "{{ user }}"
+        state: link
+      loop: 
+        - nvim
+        - tmux 
+        - i3
+        - alacritty
+        - gitui
+        - rofi
+        - polybar
+        - neofetch
+        - picom.conf
+
+    - name: Remove .zshrc
+      ansible.builtin.file:
+        path:  "{{ home_dir }}/.zshrc"
+        state: absent
+
+    - name: Create symbolic links for .zshrc
+      ansible.builtin.file:
+        src: "{{ dotfiles_dir }}/.zshrc"
+        dest:  "{{ home_dir }}/.zshrc"
+        owner: "{{ user }}"
+        state: link

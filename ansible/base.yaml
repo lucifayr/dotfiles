@@ -25,10 +25,6 @@
           - curl
         state: present
 
-    - name: Install Ansible AUR Helper Plugin
-      command:
-        cmd: ansible-galaxy collection install kewlfft.aur
-
 - name: Base Setup Step 2
   hosts: localhost
   connection: local
@@ -65,3 +61,9 @@
         regexp: '^%wheel'
         line: '%wheel ALL=(ALL:ALL) ALL'
         validate: 'visudo -cf %s'
+
+    - name: Install Ansible AUR Helper Plugin
+      command:
+        cmd: ansible-galaxy collection install kewlfft.aur
+      become: true 
+      become_user: "{{ username }}"

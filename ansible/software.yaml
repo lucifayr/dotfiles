@@ -3,35 +3,36 @@
   connection: local
 
   vars:
-    pkgs_dev:
-      - neovim
-      - cargo 
-      - python 
-      - typescript
-      - python-pip 
-      - go 
-      - jdk-openjdk 
-      - maven
-      - nodejs-lts-hydrogen 
-      - npm
-      - yarn
-      - nix
-      - github-cli
-      - fzf
-      - meson 
-      - ninja 
-      - thefuck 
+    pkgs_utils:
       - flatpak 
-      - gitui 
+      - nix
+      - fzf
       - git-delta 
       - sad 
+      - thefuck 
       - fd 
       - texlive-most 
       - tesseract-data-eng 
       - ocrdesktop
-      - picom
-      - python-pywal 
       - neofetch
+      - python-pywal 
+      - picom
+    pkgs_dev:
+      - neovim
+      - gitui 
+      - github-cli
+      - cargo 
+      - python 
+      - typescript
+      - nodejs-lts-hydrogen 
+      - jdk-openjdk 
+      - go 
+      - yarn
+      - npm
+      - python-pip 
+      - maven
+      - meson 
+      - ninja 
     pkgs_dev_aur:
       - betterlockscreen
       - nvm
@@ -91,41 +92,51 @@
       git:
         repo: https://aur.archlinux.org/paru.git        
         dest: "/tmp/paru"
-        update: true
 
     - name: Build and install 'paru'
       command:
         chdir: "/tmp/paru"
         cmd: "makepkg -si --noconfirm"
 
-    - name: Install Development Applications
+    - name: Installing development utils
+      community.general.pacman:
+        name: "{{ pkgs_utils }}"
+        state: present
+      become: yes
+
+    - name: Install development applications
       community.general.pacman:
         name: "{{ pkgs_dev }}"
         state: present
       become: yes
 
-    - name: Install Development Applications [AUR]
+    - name: Install development applications [AUR]
       kewlfft.aur.aur:
         name: "{{ pkgs_dev_aur }}"
         use: paru
         state: present
 
-    - name: Install Development Applications [Cargo]
+    - name: Install development applications [cargo]
       community.general.cargo:
         name: "{{ pkgs_dev_cargo }}"
         state: present
 
-    - name: Install Applications
+    - name: Install applications
       community.general.pacman:
         name: "{{ pkgs_application }}"
         state: present
       become: yes
 
-    - name: Install Applications [AUR]
+    - name: Install applications [AUR]
       kewlfft.aur.aur:
         name: "{{ pkgs_application_aur }}"
         use: paru
         state: present
+
+    - name: Check Oh-My-ZSH directory
+      stat:
+        path: "{{ lookup('ansible.builtin.env', 'HOME') }}/.oh-my-zsh"
+      register: zsh_dir
 
     # Update this to work if run more then once
     - name: Setup Oh-My-ZSH
@@ -134,14 +145,15 @@
         git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
         git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
         git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+      when: not zsh_dir.stat.exists 
 
-    - name: Install Audio and Bluetooth
+    - name: Install audio and bluetooth
       community.general.pacman:
         name: "{{ pkgs_audio }}"
         state: present
       become: yes
 
-    - name: Enable Bluetooth
+    - name: Enable bluetooth
       command:
         cmd: sudo systemctl enable bluetooth
       become: yes
@@ -152,7 +164,7 @@
         state: present
       become: yes
 
-    - name: Setup Docker
+    - name: Setup docker
       ansible.builtin.shell: |
         sudo systemctl enable docker
         sudo systemctl start docker
@@ -162,24 +174,33 @@
         curl -SL https://github.com/docker/compose/releases/download/v2.14.0/docker-compose-linux-x86_64 -o $DOCKER_CONFIG/cli-plugins/docker-compose
         chmod +x $DOCKER_CONFIG/cli-plugins/docker-compose
 
-    - name: Create Group For Keyboard Firmware
+    - name: Create group for keyboard firmware
       group:
         name: plugdev
         state: present
       become: true
 
-    - name: Add User To Keyboard Firmware Group
+    - name: Add user to keyboard firmware group
       ansible.builtin.user:
         name: "{{ lookup('ansible.builtin.env', 'USER') }}"
         groups: plugdev
         append: yes
       become: true
 
-    - name: Add Keyboard Firmware Configuration File
-      command:
-        cmd: echo WIP
+    - name: Add keyboard firmware configuration file
+      copy:
+        dest: /etc/udev/rules.d/50-zsa.rules
+        content: |
+          # Rules for Oryx web flashing and live training
+          KERNEL=="hidraw*", ATTRS{idVendor}=="16c0", MODE="0664", GROUP="plugdev"
+          KERNEL=="hidraw*", ATTRS{idVendor}=="3297", MODE="0664", GROUP="plugdev"
+          # Wally Flashing rules for the Moonlander and Planck EZ
+          SUBSYSTEMS=="usb", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="df11", \
+              MODE:="0666", \
+              SYMLINK+="stm32_dfu"
+      become: true
 
-    - name: Install Nerd Fonts
+    - name: Install nerd fonts
       kewlfft.aur.aur:
         name: "{{ pkgs_fonts }}"
         use: paru

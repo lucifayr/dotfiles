@@ -35,8 +35,8 @@
       - nitrogen 
       - polybar
 
-    tasks:
-    - name: Install AMD GPU Driver
+  tasks:
+    - name: Install AMD GPU driver
       community.general.pacman:
         name: 
           - mesa 
@@ -45,7 +45,7 @@
         state: latest
       when: gpu_driver == "A"
 
-    - name: Install Nvidia GPU Driver
+    - name: Install Nvidia GPU driver
       community.general.pacman:
         name: nvidia
         state: latest
