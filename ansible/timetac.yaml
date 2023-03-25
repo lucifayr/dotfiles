@@ -1,0 +1,23 @@
+- name: TimeTac Setup
+  hosts: localhost
+  connection: local
+
+  var: 
+    pkgs_application_aur:
+      - slack-desktop
+
+  tasks:
+    - name: Install Applications [AUR]
+      kewlfft.aur.aur:
+        name: "{{ pkgs_application_aur }}"
+        use: paru
+        state: present
+
+    - name: Copy SSH Keys 
+
+    - name: Copy OpenVPN files
+
+    - name: Setup OpenVPN
+      ansible.builtin.shell: |
+        nmcli connection import type openvpn file ~/openvpn/go-stage.ovpn 
+        nmcli connection modify go-stage ipv4.never-default true
