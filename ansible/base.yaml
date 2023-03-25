@@ -14,9 +14,8 @@
           - base-devel
           - git
           - man-db 
-          - openssh
           - sudo
-          - networkmanager
+          - openssh
           - networkmanager-openvpn
           - python-passlib
           - unzip
