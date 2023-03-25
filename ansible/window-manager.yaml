@@ -49,7 +49,7 @@
       community.general.pacman:
         name: nvidia
         state: latest
-      when: gpu_driver != "A"
+      when: gpu_driver == "N"
 
     - name: Install X11
       community.general.pacman:
