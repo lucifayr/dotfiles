@@ -129,6 +129,9 @@ BWM
 Ansible
 NextJS
 SolidJS
+<<<<<<< ours
+nav
+=======
 <<<<<<< HEAD
 DTLS
 WLC
@@ -151,4 +154,8 @@ FHRP
 Kondratjew
 GPD
 BEC
+<<<<<<< HEAD
 ansible
+=======
+>>>>>>> theirs
+>>>>>>> main
