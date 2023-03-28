@@ -1,5 +1,5 @@
-# TODO: copy xinitrc
 # TODO: copy other private directories
+# TODO: set wallpaper
 - name: System Configuration
   hosts: localhost
   connection: local
