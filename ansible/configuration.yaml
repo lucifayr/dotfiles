@@ -1,4 +1,5 @@
 # TODO: copy xinitrc
+# TODO: copy other private directories
 - name: System Configuration
   hosts: localhost
   connection: local
