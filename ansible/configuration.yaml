@@ -1,3 +1,4 @@
+# TODO: copy xinitrc
 - name: System Configuration
   hosts: localhost
   connection: local

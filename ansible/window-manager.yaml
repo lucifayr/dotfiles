@@ -1,3 +1,4 @@
+# TODO: set wallpaper
 - name: Window Manager Setup
   hosts: localhost
   connection: local

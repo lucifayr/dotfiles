@@ -49,6 +49,7 @@
       - alacritty 
       - bashtop 
       - tmux 
+      - rofi
       - firefox 
       - discord 
       - flameshot 
