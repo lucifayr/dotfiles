@@ -35,6 +35,8 @@
       - nitrogen 
       - polybar
     home_dir: "{{ lookup('ansible.builtin.env', 'HOME') }}"
+    project_dir: "{{ home_dir }}/projects"
+    dotfiles_dir: "{{ project_dir }}/dotfiles" 
 
   tasks:
     - name: Install AMD GPU driver
@@ -68,3 +70,7 @@
       ansible.builtin.copy:
         src: "/etc/X11/xinit/xinitrc"
         dest: "{{ home_dir }}/.xinitrc"
+
+    - name: Set Wallpaper
+      command:
+        cmd: "nitrogen --set-auto {{ dotfiles_dir }}/images/background.jpg || nitrogen --set-auto {{ dotfiles_dir }}/images/background.png"
