@@ -158,16 +158,6 @@
         cmd: sudo systemctl enable bluetooth
       become: yes
 
-    - name: Copy GitHub access token
-      ansible.builtin.copy:
-        src: "{{ dotfiles_dir }}/private/github/access-token"
-        dest: "/tmp/token"
-        decrypt: true
-
-    - name: Authentication GitHub with access token
-      command: 
-        cmd: gh auth login --with-token < /tmp/token
-
     - name: Install Docker
       community.general.pacman:
         name: docker
