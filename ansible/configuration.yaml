@@ -1,4 +1,3 @@
-# TODO: Configure GitHub access token
 - name: System Configuration
   hosts: localhost
   connection: local
