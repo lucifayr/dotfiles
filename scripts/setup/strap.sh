@@ -1,3 +1,3 @@
 #!/bin/sh
 
-pacstrap /mnt base linux linux-firmware grub efibootmgr networkmanager ansible
+pacstrap /mnt base base-devel linux linux-firmware grub efibootmgr networkmanager neovim ansible
