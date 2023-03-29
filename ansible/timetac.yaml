@@ -20,6 +20,7 @@
       ansible.builtin.copy:
         src: "{{ dotfiles_dir }}/private/timetac/.ssh"
         dest: "{{ home_dir }}"
+        mode: '0600'
         decrypt: true
 
     - name: Copy OpenVPN files
