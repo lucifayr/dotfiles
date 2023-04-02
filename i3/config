@@ -156,6 +156,9 @@ bindsym $mod+d exec discord
 
 bindsym $mod+b exec i3-sensible-terminal -e bashtop 
 
+bindsym $mod+t exec screenkey -f "JetBrains Mono" --opacity 0.3 -s small
+bindsym $mod+Shift+t exec killall screenkey
+
 bindsym $mod+Shift+s exec flameshot gui
 bindsym $mod+Shift+d exec flameshot gui -c -s && ocrdesktop -C -o -n | xclip -selection clip
 

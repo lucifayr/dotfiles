@@ -17,6 +17,7 @@
       - neofetch
       - python-pywal 
       - picom
+      - screenkey
     pkgs_dev:
       - neovim
       - gitui 
