@@ -162,12 +162,6 @@ return require('packer').startup(function(use)
     })
     use { 'uga-rosa/ccc.nvim', config = function() require "ccc".setup() end }
     use {
-        "folke/twilight.nvim",
-        config = function()
-            require("twilight").setup {}
-        end
-    }
-    use {
         "akinsho/toggleterm.nvim",
         tag = '*',
     }
