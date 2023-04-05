@@ -3,7 +3,8 @@ if type "xrandr"; then
     if [ $m = "DP-0" ]; then
       MONITOR=$m polybar -c ~/.config/polybar/config.ini &
     elif [ $m = "eDP-1" ]; then 
-      MONITOR=$m polybar -c ~/.config/polybar/config-small.ini &
+      b=$(/usr/bin/ls /sys/class/power_supply | grep BAT) 
+      MONITOR=$m BATTERY=$b polybar -c ~/.config/polybar/config-small.ini &
     elif [ $m = "DP-2" ]; then 
       MONITOR=$m polybar -c ~/.config/polybar/config-left.ini &
     else

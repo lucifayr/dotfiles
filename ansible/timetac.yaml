@@ -5,6 +5,7 @@
   vars: 
     pkgs_application_aur:
       - slack-desktop
+      - phrase-cli
     home_dir: "{{ lookup('ansible.builtin.env', 'HOME') }}"
     project_dir: "{{ home_dir }}/projects"
     dotfiles_dir: "{{ project_dir }}/dotfiles" 
