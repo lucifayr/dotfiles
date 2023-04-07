@@ -48,6 +48,7 @@
         - rofi
         - polybar
         - neofetch
+        - systemd
         - picom.conf
 
     - name: Check .zshrc
