@@ -11,3 +11,6 @@ vim.keymap.set('n', '<leader>s', [[:%s/\<<C-r><C-w>\>//gI<Left><Left><Left>]])
 
 vim.keymap.set('v', '<leader>rtd', '<cmd>lua require("jackboxx.angles").radiansToDegrees()<cr>')
 vim.keymap.set('v', '<leader>dtr', '<cmd>lua require("jackboxx.angles").degreesToRadians()<cr>')
+
+vim.keymap.set('n', '<leader>fns', ']sz=')
+vim.keymap.set('n', '<leader>fps', '[sz=')
