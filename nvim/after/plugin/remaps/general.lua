@@ -14,3 +14,9 @@ vim.keymap.set('v', '<leader>dtr', '<cmd>lua require("jackboxx.angles").degreesT
 
 vim.keymap.set('n', '<leader>fns', ']sz=')
 vim.keymap.set('n', '<leader>fps', '[sz=')
+
+
+vim.keymap.set('n', 'j', 'gj')
+vim.keymap.set('n', 'k', 'gk')
+vim.keymap.set('v', 'j', 'gj')
+vim.keymap.set('v', 'k', 'gk')
