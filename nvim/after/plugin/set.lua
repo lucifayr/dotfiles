@@ -1,4 +1,5 @@
 local opt          = vim.opt
+local home         = os.getenv("HOME")
 
 opt.exrc           = true
 opt.number         = true
@@ -10,7 +11,7 @@ opt.expandtab      = true
 opt.smartindent    = true
 opt.hidden         = true
 opt.undofile       = true
-opt.undodir        = '/home/jackboxx/.vim/undodir'
+opt.undodir        = home .. '/.vim/undodir'
 opt.incsearch      = true
 opt.scrolloff      = 15
 opt.signcolumn     = 'yes'

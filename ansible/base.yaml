@@ -32,7 +32,7 @@
     - name: username
       prompt: "Username"
       private: false
-      default: "jackboxx"
+      default: "lucifer"
     - name: password
       prompt: "Password"
       private: true

@@ -1,5 +1,7 @@
+local home = os.getenv("HOME")
+
 require("mason").setup({
-    install_root_dir = "/home/jackboxx/mason/data",
+    install_root_dir = home .. "/mason/data",
     PATH = "prepend",
     pip = {
         upgrade_pip = true,

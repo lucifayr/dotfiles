@@ -24,7 +24,7 @@ vim.g.NERDTreeMapJumpPrevSibling = '\\k'
 vim.g.latex_preview_clean = 1
 
 -- Instant
-vim.g.instant_username = 'jackboxx'
+vim.g.instant_username = 'lucifer'
 
 local ensure_packer = function()
     local fn = vim.fn
@@ -39,7 +39,7 @@ end
 
 local packer_bootstrap = ensure_packer()
 
-require('jackboxx')
+require('lucifer')
 
 return require('packer').startup(function(use)
     use {
