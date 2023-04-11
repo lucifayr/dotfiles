@@ -1,6 +1,6 @@
 Angles = {}
 
-local selection = require("jackboxx.selection")
+local selection = require("lucifer.selection")
 
 function Angles.radiansToDegrees()
     local s = selection.getSelection()

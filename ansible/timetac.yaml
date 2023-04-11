@@ -24,6 +24,10 @@
         mode: '0600'
         decrypt: true
 
+    - name: Setup SSH agent 
+      ansible.builtin.shell: |
+        systemctl --user enable --now ssh-agent
+
     - name: Copy OpenVPN files
       ansible.builtin.copy:
         src: "{{ dotfiles_dir }}/private/timetac/openvpn"

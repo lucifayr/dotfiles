@@ -1,4 +1,5 @@
 local opt          = vim.opt
+local home         = os.getenv("HOME")
 
 opt.exrc           = true
 opt.number         = true
@@ -10,18 +11,22 @@ opt.expandtab      = true
 opt.smartindent    = true
 opt.hidden         = true
 opt.undofile       = true
-opt.undodir        = '/home/jackboxx/.vim/undodir'
+opt.undodir        = home .. '/.vim/undodir'
 opt.incsearch      = true
 opt.scrolloff      = 15
 opt.signcolumn     = 'yes'
 opt.colorcolumn    = '90'
+opt.textwidth      = 90
 opt.encoding       = 'UTF-8'
 opt.updatetime     = 50
 opt.spell          = true
 opt.spelllang      = 'en_us'
 opt.hlsearch       = false
 opt.errorbells     = false
-opt.wrap           = false
+opt.wrap           = true
+opt.list           = false
+opt.linebreak      = true
+opt.breakat        = '\\'
 opt.swapfile       = false
 opt.showmode       = false
 opt.clipboard:append('unnamedplus')

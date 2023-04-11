@@ -24,7 +24,7 @@ vim.g.NERDTreeMapJumpPrevSibling = '\\k'
 vim.g.latex_preview_clean = 1
 
 -- Instant
-vim.g.instant_username = 'jackboxx'
+vim.g.instant_username = 'lucifer'
 
 local ensure_packer = function()
     local fn = vim.fn
@@ -39,7 +39,7 @@ end
 
 local packer_bootstrap = ensure_packer()
 
-require('jackboxx')
+require('lucifer')
 
 return require('packer').startup(function(use)
     use {
@@ -162,12 +162,6 @@ return require('packer').startup(function(use)
     })
     use { 'uga-rosa/ccc.nvim', config = function() require "ccc".setup() end }
     use {
-        "folke/twilight.nvim",
-        config = function()
-            require("twilight").setup {}
-        end
-    }
-    use {
         "akinsho/toggleterm.nvim",
         tag = '*',
     }
@@ -185,7 +179,23 @@ return require('packer').startup(function(use)
     use 'onsails/lspkind.nvim'
     use 'L3MON4D3/LuaSnip'
     use 'saadparwaiz1/cmp_luasnip'
-    use 'nvim-telescope/telescope.nvim'
+    use {
+        'nvim-telescope/telescope.nvim',
+        config = function()
+            require 'telescope'.setup {
+                defaults = {
+                    mappings = {
+                        i = {
+                                ["<C-K>"] = require('telescope.actions').move_selection_previous,
+                                ["<C-J>"] = require('telescope.actions').move_selection_next,
+                                ["<C-P>"] = require('telescope.actions').preview_scrolling_up,
+                                ["<C-N>"] = require('telescope.actions').preview_scrolling_down,
+                        }
+                    }
+                }
+            }
+        end
+    }
     use 'tpope/vim-fugitive'
     use 'mbbill/undotree'
     use 'mfussenegger/nvim-jdtls'
