@@ -27,7 +27,6 @@
     - name: Setup SSH agent 
       ansible.builtin.shell: |
         systemctl --user enable --now ssh-agent
-        ssh-add ~/.ssh/id_ed25519
 
     - name: Copy OpenVPN files
       ansible.builtin.copy:
