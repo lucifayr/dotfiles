@@ -12,20 +12,21 @@ local lspconfig = require('lspconfig')
 
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
 local servers = {
-    'rust_analyzer',
-    'pyright',
-    'tsserver',
-    'gopls',
-    'marksman',
     'astro',
-    'lua_ls',
-    'jdtls',
-    'svelte',
-    'sqlls',
-    'html',
+    'bashls',
     'cssls',
+    'gopls',
+    'html',
+    'jdtls',
+    'lua_ls',
+    'marksman',
+    'pyright',
+    'rust_analyzer',
+    'sqlls',
+    'svelte',
     'tailwindcss',
     'texlab',
+    'tsserver',
     'yamlls',
 }
 for _, lsp in ipairs(servers) do
@@ -79,10 +80,10 @@ cmp.setup {
         end,
     },
     mapping = cmp.mapping.preset.insert({
-            ['<C-k>'] = cmp.mapping.scroll_docs(-4),
-            ['<C-j>'] = cmp.mapping.scroll_docs(4),
-            ['<C-Space>'] = cmp.mapping.complete(),
-            ['<CR>'] = cmp.mapping.confirm {
+        ['<C-k>'] = cmp.mapping.scroll_docs(-4),
+        ['<C-j>'] = cmp.mapping.scroll_docs(4),
+        ['<C-Space>'] = cmp.mapping.complete(),
+        ['<CR>'] = cmp.mapping.confirm {
             behavior = cmp.ConfirmBehavior.Replace,
             select = true,
         },
