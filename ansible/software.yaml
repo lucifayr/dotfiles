@@ -9,6 +9,7 @@
       - fzf
       - git-delta 
       - sad 
+      - gdb
       - thefuck 
       - fd 
       - texlive-most 
