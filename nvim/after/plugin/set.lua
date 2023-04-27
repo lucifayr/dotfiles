@@ -23,7 +23,6 @@ opt.spell          = true
 opt.spelllang      = 'en_us'
 opt.hlsearch       = false
 opt.errorbells     = false
-opt.wrap           = true
 opt.list           = false
 opt.linebreak      = true
 opt.breakat        = '\\'
