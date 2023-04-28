@@ -84,11 +84,6 @@ then
     wal -enq -i ~/projects/dotfiles/images/background.png || wal -enq -i ~/projects/dotfiles/images/background.jpg
 fi
 
-clear
-
-# setup funky
-command -v funky &>/dev/null && eval "$(funky --init zsh)"
-
 source ~/.private.sh
 
 if [ -e /home/jackboxx/.nix-profile/etc/profile.d/nix.sh ]; then . /home/jackboxx/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
