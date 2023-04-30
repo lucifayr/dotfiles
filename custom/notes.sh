@@ -6,5 +6,6 @@ if [ -z $selection ]; then
     exit -1
 fi
 
+cd $selection
 note_name=$(basename $selection | sed -E 's/-(\w)/\u\1/g')
 nvim -c "Neorg workspace $note_name"
