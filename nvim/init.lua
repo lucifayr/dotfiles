@@ -80,12 +80,6 @@ return require('packer').startup(function(use)
                 load = {
                     ['core.defaults'] = {},
                     ['core.syntax'] = {},
-                    ["core.presenter"] = {
-                        config = {
-                            zen_mode = "truezen",
-                        },
-                    },
-                    ["core.integrations.truezen"] = {},
                     ["core.export"] = {},
                     ["core.export.markdown"] = {
                         config = {
