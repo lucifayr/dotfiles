@@ -10,3 +10,4 @@ vim.keymap.set('n', '<leader>gwt', '<cmd>lua require("telescope").extensions.git
 vim.keymap.set('n', '<leader>gwc', '<cmd>lua require("telescope").extensions.git_worktree.create_git_worktree()<cr>')
 
 vim.keymap.set('n', '<leader>tr', '<cmd>lua require("telescope.builtin").treesitter()<cr>')
+vim.keymap.set('n', '<leader>ss', '<cmd>lua require("telescope.builtin").spell_suggest()<cr>')
