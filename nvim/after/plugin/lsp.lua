@@ -16,6 +16,7 @@ local servers = {
     'bashls',
     'cssls',
     'gopls',
+    'fortls',
     'html',
     'jdtls',
     'lua_ls',
