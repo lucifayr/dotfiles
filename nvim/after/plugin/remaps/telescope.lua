@@ -9,5 +9,10 @@ vim.keymap.set('n', '<leader>sgs', '<cmd>lua require("telescope.builtin").git_st
 vim.keymap.set('n', '<leader>gwt', '<cmd>lua require("telescope").extensions.git_worktree.git_worktrees()<cr>')
 vim.keymap.set('n', '<leader>gwc', '<cmd>lua require("telescope").extensions.git_worktree.create_git_worktree()<cr>')
 
-vim.keymap.set('n', '<leader>tr', '<cmd>lua require("telescope.builtin").treesitter()<cr>')
 vim.keymap.set('n', '<leader>ss', '<cmd>lua require("telescope.builtin").spell_suggest()<cr>')
+
+vim.api.nvim_set_keymap('n', '<leader>sdi', '<cmd>lua require("telescope.builtin").diagnostics()<CR>',
+    { noremap = true, silent = true })
+
+vim.api.nvim_set_keymap('n', '<leader>rr', '<cmd>lua require("telescope.builtin").lsp_references()<CR>',
+    { noremap = true, silent = true })
