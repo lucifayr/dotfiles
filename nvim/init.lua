@@ -75,35 +75,6 @@ return require('packer').startup(function(use)
     }
     use {
         'nvim-neorg/neorg',
-        config = function()
-            require('neorg').setup {
-                load = {
-                    ['core.defaults'] = {},
-                    ['core.syntax'] = {},
-                    ["core.export"] = {},
-                    ["core.export.markdown"] = {
-                        config = {
-                            extensions = "all",
-                        }
-                    },
-                    ['core.concealer'] = {},
-                    ['core.dirman'] = {
-                        config = {
-                            workspaces = {
-                                drinkUp = '~/notes/drink-up',
-                                norgToMarkdown = '~/notes/norg-to-markdown',
-                                vocal = '~/notes/vocal',
-                                school = '~/notes/school',
-                                personal = '~/notes/personal',
-                                timetac = '~/notes/timetac',
-                                progressed = '~/notes/progressed',
-                            },
-                            index = "index.norg",
-                        },
-                    },
-                },
-            }
-        end,
         run = ':Neorg sync-parsers',
         requires = 'nvim-lua/plenary.nvim',
     }
