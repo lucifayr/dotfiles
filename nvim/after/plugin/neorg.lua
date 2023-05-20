@@ -28,4 +28,5 @@ neorg.setup {
 }
 
 local todo_config = neorg.modules.get_module_config("core.concealer").icons.todo
-todo_config.done.icon = "✓"
+todo_config.done.icon = ""
+todo_config.pending.icon = ""
