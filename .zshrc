@@ -6,16 +6,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 
-# Set Path to personal Notes
-export PATH_TO_NOTES="$HOME/my-notes/main/notes"
-export PATH_TO_NOTE_TEMPLATE="$HOME/my-notes/main/note-template.md"
-export PATH_TO_NOTE_UTILS="$HOME/my-notes/main/scripts"
-
-# Set Path to config files
-export PATH_TO_CONFIG="$HOME/projects/arch_config/main/"
-export PATH_TO_CONFIG_FILES="$HOME/projects/arch_config/main/scripts/files"
-export PATH_TO_CONFIG_DIRECTORIES="$HOME/projects/arch_config/main/scripts/directories"
-
 # Path exports
 export PATH=$HOME/.cargo/bin:/home/jackboxx/.local/bin:$PATH
 export PATH=$PATH:/usr/local/go/bin
