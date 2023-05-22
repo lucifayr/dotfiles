@@ -1,18 +1,18 @@
 font:
   normal:
-    family: JetBrains Mono
+    family: Fira Code
     style: Regular
 
   bold:
-    family: JetBrains Mono
+    family: Fira Code
     style: Bold
 
   italic:
-    family: JetBrains Mono
+    family: Fira Code
     style: Italic
 
   bold_italic:
-    family: JetBrains Mono
+    family: Fira Code
     style: Bold Italic
 
   size: 12
