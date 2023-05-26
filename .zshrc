@@ -58,6 +58,7 @@ alias update="sudo pacman -Syu"
 alias install="sudo pacman -S"
 alias uninstall="sudo pacman -R"
 alias cinstall="RUSTC_WRAPPER=sccache cargo install"
+alias cd="z"
 alias ls="exa --color=always --all --group-directories-first --long"
 alias cat="bat"
 alias grep="rg"
@@ -87,3 +88,5 @@ fi
 source ~/.private.sh
 
 if [ -e /home/jackboxx/.nix-profile/etc/profile.d/nix.sh ]; then . /home/jackboxx/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
+eval "$(zoxide init zsh)"

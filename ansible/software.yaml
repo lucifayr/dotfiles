@@ -11,6 +11,7 @@
       - sad 
       - gdb
       - thefuck 
+      - zoxide
       - fd 
       - texlive-most 
       - tesseract-data-eng 
