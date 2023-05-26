@@ -65,6 +65,7 @@ alias grep="rg"
 alias du="dust"
 alias speedtest="speedtest-rs"
 alias wiki="wiki-tui"
+alias sauce="source"
 
 eval $(thefuck --alias)
 
