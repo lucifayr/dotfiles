@@ -26,6 +26,7 @@ opt.errorbells     = false
 opt.wrap           = false
 opt.list           = false
 opt.linebreak      = true
+opt.guicursor      = ""
 opt.breakat        = '\\'
 opt.swapfile       = false
 opt.showmode       = false
