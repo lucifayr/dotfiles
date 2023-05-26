@@ -41,6 +41,7 @@
       - nvm
     pkgs_dev_cargo:
       - sccache 
+      - binstall
       - exa 
       - bat 
       - ripgrep 
