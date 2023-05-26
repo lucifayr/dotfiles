@@ -180,5 +180,5 @@ new_window pixel 0
 gaps outer 8 
 gaps inner 8
 
-    exec xrandr --output DP-0 --primary && xrandr --output DP-2 --left-of DP-0 && xrandr --output DP-4 --right-of DP-0 && xrandr --output DP-4 --left-of DP-0 && xrandr --output DP-4 --right-of DP-0  && nitrogen --restore && (wal -n -i ~/projects/dotfiles/images/background.png || wal -n -i ~/projects/dotfiles/images/background.jpg) && sh ~/projects/dotfiles/custom/start-polybar.sh 
+exec xrandr --output DP-0 --primary && xrandr --output DP-2 --left-of DP-0 && xrandr --output DP-4 --right-of DP-0 && xrandr --output DP-4 --left-of DP-0 && xrandr --output DP-4 --right-of DP-0  && nitrogen --restore && (wal -n -i ~/projects/dotfiles/images/background.png || wal -n -i ~/projects/dotfiles/images/background.jpg) && sh ~/projects/dotfiles/custom/start-polybar.sh 
 exec picom --config ~/.config/picom.conf &
