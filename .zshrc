@@ -9,6 +9,11 @@ fi
 # Path exports
 export PATH=$HOME/.cargo/bin:/home/jackboxx/.local/bin:$PATH
 export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:~/.local/bin
+
+# carp-lang
+export CARP_DIR=~/Carp
+export LC_CTYPE=C.UTF-8
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"

@@ -182,6 +182,7 @@ return require('packer').startup(function(use)
     use 'sbdchd/neoformat'
     use 'nvim-treesitter/nvim-treesitter-context'
     use 'navarasu/onedark.nvim'
+    use 'hellerve/carp-vim'
     use {
         "savq/paq-nvim",
         "frabjous/knap",
