@@ -20,7 +20,7 @@ export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 ENABLE_CORRECTION="true"
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting zsh-vim-mode)
 
 source $ZSH/oh-my-zsh.sh
 
