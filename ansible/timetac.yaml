@@ -1,3 +1,4 @@
+# vim:ft=yaml.ansible
 - name: TimeTac Setup
   hosts: localhost
   connection: local

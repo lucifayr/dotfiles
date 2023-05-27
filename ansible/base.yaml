@@ -1,3 +1,4 @@
+# vim:ft=yaml.ansible
 - name: Base Setup Step 1
   hosts: localhost
   connection: local
