@@ -107,6 +107,7 @@ return require('packer').startup(function(use)
         'williamboman/mason.nvim',
         'neovim/nvim-lspconfig',
         'williamboman/mason-lspconfig.nvim',
+        run = ':MasonUpdate'
     }
     use({
         "jackMort/ChatGPT.nvim",
