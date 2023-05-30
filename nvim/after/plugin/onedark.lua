@@ -26,3 +26,5 @@ require('onedark').setup {
 vim.g.background = dark
 vim.cmd("syntax on")
 vim.cmd("colorscheme onedark")
+vim.cmd("autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE")
+vim.cmd("autocmd vimenter * hi EndOfBuffer guibg=NONE ctermbg=NONE")

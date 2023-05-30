@@ -12,11 +12,12 @@ local lspconfig = require('lspconfig')
 
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
 local servers = {
+    'ansiblels',
     'astro',
     'bashls',
     'cssls',
-    'gopls',
     'fortls',
+    'gopls',
     'html',
     'jdtls',
     'lua_ls',
@@ -28,8 +29,8 @@ local servers = {
     'tailwindcss',
     'texlab',
     'tsserver',
-    'yamlls',
 }
+
 for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup {
         on_attach = function(client, bufnr)

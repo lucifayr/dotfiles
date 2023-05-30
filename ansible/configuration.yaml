@@ -1,3 +1,4 @@
+# vim:ft=yaml.ansible
 - name: System Configuration
   hosts: localhost
   connection: local
@@ -43,7 +44,7 @@
         - nvim
         - tmux 
         - i3
-        - alacritty
+        - kitty
         - gitui
         - rofi
         - polybar
@@ -52,17 +53,25 @@
         - picom.conf
 
     - name: Check .zshrc
+      register: zshrc
       stat:
         path: "{{ home_dir }}/.zshrc"
-      register: zshrc
 
     - name: Create symbolic links for .zshrc
       ansible.builtin.file:
-        src: "{{ dotfiles_dir }}/.zshrc"
         dest:  "{{ home_dir }}/.zshrc"
         owner: "{{ user }}"
+        src: "{{ dotfiles_dir }}/.zshrc"
         state: link
       when: not zshrc.stat.exists
+
+    - name: Get ZSH plugins
+      ansible.builtin.shell: |
+        cd {{ home_dir }}/.oh-my-zsh/plugins && git clone {{ item }}
+      loop: 
+        - https://github.com/zsh-users/zsh-autosuggestions
+        - https://github.com/zsh-users/zsh-syntax-highlighting
+        - https://github.com/softmoth/zsh-vim-mode
 
     - name: Copy GitHub access token
       ansible.builtin.copy:

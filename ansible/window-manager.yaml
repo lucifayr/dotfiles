@@ -1,3 +1,4 @@
+# vim:ft=yaml.ansible
 - name: Window Manager Setup
   hosts: localhost
   connection: local
