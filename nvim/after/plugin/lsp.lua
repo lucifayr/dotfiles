@@ -1,16 +1,3 @@
-require 'nvim-treesitter.configs'.setup {
-    highlight = {
-        enable = true
-    },
-}
-
--- Add additional capabilities supported by nvim-cmp
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
-
-local lspconfig = require('lspconfig')
-
--- Enable some language servers with the additional completion capabilities offered by nvim-cmp
 local servers = {
     'ansiblels',
     'astro',
@@ -31,6 +18,26 @@ local servers = {
     'tsserver',
 }
 
+local home = os.getenv("HOME")
+require("mason").setup({
+    install_root_dir = home .. "/mason/data",
+    pip = {
+        upgrade_pip = true,
+        install_args = {},
+    },
+})
+
+require("mason-lspconfig").setup {
+    ensure_installed = servers
+}
+
+-- Add additional capabilities supported by nvim-cmp
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+
+local lspconfig = require('lspconfig')
+
+-- Enable some language servers with the additional completion capabilities offered by nvim-cmp
 for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup {
         on_attach = function(client, bufnr)
@@ -115,5 +122,11 @@ cmp.setup {
             vim_item.abbr = string.sub(vim_item.abbr, 1, maxwidth)
             return vim_item
         end,
+    },
+}
+
+require 'nvim-treesitter.configs'.setup {
+    highlight = {
+        enable = true
     },
 }
