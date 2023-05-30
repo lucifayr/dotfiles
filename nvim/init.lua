@@ -181,6 +181,7 @@ return require('packer').startup(function(use)
     use 'ryanoasis/vim-devicons'
     use 'ThePrimeagen/git-worktree.nvim'
     use 'rhysd/conflict-marker.vim'
+    use 'mfussenegger/nvim-dap'
     use 'hrsh7th/nvim-cmp'
     use 'hrsh7th/cmp-nvim-lsp'
     use 'terrortylor/nvim-comment'
