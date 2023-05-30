@@ -20,7 +20,7 @@ export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 ENABLE_CORRECTION="true"
-plugins=(git vi-mode zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git docker rust vi-mode zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
