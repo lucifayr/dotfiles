@@ -91,3 +91,5 @@ if [ -e /home/jackboxx/.nix-profile/etc/profile.d/nix.sh ]; then . /home/jackbox
 eval "$(zoxide init zsh)"
 
 source ~/.private.sh
+
+[ -f "/home/lucifer/.ghcup/env" ] && source "/home/lucifer/.ghcup/env" # ghcup-env

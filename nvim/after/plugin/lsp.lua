@@ -5,6 +5,7 @@ local servers = {
     'cssls',
     'fortls',
     'gopls',
+    'hls',
     'html',
     'jdtls',
     'lua_ls',
