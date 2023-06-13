@@ -91,3 +91,7 @@ if [ -e /home/jackboxx/.nix-profile/etc/profile.d/nix.sh ]; then . /home/jackbox
 eval "$(zoxide init zsh)"
 
 source ~/.private.sh
+
+export WASMTIME_HOME="$HOME/.wasmtime"
+
+export PATH="$WASMTIME_HOME/bin:$PATH"
