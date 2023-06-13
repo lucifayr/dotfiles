@@ -188,5 +188,10 @@ runtime
 struct
 text/!
 Haskel
+<<<<<<< HEAD
 yeted
 yeeted
+=======
+Vocaloid
+WASM
+>>>>>>> main

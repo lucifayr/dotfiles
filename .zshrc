@@ -92,6 +92,9 @@ eval "$(zoxide init zsh)"
 
 source ~/.private.sh
 
-export WASMTIME_HOME="$HOME/.wasmtime"
+#[ -f "/home/lucifer/.ghcup/env" ] && source "/home/lucifer/.ghcup/env" # ghcup-env
+[ -f "/home/lucifer/.ghcup/env" ] && source "/home/lucifer/.ghcup/env" # ghcup-env
 
-export PATH="$WASMTIME_HOME/bin:$PATH"
+# Wasmer
+export WASMER_DIR="/home/lucifer/.wasmer"
+[ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"
