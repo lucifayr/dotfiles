@@ -98,3 +98,7 @@ source ~/.private.sh
 # Wasmer
 export WASMER_DIR="/home/lucifer/.wasmer"
 [ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"
+
+export WASMTIME_HOME="$HOME/.wasmtime"
+
+export PATH="$WASMTIME_HOME/bin:$PATH"
