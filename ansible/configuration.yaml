@@ -9,6 +9,10 @@
     config_dir: "{{ home_dir }}/.config"
     project_dir: "{{ home_dir }}/projects"
     dotfiles_dir: "{{ project_dir }}/dotfiles" 
+    qmk_dependencies: 
+      - python-pip 
+      - libffi 
+      - qmk
 
   tasks: 
     - name: Create 'projects' directory
@@ -114,6 +118,16 @@
               SYMLINK+="stm32_dfu"
       become: true
       when: not keyboard.stat.exists
+
+    - name: Installing QMK dependencies
+      community.general.pacman:
+        name: "{{ qmk_dependencies }}"
+        state: present
+      become: yes
+
+    - name: Setup QMK
+      ansible.builtin.shell: |
+        qmk setup -y
 
     - name: Copy '.private.sh'
       ansible.builtin.copy:
