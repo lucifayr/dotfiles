@@ -1,0 +1,5 @@
+User lucifer
+
+Host home-server
+    Hostname 192.168.31.10
+    Port 22
