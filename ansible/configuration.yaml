@@ -81,6 +81,7 @@
       ansible.builtin.copy:
         src: "{{ dotfiles_dir }}/private/personal-keys/github_ed25519"
         dest: "{{ home_dir }}/.ssh/github_ed25519"
+        mode: "0600"
         decrypt: true
 
     - name: Copy '.private.sh'
