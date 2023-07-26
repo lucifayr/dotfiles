@@ -77,15 +77,28 @@
         - https://github.com/zsh-users/zsh-syntax-highlighting
         - https://github.com/softmoth/zsh-vim-mode
 
-    - name: Copy GitHub access token
+    - name: Copy GitHub keys
       ansible.builtin.copy:
-        src: "{{ dotfiles_dir }}/private/github/access-token"
-        dest: "/tmp/token"
+        src: "{{ dotfiles_dir }}/private/personal-keys/github_ed25519"
+        dest: "{{ home_dir }}/.ssh/github_ed25519"
+        mode: "0600"
         decrypt: true
 
-    - name: Authentication GitHub with access token
+    - name: Copy '.private.sh'
+      ansible.builtin.copy:
+        src: "{{ dotfiles_dir }}/private/other/.private.sh"
+        dest: "{{ home_dir }}"
+        decrypt: true
+
+    - name: Copy 'private.lua'
+      ansible.builtin.copy:
+        src: "{{ dotfiles_dir }}/private/other/private.lua"
+        dest: "{{ dotfiles_dir }}/nvim/after/plugin"
+        decrypt: true
+
+    - name: Setup SSH agent 
       ansible.builtin.shell: |
-        gh auth login --with-token < /tmp/token
+        systemctl --user enable --now ssh-agent
 
     - name: Create group for keyboard firmware
       group:
@@ -128,15 +141,3 @@
     - name: Setup QMK
       ansible.builtin.shell: |
         qmk setup -y
-
-    - name: Copy '.private.sh'
-      ansible.builtin.copy:
-        src: "{{ dotfiles_dir }}/private/other/.private.sh"
-        dest: "{{ home_dir }}"
-        decrypt: true
-
-    - name: Copy 'private.lua'
-      ansible.builtin.copy:
-        src: "{{ dotfiles_dir }}/private/other/private.lua"
-        dest: "{{ dotfiles_dir }}/nvim/after/plugin"
-        decrypt: true
