@@ -152,7 +152,7 @@ bindsym $mod+Control+r mode "resize"
 
 # App start kebindings
 bindsym $mod+f exec firefox
-bindsym $mod+d exec discord
+bindsym $mod+d exec webcord
 
 bindsym $mod+b exec i3-sensible-terminal -e bashtop 
 

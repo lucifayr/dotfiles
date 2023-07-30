@@ -57,11 +57,11 @@
       - tmux 
       - rofi
       - firefox 
-      - discord 
       - flameshot 
     pkgs_application_aur:
       - postman-bin 
       - gobang-bin 
+      - webcord
     pkgs_audio:
       - pipewire 
       - pipewire-alsa 
