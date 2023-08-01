@@ -1,0 +1,23 @@
+echo "! fetching changes from origin"
+git fetch --all
+
+echo "! enter branch name: "
+read branch
+
+echo "! creating branch"
+git worktree add $branch origin/main
+cd $branch
+
+eoho "! copying Phrase token"
+cp ../main/web/.env.local web
+cp ../main/web/.env.local desktop
+cp ../main/web/.env.local jira-plugin
+
+echo "! installing commit hooks"
+npx husky install
+
+echo "! installing packages"
+yarn install
+
+phrase_token=$(cat web/.env.local | cut -d= -f2 | head -n1)
+phrase pull -t $phrase_token

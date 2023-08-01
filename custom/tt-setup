@@ -1,0 +1,2 @@
+echo "! connecting to go-stage VPN" && nmcli con up go-stage
+echo "! unlock SSH keys" && ssh-add $HOME/.ssh/id_rsa 
