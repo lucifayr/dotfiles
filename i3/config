@@ -84,8 +84,8 @@ workspace $ws5 output DP-0
 workspace $ws6 output DP-0
 workspace $ws7 output DP-0
 workspace $ws8 output DP-0
-workspace $ws9 output DP-2 
-workspace $ws10 output DP-4 
+workspace $ws9 output DP-0
+workspace $ws10 output DP-0
 
 # switch to workspace
 bindsym $mod+Right workspace next
@@ -152,7 +152,7 @@ bindsym $mod+Control+r mode "resize"
 
 # App start kebindings
 bindsym $mod+f exec firefox
-bindsym $mod+d exec discord
+bindsym $mod+d exec webcord
 
 bindsym $mod+b exec i3-sensible-terminal -e bashtop 
 
