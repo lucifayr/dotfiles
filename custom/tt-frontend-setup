@@ -1,3 +1,5 @@
+#!/bin/sh
+
 echo "! fetching changes from origin"
 git fetch --all
 
@@ -7,8 +9,9 @@ read branch
 echo "! creating branch"
 git worktree add $branch origin/main
 cd $branch
+git checkout -b $branch || git checkout $branch
 
-eoho "! copying Phrase token"
+echo "! copying Phrase token"
 cp ../main/web/.env.local web
 cp ../main/web/.env.local desktop
 cp ../main/web/.env.local jira-plugin
@@ -19,5 +22,7 @@ npx husky install
 echo "! installing packages"
 yarn install
 
-phrase_token=$(cat web/.env.local | cut -d= -f2 | head -n1)
-phrase pull -t $phrase_token
+echo "! installing translations"
+cd web
+phrase_token=$(cat .env.local | cut -d= -f2 | head -n1)
+phrase pull --config ../.phrase.yml  -t $phrase_token
