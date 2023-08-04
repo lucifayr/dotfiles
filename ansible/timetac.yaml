@@ -39,3 +39,11 @@
       ansible.builtin.shell: |
         nmcli connection import type openvpn file $HOME/openvpn/go-stage.ovpn 
         nmcli connection modify go-stage ipv4.never-default true
+
+    - name: Copy util scripts
+      ansible.builtin.copy:
+        src: "{{ dotfiles_dir }}/custom/{{ item }}"
+        dest: "/usr/bin/{{ item }}"
+      loop: 
+        - tt-setup
+        - tt-frontend-setup
