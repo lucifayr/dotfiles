@@ -77,6 +77,7 @@ return require('packer').startup(function(use)
         end,
         requires = { 'nvim-tree/nvim-web-devicons' }
     }
+    use 'folke/zen-mode.nvim'
     use {
         'nvim-neorg/neorg',
         run = ':Neorg sync-parsers',
