@@ -57,6 +57,7 @@
       - tmux 
       - rofi
       - firefox 
+      - obsidian
       - flameshot 
     pkgs_application_aur:
       - postman-bin 

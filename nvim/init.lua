@@ -43,6 +43,10 @@ require('lucifer')
 
 return require('packer').startup(function(use)
     use {
+        'Jackboxx/archwiki-nvim',
+        requires = { 'nvim-telescope/telescope.nvim' }
+    }
+    use {
         'glepnir/dashboard-nvim',
         event = 'VimEnter',
         config = function()
@@ -73,6 +77,7 @@ return require('packer').startup(function(use)
         end,
         requires = { 'nvim-tree/nvim-web-devicons' }
     }
+    use 'folke/zen-mode.nvim'
     use {
         'nvim-neorg/neorg',
         run = ':Neorg sync-parsers',
