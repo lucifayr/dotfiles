@@ -222,6 +222,9 @@ JSON
 base64
 =======
 VPN
+<<<<<<< HEAD
+Archwiki
+=======
 >>>>>>> 7bed4a5a455164c54b8ec3244269195f413d08e3
 text
 stderr
@@ -230,3 +233,4 @@ unicode
 archwiki
 archwiki
 html
+>>>>>>> d47beac9bfe701093887f1772008fff17e1240b6
