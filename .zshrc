@@ -67,6 +67,8 @@ alias speedtest="speedtest-rs"
 alias wiki="wiki-tui"
 alias sauce="source"
 alias cargo-publish="cargo publish --token \$(ansible-vault decrypt ~/projects/dotfiles/private/crates-io-api-token --output /tmp/token && cat /tmp/token)"
+alias xcb="xclip -selection clipboad"
+alias attitude="attitudes | xclip -selection clipboad"
 
 eval $(thefuck --alias)
 
