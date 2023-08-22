@@ -3,10 +3,10 @@ vim.keymap.set('n', '<leader>li', '<cmd>LspInfo<cr>')
 
 vim.cmd [[
 " Use Tab to expand and jump through snippets
-imap <silent><expr> <cr> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<cr>'
-smap <silent><expr> <cr> luasnip#jumpable(1) ? '<Plug>luasnip-jump-next' : '<cr>'
+imap <silent><expr> <TAB> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<TAB>'
+smap <silent><expr> <TAB> luasnip#jumpable(1) ? '<Plug>luasnip-jump-next' : '<TAB>'
 
 " Use Shift-Tab to jump backwards through snippets
-imap <silent><expr> <S-cr> luasnip#jumpable(-1) ? '<Plug>luasnip-jump-prev' : '<S-cr>'
-smap <silent><expr> <S-cr> luasnip#jumpable(-1) ? '<Plug>luasnip-jump-prev' : '<S-cr>'
+imap <silent><expr> <S-TAB> luasnip#jumpable(-1) ? '<Plug>luasnip-jump-prev' : '<S-TAB>'
+smap <silent><expr> <S-TAB> luasnip#jumpable(-1) ? '<Plug>luasnip-jump-prev' : '<S-TAB>'
 ]]

@@ -146,3 +146,7 @@ require 'nvim-treesitter.configs'.setup {
 
 -- snippets
 require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/snippets/" })
+
+-- shared snippets
+require("luasnip").filetype_extend("typescriptreact", { "typescript", "html" })
+require("luasnip").filetype_extend("svelte", { "typescript" })
