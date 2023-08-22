@@ -143,3 +143,6 @@ require 'nvim-treesitter.configs'.setup {
         enable = true
     },
 }
+
+-- snippets
+require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/snippets/" })
