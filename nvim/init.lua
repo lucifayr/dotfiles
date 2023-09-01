@@ -77,7 +77,6 @@ return require('packer').startup(function(use)
         end,
         requires = { 'nvim-tree/nvim-web-devicons' }
     }
-    use 'folke/zen-mode.nvim'
     use {
         'nvim-neorg/neorg',
         run = ':Neorg sync-parsers',
@@ -133,10 +132,6 @@ return require('packer').startup(function(use)
     })
     use { 'uga-rosa/ccc.nvim', config = function() require "ccc".setup() end }
     use {
-        "akinsho/toggleterm.nvim",
-        tag = '*',
-    }
-    use {
         'ggandor/leap.nvim',
         requires = { 'tpope/vim-repeat' },
     }
@@ -184,26 +179,25 @@ return require('packer').startup(function(use)
     use 'APZelos/blamer.nvim'
     use 'preservim/nerdtree'
     use 'Xuyuanp/nerdtree-git-plugin'
-    use 'ryanoasis/vim-devicons'
-    use 'ThePrimeagen/git-worktree.nvim'
     use 'rhysd/conflict-marker.vim'
     use 'mfussenegger/nvim-dap'
     use 'hrsh7th/nvim-cmp'
     use 'hrsh7th/cmp-nvim-lsp'
     use 'terrortylor/nvim-comment'
     use 'nvim-tree/nvim-web-devicons'
-    use 'evanleck/vim-svelte'
-    use 'pangloss/vim-javascript'
-    use 'HerringtonDarkholme/yats.vim'
     use 'nvim-lualine/lualine.nvim'
     use 'sbdchd/neoformat'
     use 'nvim-treesitter/nvim-treesitter-context'
     use 'navarasu/onedark.nvim'
-    use 'hellerve/carp-vim'
     use {
         "savq/paq-nvim",
         "frabjous/knap",
     }
+
+    -- DB
+    use 'tpope/vim-dadbod'
+    use 'kristijanhusak/vim-dadbod-ui'
+    use 'kristijanhusak/vim-dadbod-completion'
 
     if packer_bootstrap then
         require('packer').sync()

@@ -8,6 +8,7 @@ local servers = {
     'html',
     'jdtls',
     'lua_ls',
+    'sqlls',
     'marksman',
     'pyright',
     'rust_analyzer',
@@ -150,3 +151,7 @@ require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/snippets/" })
 -- shared snippets
 require("luasnip").filetype_extend("typescriptreact", { "typescript", "html" })
 require("luasnip").filetype_extend("svelte", { "typescript" })
+
+-- DB
+vim.cmd(
+"autocmd FileType sql,mysql,plsql lua require('cmp').setup.buffer({ sources = {{ name = 'vim-dadbod-completion' }} })")
