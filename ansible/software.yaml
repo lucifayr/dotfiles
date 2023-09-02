@@ -38,6 +38,7 @@
       - maven
       - meson 
       - ninja 
+      - lldb
     pkgs_dev_aur:
       - betterlockscreen
       - nvm

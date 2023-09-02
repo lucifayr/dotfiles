@@ -180,7 +180,6 @@ return require('packer').startup(function(use)
     use 'preservim/nerdtree'
     use 'Xuyuanp/nerdtree-git-plugin'
     use 'rhysd/conflict-marker.vim'
-    use 'mfussenegger/nvim-dap'
     use 'hrsh7th/nvim-cmp'
     use 'hrsh7th/cmp-nvim-lsp'
     use 'terrortylor/nvim-comment'
@@ -198,6 +197,17 @@ return require('packer').startup(function(use)
     use 'tpope/vim-dadbod'
     use 'kristijanhusak/vim-dadbod-ui'
     use 'kristijanhusak/vim-dadbod-completion'
+
+    -- Debugger
+    use 'mfussenegger/nvim-dap'
+    use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }
+
+    -- Plugin Development
+    use { 'folke/neodev.nvim', config = function()
+        require("neodev").setup({
+            library = { plugins = { "nvim-dap-ui" }, types = true },
+        })
+    end }
 
     if packer_bootstrap then
         require('packer').sync()
