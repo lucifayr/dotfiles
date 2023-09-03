@@ -4,6 +4,8 @@
   connection: local
 
   vars: 
+    pkgs_utils:
+      - glab
     pkgs_application_aur:
       - slack-desktop
       - phrase-cli
@@ -12,6 +14,12 @@
     dotfiles_dir: "{{ project_dir }}/dotfiles" 
 
   tasks:
+    - name: Install utils
+      community.general.pacman:
+        name: "{{ pkgs_utils }}"
+        state: present
+      become: yes
+
     - name: Install applications [AUR]
       kewlfft.aur.aur:
         name: "{{ pkgs_application_aur }}"
