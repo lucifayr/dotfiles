@@ -4,6 +4,8 @@
   connection: local
 
   vars: 
+    pkgs_utils:
+      - glab
     pkgs_application_aur:
       - slack-desktop
       - phrase-cli
@@ -12,6 +14,12 @@
     dotfiles_dir: "{{ project_dir }}/dotfiles" 
 
   tasks:
+    - name: Install utils
+      community.general.pacman:
+        name: "{{ pkgs_utils }}"
+        state: present
+      become: yes
+
     - name: Install applications [AUR]
       kewlfft.aur.aur:
         name: "{{ pkgs_application_aur }}"
@@ -22,6 +30,20 @@
       ansible.builtin.copy:
         src: "{{ dotfiles_dir }}/private/timetac/.ssh"
         dest: "{{ home_dir }}"
+        mode: '0600'
+        decrypt: true
+
+    - name: Copy server data
+      ansible.builtin.copy:
+        src: "{{ dotfiles_dir }}/private/timetac/tt-server-data"
+        dest: "{{ home_dir }}"
+        mode: '0600'
+        decrypt: true
+
+    - name: Copy DB connections
+      ansible.builtin.copy:
+        src: "{{ dotfiles_dir }}/private/timetac/db-connections.json"
+        dest: "{{ home_dir }}/.local/share/db_ui/connections.json"
         mode: '0600'
         decrypt: true
 
@@ -47,3 +69,4 @@
       loop: 
         - tt-setup
         - tt-frontend-setup
+        - tt-ssh-forward

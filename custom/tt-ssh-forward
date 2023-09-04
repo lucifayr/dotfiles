@@ -1,0 +1,9 @@
+#!/bin/sh
+
+ip=$1
+local_port=$2
+remote_port=$3
+user=$4
+
+ssh -N -L $local_port:$ip:$remote_port $user@$ip &
+echo mysql://$user:{ password }@127.0.0.1:$local_port
