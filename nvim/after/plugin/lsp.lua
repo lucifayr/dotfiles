@@ -8,7 +8,6 @@ local servers = {
     'html',
     'jdtls',
     'lua_ls',
-    'sqlls',
     'marksman',
     'pyright',
     'rust_analyzer',
@@ -17,6 +16,7 @@ local servers = {
     'tailwindcss',
     'texlab',
     'tsserver',
+    'yamlls',
 }
 
 local home = os.getenv("HOME")
@@ -154,4 +154,4 @@ require("luasnip").filetype_extend("svelte", { "typescript" })
 
 -- DB
 vim.cmd(
-"autocmd FileType sql,mysql,plsql lua require('cmp').setup.buffer({ sources = {{ name = 'vim-dadbod-completion' }} })")
+    "autocmd FileType sql,mysql,plsql lua require('cmp').setup.buffer({ sources = {{ name = 'vim-dadbod-completion' }} })")
