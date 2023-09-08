@@ -1,13 +1,13 @@
-require'treesitter-context'.setup{
-    enable = true, 
-    max_lines = 0, 
-    trim_scope = 'outer', 
-    patterns = { 
+require 'treesitter-context'.setup {
+    enable = true,
+    max_lines = 10,
+    trim_scope = 'outer',
+    patterns = {
         default = {
             'class',
             'function',
             'method',
-            'for', 
+            'for',
             'while',
             'if',
             'switch',
@@ -16,7 +16,7 @@ require'treesitter-context'.setup{
     },
     exact_patterns = {
     },
-    zindex = 20, 
-    mode = 'cursor',  
-    separator = nil, 
+    zindex = 20,
+    mode = 'cursor',
+    separator = nil,
 }
