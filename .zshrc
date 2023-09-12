@@ -120,3 +120,6 @@ export PATH="$WASMTIME_HOME/bin:$PATH"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# Flutter
+export PATH="$PATH:$HOME/flutter/bin"
