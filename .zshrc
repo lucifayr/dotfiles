@@ -113,3 +113,7 @@ export WASMER_DIR="/home/lucifer/.wasmer"
 export WASMTIME_HOME="$HOME/.wasmtime"
 
 export PATH="$WASMTIME_HOME/bin:$PATH"
+
+# Flutter
+export PATH="$PATH:$HOME/flutter/bin"
+CHROME_EXECUTABLE=/usr/bin/google-chrome-stable

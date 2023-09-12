@@ -1,0 +1,12 @@
+#!/bin/sh
+
+curl https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.13.3-stable.tar.xz
+tar xf flutter_linux_3.13.3-stable.tar.xz
+
+# disable bullshit
+flutter config --no-analytics
+flutter --disable-telemetry
+
+yay -S android-studio
+
+flutter config --android-sdk /usr/bin/android-studio
