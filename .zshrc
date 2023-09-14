@@ -114,6 +114,12 @@ export WASMTIME_HOME="$HOME/.wasmtime"
 
 export PATH="$WASMTIME_HOME/bin:$PATH"
 
+# bun completions
+[ -s "/home/jackboxx/.bun/_bun" ] && source "/home/jackboxx/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
 # Flutter
 export PATH="$PATH:$HOME/flutter/bin"
-CHROME_EXECUTABLE=/usr/bin/google-chrome-stable
