@@ -45,7 +45,7 @@
     pkgs_dev_cargo:
       - sccache 
       - binstall
-      - exa 
+      - eza 
       - bat 
       - ripgrep 
       - du-dust 
