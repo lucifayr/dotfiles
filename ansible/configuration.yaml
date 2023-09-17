@@ -56,6 +56,19 @@
         - systemd
         - picom.conf
 
+    - name: Create symbolic links for firefox
+      ansible.builtin.file:
+        src: "{{ home_dir }}/.mozilla/firefox/{{ item }}"
+        dest:  "{{ config_dir }}/firefox/{{ item }}"
+        owner: "{{ user }}"
+        state: link
+      loop: 
+        - addon.json 
+        - prefs.js 
+        - places.sqlite
+        - favicons.sqlite
+        - extensions
+
     - name: Check .zshrc
       register: zshrc
       stat:
