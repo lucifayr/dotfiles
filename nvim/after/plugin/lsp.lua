@@ -38,33 +38,36 @@ capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 local lspconfig = require('lspconfig')
 
+local on_attach = function(_client, bufnr)
+    local opts = { buffer = bufnr, remap = false }
+
+    vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
+    vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
+    vim.keymap.set("n", "<leader>ca", function() vim.lsp.buf.code_action() end, opts)
+    vim.keymap.set("n", "<leader>rn", function() vim.lsp.buf.rename() end, opts)
+end
+
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
 for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup {
-        on_attach = function(client, bufnr)
-            local opts = { buffer = bufnr, remap = false }
-
-            vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
-            vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
-            vim.keymap.set("n", "<leader>ca", function() vim.lsp.buf.code_action() end, opts)
-            vim.keymap.set("n", "<leader>rn", function() vim.lsp.buf.rename() end, opts)
-        end
-        ,
+        on_attach = on_attach,
         capabilities = capabilities,
     }
 end
 
 lspconfig['hls'].setup {
-    on_attach = function(client, bufnr)
-        local opts = { buffer = bufnr, remap = false }
-
-        vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
-        vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
-        vim.keymap.set("n", "<leader>ca", function() vim.lsp.buf.code_action() end, opts)
-        vim.keymap.set("n", "<leader>rn", function() vim.lsp.buf.rename() end, opts)
-    end
-    ,
+    on_attach = on_attach,
     capabilities = capabilities,
+}
+
+lspconfig['omnisharp'].setup {
+    on_attach = on_attach,
+    cmd = {
+        'mono',
+        '--assembly-loader=strict',
+        '/home/lucifer/omnisharp/OmniSharp.exe',
+    },
+    use_mono = true,
 }
 
 local luasnip = require 'luasnip'

@@ -123,3 +123,6 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 # Flutter
 export PATH="$PATH:$HOME/flutter/bin"
+
+# dotnet
+export PATH="$PATH:$HOME/.dotnet/tools"
