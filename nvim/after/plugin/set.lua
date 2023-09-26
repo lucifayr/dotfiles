@@ -12,6 +12,7 @@ opt.smartindent    = true
 opt.hidden         = true
 opt.undofile       = true
 opt.undodir        = home .. '/.vim/undodir'
+opt.termguicolors  = true
 opt.incsearch      = true
 opt.scrolloff      = 15
 opt.signcolumn     = 'yes'

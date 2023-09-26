@@ -14,17 +14,8 @@ vim.g.blamer_show_in_visual_modes = 0
 vim.g.blamer_date_format = '%H:%M on the %d of %B, %Y'
 vim.g.blamer_template = '<committer> <summary> at <committer-time> '
 
--- NerdTree
-vim.g.NERDTreeQuitOnOpen = 1
-vim.g.NERDTreeShowHidden = 1
-vim.g.NERDTreeMapJumpNextSibling = '\\j'
-vim.g.NERDTreeMapJumpPrevSibling = '\\k'
-
 -- LaTex
 vim.g.latex_preview_clean = 1
-
--- Instant
-vim.g.instant_username = 'lucifer'
 
 local ensure_packer = function()
     local fn = vim.fn
@@ -219,6 +210,16 @@ return require('packer').startup(function(use)
         config = function()
             require("flutter-tools").setup {} -- use defaults
         end
+    }
+
+    -- Notifications
+
+    use {
+        'folke/noice.nvim',
+        requires = {
+            "MunifTanjim/nui.nvim",
+            "rcarriga/nvim-notify"
+        },
     }
 
     if packer_bootstrap then
