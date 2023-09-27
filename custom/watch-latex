@@ -1,0 +1,3 @@
+#!/bin/sh
+
+echo $1 | entr -s "pdflatex -interaction=batchmode $1"

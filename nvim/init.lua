@@ -179,10 +179,6 @@ return require('packer').startup(function(use)
     use 'sbdchd/neoformat'
     use 'nvim-treesitter/nvim-treesitter-context'
     use 'navarasu/onedark.nvim'
-    use {
-        "savq/paq-nvim",
-        "frabjous/knap",
-    }
 
     -- DB
     use 'tpope/vim-dadbod'

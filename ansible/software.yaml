@@ -22,6 +22,7 @@
       - python-pywal 
       - picom
       - screenkey
+      - entr
     pkgs_dev:
       - neovim
       - gitui 
