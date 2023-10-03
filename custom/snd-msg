@@ -1,0 +1,10 @@
+#!/bin/sh
+
+endpoint=$(awk -F':' -v name="$1" '{if($1==name) print $2;}' $HOME/ntfy-subs)
+exists=$(echo $endpoint | wc -w)
+
+if [ $exists -gt 0 ]; then
+    curl -d "$2" ntfy.sh/$endpoint
+else
+    echo "entry $input doesn't exists in $HOME/ntfy-subs"
+fi
