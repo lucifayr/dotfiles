@@ -109,6 +109,12 @@
         dest: "{{ dotfiles_dir }}/nvim/after/plugin"
         decrypt: true
 
+    - name: Copy 'ntfy-subs'
+      ansible.builtin.copy:
+        src: "{{ dotfiles_dir }}/private/ntfy-subs"
+        dest: "{{ home_dir }}"
+        decrypt: true
+
     - name: Setup SSH agent 
       ansible.builtin.shell: |
         systemctl --user enable --now ssh-agent
