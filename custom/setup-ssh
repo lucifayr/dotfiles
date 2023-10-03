@@ -1,7 +1,10 @@
 #!/bin/sh
 
+echo "enter common password for keys"
+read -s password
+
 files=$(ls $HOME/.ssh | grep _ed25519 | grep -v .pub)
 for file in $files 
 do
-    ssh-add $HOME/.ssh/$file
+    SSH_PASS=$password DISPLAY=1 SSH_ASKPASS=/usr/bin/ssh-pass-pass ssh-add $HOME/.ssh/$file < /dev/null
 done
