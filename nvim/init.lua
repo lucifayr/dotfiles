@@ -38,42 +38,6 @@ return require('packer').startup(function(use)
         requires = { 'nvim-telescope/telescope.nvim' }
     }
     use {
-        'glepnir/dashboard-nvim',
-        event = 'VimEnter',
-        config = function()
-            require('dashboard').setup({
-                theme = 'hyper',
-                config = {
-                    header = {
-                        '███╗   ██╗ ██████╗     ███╗   ███╗ █████╗ ██╗██████╗ ███████╗███╗   ██╗███████╗',
-                        '████╗  ██║██╔═══██╗    ████╗ ████║██╔══██╗██║██╔══██╗██╔════╝████╗  ██║██╔════╝',
-                        '██╔██╗ ██║██║   ██║    ██╔████╔██║███████║██║██║  ██║█████╗  ██╔██╗ ██║███████╗',
-                        '██║╚██╗██║██║   ██║    ██║╚██╔╝██║██╔══██║██║██║  ██║██╔══╝  ██║╚██╗██║╚════██║',
-                        '██║ ╚████║╚██████╔╝    ██║ ╚═╝ ██║██║  ██║██║██████╔╝███████╗██║ ╚████║███████║',
-                        '╚═╝  ╚═══╝ ╚═════╝     ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝╚═════╝ ╚══════╝╚═╝  ╚═══╝╚══════╝',
-                    },
-                    footer = {},
-                    shortcut = {
-                        {
-                            icon = ' ',
-                            icon_hl = '@variable',
-                            desc = 'Find Files',
-                            group = 'Label',
-                            action = 'Telescope find_files',
-                            key = 'f',
-                        },
-                    },
-                },
-            })
-        end,
-        requires = { 'nvim-tree/nvim-web-devicons' }
-    }
-    use {
-        'nvim-neorg/neorg',
-        run = ':Neorg sync-parsers',
-        requires = 'nvim-lua/plenary.nvim',
-    }
-    use {
         'windwp/nvim-autopairs',
         config = function() require('nvim-autopairs').setup {} end
     }
@@ -81,13 +45,13 @@ return require('packer').startup(function(use)
         'nvim-treesitter/nvim-treesitter',
         config = function()
             require 'nvim-treesitter.configs'.setup {
-                ensure_installed = { 'c', 'lua', 'rust', 'go', 'typescript', 'javascript', 'svelte' },
+                ensure_installed = { 'c', 'lua', 'rust', 'go', 'org', 'typescript', 'javascript', 'svelte' },
                 sync_install = false,
                 auto_install = true,
                 ignore_install = { 'javascript' },
                 highlight = {
                     enable = true,
-                    additional_vim_regex_highlighting = false,
+                    additional_vim_regex_highlighting = { 'org' },
                 },
             }
         end
@@ -104,16 +68,7 @@ return require('packer').startup(function(use)
         'williamboman/mason-lspconfig.nvim',
         run = ':MasonUpdate'
     }
-    use({
-        "jackMort/ChatGPT.nvim",
-        requires = {
-            "MunifTanjim/nui.nvim",
-            "nvim-lua/plenary.nvim",
-            "nvim-telescope/telescope.nvim"
-        }
-    })
     use { 'tzachar/cmp-tabnine', run = './install.sh', requires = 'hrsh7th/nvim-cmp' }
-    use { 'jbyuki/instant.nvim' }
     use({
         "ray-x/sad.nvim",
         requires = { "ray-x/guihua.lua", run = "cd lua/fzy && make" },
@@ -121,14 +76,7 @@ return require('packer').startup(function(use)
             require("sad").setup {}
         end,
     })
-    use { 'uga-rosa/ccc.nvim', config = function() require "ccc".setup() end }
-    use {
-        'ggandor/leap.nvim',
-        requires = { 'tpope/vim-repeat' },
-    }
-    use 'Pocco81/true-zen.nvim'
     use 'brneor/gitui.nvim'
-    use 'ryicoh/deepl.vim'
     use 'ThePrimeagen/harpoon'
     use 'vim-test/vim-test'
     use 'wbthomason/packer.nvim'
@@ -168,8 +116,6 @@ return require('packer').startup(function(use)
     use 'mfussenegger/nvim-jdtls'
     use 'tpope/vim-surround'
     use 'APZelos/blamer.nvim'
-    use 'preservim/nerdtree'
-    use 'Xuyuanp/nerdtree-git-plugin'
     use 'rhysd/conflict-marker.vim'
     use 'hrsh7th/nvim-cmp'
     use 'hrsh7th/cmp-nvim-lsp'
@@ -196,26 +142,27 @@ return require('packer').startup(function(use)
         })
     end }
 
-    -- Flutter
-    use {
-        'akinsho/flutter-tools.nvim',
-        requires = {
-            'nvim-lua/plenary.nvim',
-            'stevearc/dressing.nvim', -- optional for vim.ui.select
-        },
-        config = function()
-            require("flutter-tools").setup {} -- use defaults
-        end
-    }
-
     -- Notifications
-
     use {
         'folke/noice.nvim',
         requires = {
             "MunifTanjim/nui.nvim",
             "rcarriga/nvim-notify"
         },
+    }
+
+    -- Org
+    use { 'nvim-orgmode/orgmode', config = function()
+        require('orgmode').setup_ts_grammar()
+        require('orgmode').setup({
+            org_agenda_files = {
+                '~/projects/notes/todos/personal.org',
+                '~/projects/notes/todos/school.org',
+                '~/projects/notes/todos/work.org'
+            },
+            org_default_notes_file = '~/projects/notes/refile.org'
+        })
+    end
     }
 
     if packer_bootstrap then

@@ -117,6 +117,7 @@ cmp.setup {
         -- { name = 'cmp_tabnine' },
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
+        { name = 'orgmode' },
     },
     formatting = {
         format = function(entry, vim_item)
