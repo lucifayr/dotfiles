@@ -156,9 +156,7 @@ return require('packer').startup(function(use)
         require('orgmode').setup_ts_grammar()
         require('orgmode').setup({
             org_agenda_files = {
-                '~/projects/notes/todos/personal.org',
-                '~/projects/notes/todos/school.org',
-                '~/projects/notes/todos/work.org'
+                '~/projects/notes/todos/*',
             },
             org_default_notes_file = '~/projects/notes/refile.org'
         })
