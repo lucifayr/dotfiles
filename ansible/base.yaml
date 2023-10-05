@@ -23,6 +23,7 @@
           - uthash
           - zsh
           - curl
+          - gocryptfs 
         state: present
 
 - name: Base Setup Step 2

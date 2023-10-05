@@ -77,6 +77,7 @@ alias xcb="xclip -selection clipboad"
 alias attitude="attitudes | xclip -selection clipboad"
 alias tt-start-tunnels="cat ~/tt-server-data | xargs -L 1 tt-ssh-forward"
 alias tt-kill-tunnels="ps -aux | grep \"ssh -N -L\" | awk '{print \$2}' | xargs kill"
+alias unlock-notes="gocryptfs ~/projects/notes-crypt/content ~/projects/notes"
 
 eval $(thefuck --alias)
 
