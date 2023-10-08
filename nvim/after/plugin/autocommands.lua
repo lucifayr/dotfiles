@@ -3,6 +3,7 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
         "*.rs",
         "*.lua",
         "*.go",
+        "*.java",
     },
     callback = function(_event)
         vim.lsp.buf.format()
