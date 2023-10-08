@@ -1,21 +1,21 @@
-vim.api.nvim_create_autocmd({ "FileType" }, {
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
     pattern = {
-        "rust",
-        "lua",
-        "go",
+        "*.rs",
+        "*.lua",
+        "*.go",
     },
     callback = function(_event)
         vim.lsp.buf.format()
     end,
 })
 
-vim.api.nvim_create_autocmd({ "FileType" }, {
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
     pattern = {
-        "svelte",
-        "jsx",
-        "tsx",
-        "js",
-        "ts",
+        "*.svelte",
+        "*.jsx",
+        "*.tsx",
+        "*.js",
+        "*.ts",
     },
     callback = function(_event)
         vim.cmd("Neoformat")
