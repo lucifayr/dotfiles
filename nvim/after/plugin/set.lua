@@ -31,6 +31,7 @@ opt.guicursor      = ""
 opt.breakat        = '\\'
 opt.swapfile       = false
 opt.showmode       = false
+opt.foldenable     = false
 opt.clipboard:append('unnamedplus')
 opt.cursorline = true
 opt.splitright = true
