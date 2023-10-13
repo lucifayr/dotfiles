@@ -1,0 +1,4 @@
+#!/bin/sh
+
+cd $NOTE_DIR
+git pull origin main
