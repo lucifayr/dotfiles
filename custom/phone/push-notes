@@ -1,4 +1,3 @@
 #!/bin/sh
 
-cd $NOTE_DIR
-git push origin main
+cd $NOTE_DIR && git push origin main
