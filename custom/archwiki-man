@@ -1,0 +1,8 @@
+#!/bin/sh
+
+out=$(archwiki-rs read-page $1 --format markdown) 
+
+if [ $? -eq 0 ]; then
+    echo "$out" | pandoc -s -f markdown -t man | man -p t -l -
+fi
+
