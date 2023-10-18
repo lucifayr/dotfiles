@@ -77,6 +77,7 @@ alias sauce="source"
 alias cargo-publish="cargo publish --token \$(ansible-vault decrypt ~/projects/dotfiles/private/crates-io-api-token --output /tmp/token && cat /tmp/token)"
 alias xcb="xclip -selection clipboad"
 alias attitude="attitudes | xclip -selection clipboad"
+alias archwiki-man="~/projects/dotfiles/custom/archwiki-man"
 alias tt-start-tunnels="cat ~/tt-server-data | xargs -L 1 tt-ssh-forward"
 alias tt-kill-tunnels="ps -aux | grep \"ssh -N -L\" | awk '{print \$2}' | xargs kill"
 
