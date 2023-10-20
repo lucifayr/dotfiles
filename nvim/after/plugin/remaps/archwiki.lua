@@ -1,5 +1,5 @@
 local function open_page_as_man(page)
-    vim.cmd("!tmux neww awman " .. page)
+    vim.cmd("!tmux neww ~/projects/dotfiles/custom/archwiki-man '" .. page .. "'")
 end
 
 vim.keymap.set('n', '<leader>aw', function()
