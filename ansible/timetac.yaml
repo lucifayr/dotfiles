@@ -40,6 +40,11 @@
         mode: '0600'
         decrypt: true
 
+    - name: ensure "{{ home_dir }}/.local/share/db_ui" exists
+      file: 
+        path: "{{ home_dir }}/.local/share/db_ui"
+        state: "directory"
+
     - name: Copy DB connections
       ansible.builtin.copy:
         src: "{{ dotfiles_dir }}/private/timetac/db-connections.json"
@@ -66,6 +71,7 @@
       ansible.builtin.copy:
         src: "{{ dotfiles_dir }}/custom/{{ item }}"
         dest: "/usr/bin/{{ item }}"
+      become: true
       loop: 
         - tt-setup
         - tt-frontend-setup
