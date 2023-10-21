@@ -71,6 +71,7 @@
       ansible.builtin.copy:
         src: "{{ dotfiles_dir }}/custom/{{ item }}"
         dest: "/usr/bin/{{ item }}"
+        mode: '0700'
       become: true
       loop: 
         - tt-setup
