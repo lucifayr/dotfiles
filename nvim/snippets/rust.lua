@@ -4,54 +4,30 @@ local i = ls.insert_node
 local fmt = require("luasnip.extras.fmt").fmt
 
 return {
-    s({ trig = "fn", dscr = "Rust function", priority = 50 },
+    s({ trig = "tmod", dscr = "unit test module", priority = 50 },
         fmt(
             [[
-            fn []([]) {}
+            #[cfg(test)]
+            mod tests {
+                12
+            }
     ]],
             {
                 i(1),
-                i(2)
             },
-            { delimiters = "[]" }
+            { delimiters = "12" }
         )
     ),
-    s({ trig = "fnr", dscr = "Rust function with return", priority = 100 },
+    s({ trig = "tf", dscr = "unit test function", priority = 50 },
         fmt(
             [[
-            fn []([]) -> [] {}
+            #[test]
+            fn 12() {}
     ]],
             {
                 i(1),
-                i(2),
-                i(3),
             },
-            { delimiters = "[]" }
-        )
-    ),
-    s({ trig = "afn", dscr = "Async Rust function", priority = 50 },
-        fmt(
-            [[
-            async fn []([]) {}
-    ]],
-            {
-                i(1),
-                i(2)
-            },
-            { delimiters = "[]" }
-        )
-    ),
-    s({ trig = "afnr", dscr = "Async Rust function with return value", priority = 100 },
-        fmt(
-            [[
-            async fn []([]) -> [] {}
-    ]],
-            {
-                i(1),
-                i(2),
-                i(3),
-            },
-            { delimiters = "[]" }
+            { delimiters = "12" }
         )
     ),
 }
