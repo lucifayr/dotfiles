@@ -14,9 +14,6 @@ vim.g.blamer_show_in_visual_modes = 0
 vim.g.blamer_date_format = '%H:%M on the %d of %B, %Y'
 vim.g.blamer_template = '<committer> <summary> at <committer-time> '
 
--- LaTex
-vim.g.latex_preview_clean = 1
-
 local ensure_packer = function()
     local fn = vim.fn
     local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
@@ -33,28 +30,27 @@ local packer_bootstrap = ensure_packer()
 require('lucifer')
 
 return require('packer').startup(function(use)
-    use {
-        'Jackboxx/archwiki-nvim',
-        requires = { 'nvim-telescope/telescope.nvim' }
-    }
-    use {
-        'windwp/nvim-autopairs',
-        config = function() require('nvim-autopairs').setup {} end
-    }
-    use 'nvim-treesitter/nvim-treesitter'
-    use {
-        'brenoprata10/nvim-highlight-colors',
-        config = function()
-            require('nvim-highlight-colors').setup {}
-        end,
-    }
+    -- Other
+    use 'nvim-lua/plenary.nvim'
+
+    -- Dependency Management
+    use 'wbthomason/packer.nvim'
     use {
         'williamboman/mason.nvim',
         'neovim/nvim-lspconfig',
         'williamboman/mason-lspconfig.nvim',
         run = ':MasonUpdate'
     }
-    use { 'tzachar/cmp-tabnine', run = './install.sh', requires = 'hrsh7th/nvim-cmp' }
+
+    -- Git
+    use 'tpope/vim-fugitive'
+    use 'APZelos/blamer.nvim'
+    use 'rhysd/conflict-marker.vim'
+    use 'brneor/gitui.nvim'
+
+    -- Editing
+    use 'mbbill/undotree'
+
     use({
         "ray-x/sad.nvim",
         requires = { "ray-x/guihua.lua", run = "cd lua/fzy && make" },
@@ -62,14 +58,21 @@ return require('packer').startup(function(use)
             require("sad").setup {}
         end,
     })
-    use 'brneor/gitui.nvim'
+
+    -- File Navigation
     use 'ThePrimeagen/harpoon'
-    use 'vim-test/vim-test'
-    use 'wbthomason/packer.nvim'
-    use 'nvim-lua/plenary.nvim'
-    use 'onsails/lspkind.nvim'
-    use 'L3MON4D3/LuaSnip'
-    use 'saadparwaiz1/cmp_luasnip'
+
+    use {
+        'stevearc/oil.nvim',
+        config = function()
+            require('oil').setup({
+                view_options = {
+                    show_hidden = true,
+                },
+            })
+        end
+    }
+
     use {
         'nvim-telescope/telescope.nvim',
         config = function()
@@ -87,30 +90,37 @@ return require('packer').startup(function(use)
             }
         end
     }
+
+    -- Style
+    use 'navarasu/onedark.nvim'
+    use 'nvim-lualine/lualine.nvim'
+    use 'nvim-tree/nvim-web-devicons'
+
     use {
-        'stevearc/oil.nvim',
+        'brenoprata10/nvim-highlight-colors',
         config = function()
-            require('oil').setup({
-                view_options = {
-                    show_hidden = true,
-                },
-            })
-        end
+            require('nvim-highlight-colors').setup {}
+        end,
     }
-    use 'tpope/vim-fugitive'
-    use 'mbbill/undotree'
-    use 'mfussenegger/nvim-jdtls'
+
+    -- Coding
+    use 'nvim-treesitter/nvim-treesitter'
+    use 'nvim-treesitter/nvim-treesitter-context'
     use 'tpope/vim-surround'
-    use 'APZelos/blamer.nvim'
-    use 'rhysd/conflict-marker.vim'
+    use 'onsails/lspkind.nvim'
+    use 'saadparwaiz1/cmp_luasnip'
     use 'hrsh7th/nvim-cmp'
     use 'hrsh7th/cmp-nvim-lsp'
-    use 'terrortylor/nvim-comment'
-    use 'nvim-tree/nvim-web-devicons'
-    use 'nvim-lualine/lualine.nvim'
     use 'sbdchd/neoformat'
-    use 'nvim-treesitter/nvim-treesitter-context'
-    use 'navarasu/onedark.nvim'
+    use 'vim-test/vim-test'
+    use 'L3MON4D3/LuaSnip'
+    use 'terrortylor/nvim-comment'
+    use 'mfussenegger/nvim-jdtls'
+
+    use {
+        'windwp/nvim-autopairs',
+        config = function() require('nvim-autopairs').setup {} end
+    }
 
     -- DB
     use 'tpope/vim-dadbod'
@@ -146,6 +156,12 @@ return require('packer').startup(function(use)
             org_default_notes_file = '~/projects/notes/refile.org'
         })
     end
+    }
+
+    -- ArchWiki
+    use {
+        'Jackboxx/archwiki-nvim',
+        requires = { 'nvim-telescope/telescope.nvim' }
     }
 
     if packer_bootstrap then
