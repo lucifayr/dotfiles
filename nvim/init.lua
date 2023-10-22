@@ -41,21 +41,7 @@ return require('packer').startup(function(use)
         'windwp/nvim-autopairs',
         config = function() require('nvim-autopairs').setup {} end
     }
-    use {
-        'nvim-treesitter/nvim-treesitter',
-        config = function()
-            require 'nvim-treesitter.configs'.setup {
-                ensure_installed = { 'c', 'lua', 'rust', 'go', 'org', 'typescript', 'javascript', 'svelte' },
-                sync_install = false,
-                auto_install = true,
-                ignore_install = { 'javascript' },
-                highlight = {
-                    enable = true,
-                    additional_vim_regex_highlighting = { 'org' },
-                },
-            }
-        end
-    }
+    use 'nvim-treesitter/nvim-treesitter'
     use {
         'brenoprata10/nvim-highlight-colors',
         config = function()
@@ -153,7 +139,6 @@ return require('packer').startup(function(use)
 
     -- Org
     use { 'nvim-orgmode/orgmode', config = function()
-        require('orgmode').setup_ts_grammar()
         require('orgmode').setup({
             org_agenda_files = {
                 '~/projects/notes/todos/*',

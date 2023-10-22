@@ -143,12 +143,6 @@ cmp.setup {
     },
 }
 
-require 'nvim-treesitter.configs'.setup {
-    highlight = {
-        enable = true
-    },
-}
-
 -- snippets
 require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/snippets/" })
 

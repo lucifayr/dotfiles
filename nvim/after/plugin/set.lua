@@ -37,3 +37,8 @@ opt.cursorline = true
 opt.splitright = true
 opt.splitbelow = true
 opt.iskeyword:append('-')
+
+-- Org links
+opt.conceallevel = 2
+opt.concealcursor = 'nc'
+opt.shellslash = true
