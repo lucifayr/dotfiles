@@ -63,17 +63,6 @@ return require('packer').startup(function(use)
     use 'ThePrimeagen/harpoon'
 
     use {
-        'stevearc/oil.nvim',
-        config = function()
-            require('oil').setup({
-                view_options = {
-                    show_hidden = true,
-                },
-            })
-        end
-    }
-
-    use {
         'nvim-telescope/telescope.nvim',
         config = function()
             require 'telescope'.setup {
