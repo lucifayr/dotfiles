@@ -78,6 +78,7 @@ alias cargo-publish="cargo publish --token \$(ansible-vault decrypt ~/projects/d
 alias xcb="xclip -selection clipboad"
 alias attitude="attitudes | xclip -selection clipboad"
 alias awman="~/projects/dotfiles/custom/archwiki-man"
+alias gcn="~/projects/dotfiles/custom/commit_changed_notes"
 alias tt-start-tunnels="cat ~/tt-server-data | xargs -L 1 tt-ssh-forward"
 alias tt-kill-tunnels="ps -aux | grep \"ssh -N -L\" | awk '{print \$2}' | xargs kill"
 

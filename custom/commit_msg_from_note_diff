@@ -1,0 +1,10 @@
+#!/bin/sh
+
+task_type=$1
+
+removed_tasks=$(git diff --staged todos/$task_type.org | grep '+\* DONE' | awk -F 'DONE' '{ print $2 }' | xargs -I {} echo "<$task_type-> {}")
+added_tasks=$(git diff --staged todos/$task_type.org | grep '+\* TODO' | awk -F 'TODO' '{ print $2 }' | xargs -I {} echo "<$task_type+> {}")
+
+
+echo "$removed_tasks"
+echo "$added_tasks"
