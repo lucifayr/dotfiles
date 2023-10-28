@@ -45,8 +45,6 @@ return require('packer').startup(function(use)
     -- Git
     use 'tpope/vim-fugitive'
     use 'APZelos/blamer.nvim'
-    use 'rhysd/conflict-marker.vim'
-    use 'brneor/gitui.nvim'
 
     -- Editing
     use 'mbbill/undotree'
