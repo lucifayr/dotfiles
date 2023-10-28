@@ -101,8 +101,14 @@ return require('packer').startup(function(use)
     use 'sbdchd/neoformat'
     use 'vim-test/vim-test'
     use 'L3MON4D3/LuaSnip'
-    use 'terrortylor/nvim-comment'
     use 'mfussenegger/nvim-jdtls'
+
+    use {
+        'numToStr/Comment.nvim',
+        config = function()
+            require('Comment').setup()
+        end
+    }
 
     use {
         'windwp/nvim-autopairs',
