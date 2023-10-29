@@ -11,10 +11,6 @@ export PATH=$HOME/.cargo/bin:/home/jackboxx/.local/bin:$PATH
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:~/.local/bin
 
-# carp-lang
-export CARP_DIR=~/Carp
-export LC_CTYPE=C.UTF-8
-
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -57,22 +53,17 @@ alias tn="tmux new-session -c sh ~/projects/dotfiles/custom/notes.sh"
 alias ta="tmux attach"
 alias tk="tmux kill-session"
 alias td="tmux detach-client"
-alias cdf=". ~/projects/dotfiles/custom/dir-fzf.sh"
-alias nr="npm run"
 alias rm="rm -I"
 alias mv="mv -i"
-alias ntm="norg-to-markdown"
 alias update="sudo pacman -Syu"
 alias install="sudo pacman -S"
 alias uninstall="sudo pacman -R"
-alias cinstall="RUSTC_WRAPPER=sccache cargo install"
 alias cd="z"
 alias ls="eza --color=always --all --group-directories-first --long"
 alias cat="bat"
 alias grep="rg"
 alias du="dust"
 alias speedtest="speedtest-rs"
-alias wiki="wiki-tui"
 alias sauce="source"
 alias cargo-publish="cargo publish --token \$(ansible-vault decrypt ~/projects/dotfiles/private/crates-io-api-token --output /tmp/token && cat /tmp/token)"
 alias xcb="xclip -selection clipboad"
@@ -109,24 +100,3 @@ source ~/.private.sh
 
 #[ -f "/home/lucifer/.ghcup/env" ] && source "/home/lucifer/.ghcup/env" # ghcup-env
 [ -f "/home/lucifer/.ghcup/env" ] && source "/home/lucifer/.ghcup/env" # ghcup-env
-
-# Wasmer
-export WASMER_DIR="/home/lucifer/.wasmer"
-[ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"
-
-export WASMTIME_HOME="$HOME/.wasmtime"
-
-export PATH="$WASMTIME_HOME/bin:$PATH"
-
-# bun completions
-[ -s "/home/jackboxx/.bun/_bun" ] && source "/home/jackboxx/.bun/_bun"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-
-# Flutter
-export PATH="$PATH:$HOME/flutter/bin"
-
-# dotnet
-export PATH="$PATH:$HOME/.dotnet/tools"
