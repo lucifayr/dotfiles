@@ -1,22 +1,15 @@
 local servers = {
-    'ansiblels',
-    'astro',
     'bashls',
     'cssls',
-    'fortls',
     'gopls',
     'html',
-    'jdtls',
     'lua_ls',
-    'marksman',
-    'pyright',
     'rust_analyzer',
     'sqlls',
     'svelte',
     'tailwindcss',
     'texlab',
     'tsserver',
-    'yamlls',
 }
 
 local home = os.getenv("HOME")
