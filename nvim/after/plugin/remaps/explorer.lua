@@ -1,1 +1,1 @@
-vim.keymap.set("n", "<leader>oi", "<cmd>Explore<cr>", { desc = "Open parent directory" })
+vim.keymap.set("n", "<leader>oii", "<cmd>Explore<cr>", { desc = "Open parent directory" })
