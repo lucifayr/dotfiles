@@ -93,6 +93,7 @@ return require('packer').startup(function(use)
     -- Coding
     use 'nvim-treesitter/nvim-treesitter'
     use 'nvim-treesitter/nvim-treesitter-context'
+    use "nvim-treesitter/nvim-treesitter-textobjects"
     use 'tpope/vim-surround'
     use 'onsails/lspkind.nvim'
     use 'saadparwaiz1/cmp_luasnip'
