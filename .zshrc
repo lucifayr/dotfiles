@@ -8,7 +8,7 @@ fi
 
 # Path exports
 export PATH=$HOME/.cargo/bin:/home/jackboxx/.local/bin:$PATH
-export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:$HOME/go/bin
 export PATH=$PATH:~/.local/bin
 
 # Path to your oh-my-zsh installation.
