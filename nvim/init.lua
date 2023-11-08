@@ -147,6 +147,7 @@ return require('packer').startup(function(use)
             org_agenda_files = {
                 '~/projects/notes/todos/*',
             },
+            org_todo_keywords = { 'TODO', '|', 'DONE', 'CANCELED' },
             org_default_notes_file = '~/projects/notes/refile.org'
         })
     end
