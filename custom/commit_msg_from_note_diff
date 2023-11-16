@@ -2,9 +2,58 @@
 
 task_type=$1
 
-removed_tasks=$(git diff --staged todos/$task_type.org | grep '+\* DONE' | awk -F 'DONE' '{ print $2 }' | xargs -I {} echo "<$task_type-> {}")
+done_tasks=$(git diff --staged todos/$task_type.org | grep '+\* DONE' | awk -F 'DONE' '{ print $2 }' | xargs -I {} echo "<$task_type−> {}")
+canceled_tasks=$(git diff --staged todos/$task_type.org | grep '+\* CANCELED' | awk -F 'CANCELED' '{ print $2 }' | xargs -I {} echo "<$task_type×> {}")
 added_tasks=$(git diff --staged todos/$task_type.org | grep '+\* TODO' | awk -F 'TODO' '{ print $2 }' | xargs -I {} echo "<$task_type+> {}")
 
+OLD_IFS=$IFS
+IFS=$'\n' 
+read -d "" -ra deadlines <<< $(git diff --staged todos/$task_type.org | grep '+  DEADLINE:' -B2 | sed -z 's/--\n/:::::/g' |  sed -z 's/\n/;;;;;/g' | sed 's/:::::/\n/g')     
+read -d "" -ra schedules <<< $(git diff --staged todos/$task_type.org | grep '+  SCHEDULED:' -B2 | sed -z 's/--\n/:::::/g' |  sed -z 's/\n/;;;;;/g' | sed 's/:::::/\n/g')     
+IFS=$OLD_IFS
 
-echo "$removed_tasks"
+changed_deadlines=""
+changed_schedules=""
+
+for deadline in "${deadlines[@]}"
+do
+    task=$(echo "$deadline" | awk -F';;;;;' '{ print $1 }')
+    old_deadline=$(echo "$deadline" | awk -F';;;;;' '{ print $2 }')
+    new_deadline=$(echo "$deadline" | awk -F';;;;;' '{ print $3 }')
+
+    # prevent todo state change from overlapping with date change
+    if [[ "$task" =~ .*"DEADLINE:".* ]]; then
+        continue
+    fi
+
+
+    task_name=$(echo "$task" | sed  's/ *\* DONE//g' | sed  's/ *\* CANCELED//g' | sed  's/ *\* TODO//g' | sed 's/ *^\* //g' | sed 's/^[[:space:]]*//g' | sed 's/[[:space:]]*$//g') 
+    old_deadline=$(echo "$old_deadline" | awk -F 'DEADLINE:' '{ print $2 }' | sed 's/^[[:space:]]*//g' | sed 's/[[:space:]]*$//g')
+    new_deadline=$(echo "$new_deadline" | awk -F 'DEADLINE:' '{ print $2 }' | sed 's/^[[:space:]]*//g' | sed 's/[[:space:]]*$//g')
+
+    changed_deadlines=$(printf "$changed\n<$task_type⧖> deadline [$task_name]: $old_deadline -> $new_deadline")
+done
+
+for schedule in "${schedules[@]}"
+do
+    task=$(echo "$schedule" | awk -F';;;;;' '{ print $1 }')
+    old_schedule=$(echo "$schedule" | awk -F';;;;;' '{ print $2 }')
+    new_schedule=$(echo "$schedule" | awk -F';;;;;' '{ print $3 }')
+
+    # prevent todo state change from overlapping with date change
+    if [[ "$task" =~ .*"SCHEDULED:".* ]]; then
+        continue
+    fi
+
+    task_name=$(echo "$task" | sed  's/^ *\* DONE//g' | sed  's/^ *\* CANCELED//g' | sed  's/^ *\* TODO//g' | sed  's/^ *\* //g' | sed 's/^[[:space:]]*//g' | sed 's/[[:space:]]*$//g') 
+    old_schedule=$(echo "$old_schedule" | awk -F 'SCHEDULED:' '{ print $2 }' | sed 's/^[[:space:]]*//g' | sed 's/[[:space:]]*$//g')
+    new_schedule=$(echo "$new_schedule" | awk -F 'SCHEDULED:' '{ print $2 }' | sed 's/^[[:space:]]*//g' | sed 's/[[:space:]]*$//g')
+
+    changed_schedules=$(printf "$changed\n<$task_type⧖> scheduled [$task_name]: $old_schedule -> $new_schedule")
+done
+
 echo "$added_tasks"
+echo "$done_tasks"
+echo "$canceled_tasks"
+echo "$changed_deadlines"
+echo "$changed_schedules"

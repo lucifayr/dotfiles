@@ -1,3 +1,7 @@
 #!/bin/sh
 
-ls todos | awk -F '.' '{ print $1 }' | xargs -I {} sh -c "sh ~/projects/dotfiles/custom/commit_msg_from_note_diff {} 2> /dev/null || sh ~/storage/shared/projects/dotfiles/custom/commit_msg_from_note_diff {} 2> /dev/null" | xargs -I {} echo {} | xargs -0 -I {} git commit -m {} 
+ls todos | awk -F '.' '{ print $1 }' | xargs -I {} sh -c "sh \
+    ~/projects/dotfiles/custom/commit_msg_from_note_diff {} 2> /dev/null || sh \
+    ~/storage/shared/projects/dotfiles/custom/commit_msg_from_note_diff {} 2> /dev/null" \
+    | xargs -I {} echo {} | sed 's/^[[:space:]]*//g' | sed 's/[[:space:]]*$//g' | xargs -0 \
+        -I {} git commit -m {} 
