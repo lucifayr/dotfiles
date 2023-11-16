@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 task_type=$1
 
