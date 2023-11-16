@@ -6,17 +6,18 @@ done_tasks=$(git diff --staged todos/$task_type.org | grep '+\* DONE' | awk -F '
 canceled_tasks=$(git diff --staged todos/$task_type.org | grep '+\* CANCELED' | awk -F 'CANCELED' '{ print $2 }' | xargs -I {} echo "<$task_type×> {}")
 added_tasks=$(git diff --staged todos/$task_type.org | grep '+\* TODO' | awk -F 'TODO' '{ print $2 }' | xargs -I {} echo "<$task_type+> {}")
 
-OLD_IFS=$IFS
-IFS=$'\n' 
-read -d "" -ra deadlines <<< $(git diff --staged todos/$task_type.org | grep '+  DEADLINE:' -B2 | sed -z 's/--\n/:::::/g' |  sed -z 's/\n/;;;;;/g' | sed 's/:::::/\n/g')     
-read -d "" -ra schedules <<< $(git diff --staged todos/$task_type.org | grep '+  SCHEDULED:' -B2 | sed -z 's/--\n/:::::/g' |  sed -z 's/\n/;;;;;/g' | sed 's/:::::/\n/g')     
-IFS=$OLD_IFS
+readarray -t deadlines <<< $(git diff --staged todos/$task_type.org | grep '+  DEADLINE:' -B2 | sed -z 's/--\n/:::::/g' |  sed -z 's/\n/;;;;;/g' | sed 's/:::::/\n/g')     
+readarray -t schedules <<< $(git diff --staged todos/$task_type.org | grep '+  SCHEDULED:' -B2 | sed -z 's/--\n/:::::/g' |  sed -z 's/\n/;;;;;/g' | sed 's/:::::/\n/g')     
 
 changed_deadlines=""
 changed_schedules=""
 
 for deadline in "${deadlines[@]}"
 do
+    if [[ "$deadline" = "" ]]; then
+        continue
+    fi
+
     task=$(echo "$deadline" | awk -F';;;;;' '{ print $1 }')
     old_deadline=$(echo "$deadline" | awk -F';;;;;' '{ print $2 }')
     new_deadline=$(echo "$deadline" | awk -F';;;;;' '{ print $3 }')
@@ -36,6 +37,10 @@ done
 
 for schedule in "${schedules[@]}"
 do
+    if [[ "$schedule" = "" ]]; then
+        continue
+    fi
+
     task=$(echo "$schedule" | awk -F';;;;;' '{ print $1 }')
     old_schedule=$(echo "$schedule" | awk -F';;;;;' '{ print $2 }')
     new_schedule=$(echo "$schedule" | awk -F';;;;;' '{ print $3 }')
