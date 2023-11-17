@@ -23,7 +23,7 @@ do
     new_deadline=$(echo "$deadline" | awk -F';;;;;' '{ print $3 }')
 
     # prevent todo state change from overlapping with date change
-    if [[ "$task" =~ .*"DEADLINE:".* ]]; then
+    if [[ "$task" =~ .*"DEADLINE:".* ||  "$task" =~ .*"@@".* ]]; then
         continue
     fi
 
@@ -46,7 +46,7 @@ do
     new_schedule=$(echo "$schedule" | awk -F';;;;;' '{ print $3 }')
 
     # prevent todo state change from overlapping with date change
-    if [[ "$task" =~ .*"SCHEDULED:".* ]]; then
+    if [[ "$task" =~ .*"SCHEDULED:".* ||  "$task" =~ .*"@@".* ]]; then
         continue
     fi
 
