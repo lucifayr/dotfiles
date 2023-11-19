@@ -100,5 +100,10 @@ eval "$(zoxide init zsh)"
 
 source ~/.private.sh
 
+# Android SDK for Rust builds
+export ANDROID_SDK=\$HOME/Android/sdk
+export ANDROID_NDK=\$ANDROID_SDK/ndk-bundle
+export PATH=\$PATH:\$ANDROID_SDK/platform-tools:\$ANDROID_SDK/tools/bin
+
 #[ -f "/home/lucifer/.ghcup/env" ] && source "/home/lucifer/.ghcup/env" # ghcup-env
 [ -f "/home/lucifer/.ghcup/env" ] && source "/home/lucifer/.ghcup/env" # ghcup-env

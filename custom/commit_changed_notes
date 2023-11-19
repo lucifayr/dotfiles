@@ -1,5 +1,5 @@
 #!/bin/bash
 
-ls todos | awk -F '.' '{ print $1 }' | xargs -I {} bash -c "bash ~/projects/dotfiles/custom/commit_msg_from_note_diff {} 2> /dev/null || bash ~/storage/shared/projects/dotfiles/custom/commit_msg_from_note_diff {} 2> /dev/null" \
+ls todos | awk -F '.' '{ print $1 }' | xargs -I {} bash -c "scribe {}" \
     | xargs -I {} echo {} | sed 's/^[[:space:]]*//g' | sed 's/[[:space:]]*$//g' | xargs -0 \
         -I {} git commit -m {} 
