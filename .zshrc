@@ -47,7 +47,13 @@ alias gw="git worktree"
 alias gst="git stash"
 alias gstc="git stash clear"
 alias gstp="git stash clear"
-alias tmux="TERM=xterm-256color tmux"
+
+case $(tty) in 
+  (/dev/tty[1-9]) alias tmux="tmux";; 
+              (*) alias tmux="TERM=xterm-256color tmux";; 
+esac
+
+
 alias t="tmux"
 alias tp="tmux new-session -c sh ~/projects/dotfiles/custom/list-projects.sh"
 alias tn="tmux new-session -c sh ~/projects/dotfiles/custom/notes.sh"
