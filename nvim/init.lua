@@ -14,6 +14,9 @@ vim.g.blamer_show_in_visual_modes = 0
 vim.g.blamer_date_format = '%H:%M on the %d of %B, %Y'
 vim.g.blamer_template = '<committer> <summary> at <committer-time> '
 
+vim.g.highlightedyank_highlight_duration = 100
+vim.g.highlightedyank_highlight_in_visual = 0
+
 local ensure_packer = function()
     local fn = vim.fn
     local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
@@ -103,6 +106,7 @@ return require('packer').startup(function(use)
     use 'vim-test/vim-test'
     use 'L3MON4D3/LuaSnip'
     use 'mfussenegger/nvim-jdtls'
+    use 'machakann/vim-highlightedyank'
 
     use {
         'numToStr/Comment.nvim',
