@@ -1,0 +1,7 @@
+#!/bin/sh
+
+if [[ -z $WAYLAND_DISPLAY ]]; then
+    rofi -modi drun -show drun
+else
+    wofi
+fi

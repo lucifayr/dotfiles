@@ -60,26 +60,37 @@ alias tn="tmux new-session -c sh ~/projects/dotfiles/custom/notes.sh"
 alias ta="tmux attach"
 alias tk="tmux kill-session"
 alias td="tmux detach-client"
+
 alias rm="rm -I"
 alias mv="mv -i"
+
 alias update="sudo pacman -Syu"
 alias install="sudo pacman -S"
 alias uninstall="sudo pacman -R"
+
 alias cd="z"
 alias ls="eza --color=always --all --group-directories-first --long"
 alias cat="bat"
 alias grep="rg"
+
 alias du="dust"
 alias speedtest="speedtest-rs"
 alias sauce="source"
+
 alias cargo-publish="cargo publish --token \$(ansible-vault decrypt ~/projects/dotfiles/private/crates-io-api-token --output /tmp/token && cat /tmp/token)"
-alias xcb="xclip -selection clipboad"
-alias attitude="attitudes | xclip -selection clipboad"
+alias cargo-doc="BROWSER=google-chrome-stable cargo doc --all-features --open"
+
+alias cb="~/projects/dotfiles/custom/clip-copy"
+alias psp="~/projects/dotfiles/custom/process-picker"
+alias wm-style="~/projects/dotfiles/custom/wm-style"
+alias lock="~/projects/dotfiles/custom/lock-device"
+
 alias awman="~/projects/dotfiles/custom/archwiki-man"
 alias gcn="~/projects/dotfiles/custom/commit_changed_notes"
-alias cargo-doc="BROWSER=google-chrome-stable cargo doc --all-features --open"
+
 alias tt-start-tunnels="cat ~/tt-server-data | xargs -L 1 tt-ssh-forward"
 alias tt-kill-tunnels="ps -aux | grep \"ssh -N -L\" | awk '{print \$2}' | xargs kill"
+
 alias tor-browser="flatpak run com.github.micahflee.torbrowser-launcher"
 
 eval $(thefuck --alias)

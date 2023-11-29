@@ -12,6 +12,7 @@
       - sad 
       - gdb
       - httpie
+      - jq
       - thefuck 
       - zoxide
       - fd 
@@ -21,7 +22,6 @@
       - neofetch
       - python-pywal 
       - picom
-      - screenkey
       - entr
     pkgs_dev:
       - neovim
@@ -31,44 +31,37 @@
       - python 
       - typescript
       - nodejs-lts-hydrogen 
-      - jdk-openjdk 
       - go 
       - yarn
       - npm
-      - python-pip 
-      - maven
       - meson 
       - ninja 
       - lldb
     pkgs_dev_aur:
-      - betterlockscreen
       - nvm
     pkgs_dev_cargo:
       - sccache 
       - binstall
       - eza 
       - bat 
+      - zoxide
       - ripgrep 
       - du-dust 
       - cargo-info 
       - speedtest-rs 
     pkgs_application:
-      - zsa-wally 
       - kitty
       - bashtop 
       - tmux 
-      - rofi
       - firefox 
       - obsidian
       - flameshot 
     pkgs_application_aur:
-      - postman-bin 
-      - gobang-bin 
       - webcord
     pkgs_audio:
       - pipewire 
       - pipewire-alsa 
-      - pipewire-pulse 
+      - pipewire-audio 
       - bluez 
       - bluez-utils 
       - blueberry
@@ -184,7 +177,7 @@
         curl -SL https://github.com/docker/compose/releases/download/v2.14.0/docker-compose-linux-x86_64 -o $DOCKER_CONFIG/cli-plugins/docker-compose
         chmod +x $DOCKER_CONFIG/cli-plugins/docker-compose
 
-    - name: Install nerd fonts
+    - name: Install fonts
       kewlfft.aur.aur:
         name: "{{ pkgs_fonts }}"
         use: paru

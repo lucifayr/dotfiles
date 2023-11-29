@@ -56,19 +56,6 @@
         - systemd
         - picom.conf
 
-    - name: Create symbolic links for firefox
-      ansible.builtin.file:
-        src: "{{ home_dir }}/.mozilla/firefox/{{ item }}"
-        dest:  "{{ config_dir }}/firefox/{{ item }}"
-        owner: "{{ user }}"
-        state: link
-      loop: 
-        - addon.json 
-        - prefs.js 
-        - places.sqlite
-        - favicons.sqlite
-        - extensions
-
     - name: Check .zshrc
       register: zshrc
       stat:
@@ -95,18 +82,6 @@
         src: "{{ dotfiles_dir }}/private/personal-keys/github_ed25519"
         dest: "{{ home_dir }}/.ssh/github_ed25519"
         mode: "0600"
-        decrypt: true
-
-    - name: Copy '.private.sh'
-      ansible.builtin.copy:
-        src: "{{ dotfiles_dir }}/private/other/.private.sh"
-        dest: "{{ home_dir }}"
-        decrypt: true
-
-    - name: Copy 'private.lua'
-      ansible.builtin.copy:
-        src: "{{ dotfiles_dir }}/private/other/private.lua"
-        dest: "{{ dotfiles_dir }}/nvim/after/plugin"
         decrypt: true
 
     - name: Copy 'ntfy-subs'

@@ -1,9 +1,6 @@
 set_from_resource $fg i3wm.color7 #ea17b5
 set_from_resource $bg i3wm.color2 #470a5b
 
-# Float window rules
-for_window [class="Galculator" instance="galculator"] floating enable
-
 set $mod Mod4
 font pango:JetBrains Mono 12
 
@@ -27,8 +24,8 @@ bindsym $mod+Return exec i3-sensible-terminal
 # kill focused window
 bindsym $mod+Shift+c kill
 
-# start rofi (a program launcher)
-bindsym $mod+r exec rofi -modi drun -show drun
+# start a program launcher
+bindsym $mod+r exec psp
 
 # change focus
 bindsym $mod+h focus left
@@ -59,9 +56,6 @@ bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
-
-# focus the parent container
-bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -121,7 +115,7 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 bindsym $mod+Shift+e reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
+# exit i3 (logs you out of your WM session)
 bindsym $mod+Shift+q exit 
 
 # resize window (you can also use the mouse for that)
@@ -157,13 +151,10 @@ bindsym $mod+o exec obsidian
 
 bindsym $mod+b exec i3-sensible-terminal -e bashtop 
 
-bindsym $mod+t exec screenkey -f "JetBrains Mono" --opacity 0.3 -s small
-bindsym $mod+Shift+t exec killall screenkey
-
 bindsym $mod+Shift+s exec flameshot gui
 bindsym $mod+Shift+d exec flameshot gui -c -s && ocrdesktop -C -o -n | xclip -selection clip
 
-bindsym $mod+Shift+a exec betterlockscreen -l --display 1
+bindsym $mod+Shift+a exec lock
 bindsym $mod+Control+q exec shutdown now
 bindsym $mod+Control+w exec reboot 
 
@@ -181,5 +172,4 @@ new_window pixel 0
 gaps outer 8 
 gaps inner 8
 
-exec xrandr --output DP-0 --primary && xrandr --output DP-2 --left-of DP-0 && xrandr --output DP-4 --right-of DP-0 && xrandr --output DP-4 --left-of DP-0 && xrandr --output DP-4 --right-of DP-0  && nitrogen --restore && (wal -n -i ~/projects/dotfiles/images/background.png || wal -n -i ~/projects/dotfiles/images/background.jpg) && sh ~/projects/dotfiles/custom/start-polybar.sh 
-exec picom --config ~/.config/picom.conf &
+exec wm-style

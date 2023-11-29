@@ -1,0 +1,7 @@
+#!/bin/sh
+
+if [[ -z $WAYLAND_DISPLAY ]]; then
+    betterlockscreen -l --display 1
+else
+    swaylock
+fi

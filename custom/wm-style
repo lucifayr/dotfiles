@@ -1,0 +1,10 @@
+#!/bin/sh
+
+if [[ -z $WAYLAND_DISPLAY ]]; then
+    nitrogen --restore && (wal -n -i ~/projects/dotfiles/images/background.png || wal -n -i ~/projects/dotfiles/images/background.jpg) && sh ~/projects/dotfiles/custom/start-polybar.sh 
+else
+    # TODO 
+    # - display wallpaper
+    # - show status bar
+    (wal -n -i ~/projects/dotfiles/images/background.png || wal -n -i ~/projects/dotfiles/images/background.jpg)
+fi
