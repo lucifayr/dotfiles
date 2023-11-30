@@ -6,5 +6,5 @@ read -s password
 files=$(ls $HOME/.ssh | grep _ed25519 | grep -v .pub)
 for file in $files 
 do
-    SSH_PASS=$password DISPLAY=1 SSH_ASKPASS=/usr/bin/ssh-pass-pass ssh-add $HOME/.ssh/$file < /dev/null
+    SSH_PASS=$password DISPLAY=1 SSH_ASKPASS=$HOME/projects/dotfiles/custom/ssh-pass-pass ssh-add $HOME/.ssh/$file < /dev/null
 done

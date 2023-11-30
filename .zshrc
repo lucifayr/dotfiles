@@ -1,6 +1,8 @@
 export EDITOR=nvim
 export VISUAL=nvim
 
+export GPG_TTY=$(tty)
+
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
@@ -49,7 +51,7 @@ alias gstc="git stash clear"
 alias gstp="git stash clear"
 
 case $(tty) in 
-  (/dev/tty[1-9]) alias tmux="tmux";; 
+  (/dev/tty[1-9]) alias tmux="/usr/bin/tmux";; 
               (*) alias tmux="TERM=xterm-256color tmux";; 
 esac
 
@@ -79,6 +81,8 @@ alias sauce="source"
 
 alias cargo-publish="cargo publish --token \$(ansible-vault decrypt ~/projects/dotfiles/private/crates-io-api-token --output /tmp/token && cat /tmp/token)"
 alias cargo-doc="BROWSER=google-chrome-stable cargo doc --all-features --open"
+
+alias setup-ssh="~/projects/dotfiles/custom/setup-ssh"
 
 alias cb="~/projects/dotfiles/custom/clip-copy"
 alias psp="~/projects/dotfiles/custom/process-picker"
@@ -116,7 +120,6 @@ if [ -e /home/jackboxx/.nix-profile/etc/profile.d/nix.sh ]; then . /home/jackbox
 
 eval "$(zoxide init zsh)"
 
-source ~/.private.sh
 
 # Android SDK for Rust builds
 export ANDROID_HOME=$HOME/android
