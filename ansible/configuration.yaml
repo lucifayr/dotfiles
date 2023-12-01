@@ -48,10 +48,12 @@
         - nvim
         - tmux 
         - i3
+        - sway
         - kitty
         - gitui
         - rofi
         - polybar
+        - waybar
         - neofetch
         - systemd
         - picom.conf
