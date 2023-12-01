@@ -157,8 +157,8 @@ client.background       $bg
 
 default_border pixel 0
 
-gaps outer 2
-gaps inner 4
+gaps outer 4
+gaps inner 8
 
 output eDP-1 {
    scale 1
