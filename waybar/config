@@ -8,11 +8,11 @@
     "clock"
   ],
   "modules-right": [
+    "tray",
     "network",
     "cpu",
     "memory",
-    "battery",
-    "tray"
+    "battery"
   ],
   "sway/workspaces": {
     "disable-scroll": true,
@@ -21,6 +21,7 @@
     "format": "{name}"
   },
   "tray": {
+    "icon-size": 32,
     "spacing": 10
   },
   "clock": {
