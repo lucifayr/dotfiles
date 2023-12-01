@@ -20,6 +20,8 @@
       - wayland 
       - wayland-protocols 
       - wlroots
+      - xorg-xwayland
+      - wl-clipboard
       - sway 
       - swaybg
       - swaylock

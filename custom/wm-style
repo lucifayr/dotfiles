@@ -1,10 +1,8 @@
 #!/bin/sh
 
-if [[ -z $WAYLAND_DISPLAY ]]; then
-    nitrogen --restore && (wal -n -i ~/projects/dotfiles/images/background.png || wal -n -i ~/projects/dotfiles/images/background.jpg) && sh ~/projects/dotfiles/custom/start-polybar.sh 
+if [[ $XDG_SESSION_TYPE -eq "wayland" ]]; then
+    swaybg -i ~/projects/dotfiles/images/background.* && \
+    wal -n -i ~/projects/dotfiles/images/background.*
 else
-    # TODO 
-    # - display wallpaper
-    # - show status bar
-    (wal -n -i ~/projects/dotfiles/images/background.png || wal -n -i ~/projects/dotfiles/images/background.jpg)
+    nitrogen --restore && wal -n -i ~/projects/dotfiles/images/background.* && sh ~/projects/dotfiles/custom/start-polybar.sh 
 fi

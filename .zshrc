@@ -86,7 +86,7 @@ alias setup-ssh="~/projects/dotfiles/custom/setup-ssh"
 
 alias cb="~/projects/dotfiles/custom/clip-copy"
 alias psp="~/projects/dotfiles/custom/process-picker"
-alias wm-style="~/projects/dotfiles/custom/wm-style"
+alias wm="~/projects/dotfiles/custom/wm"
 alias lock="~/projects/dotfiles/custom/lock-device"
 
 alias awman="~/projects/dotfiles/custom/archwiki-man"
