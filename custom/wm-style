@@ -1,7 +1,7 @@
 #!/bin/sh
 
 if [[ $XDG_SESSION_TYPE -eq "wayland" ]]; then
-    swaybg -i ~/projects/dotfiles/images/background.* && \
+    swaybg -i ~/projects/dotfiles/images/background.* -m fill && \
     wal -n -i ~/projects/dotfiles/images/background.*
 else
     nitrogen --restore && wal -n -i ~/projects/dotfiles/images/background.* && sh ~/projects/dotfiles/custom/start-polybar.sh 
