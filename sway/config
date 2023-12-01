@@ -160,6 +160,10 @@ default_border pixel 0
 gaps outer 2
 gaps inner 4
 
+output eDP-1 {
+   scale 1
+}
+
 # magic
 # https://github.com/flameshot-org/flameshot/blob/master/docs/Sway%20and%20wlroots%20support.md
 exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP XDG_CURRENT_SESSION
