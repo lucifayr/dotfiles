@@ -26,7 +26,7 @@
       - swaybg
       - swaylock
       - waybar
-      - wofi 
+      - fuzzel 
     pkgs_x11:
       - xorg-server 
       - xorg-apps 

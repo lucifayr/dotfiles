@@ -15,6 +15,7 @@ bindsym $mod+Shift+c kill
 
 # start a program launcher
 bindsym $mod+r exec ~/projects/dotfiles/custom/process-picker
+bindsym $mod+e exec BEMOJI_PICKER_CMD="fuzzel --dmenu" bemoji
 
 # change focus
 bindsym $mod+h focus left

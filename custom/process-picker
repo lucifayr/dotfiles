@@ -3,5 +3,5 @@
 if [[ -z $WAYLAND_DISPLAY ]]; then
     rofi -modi drun -show drun
 else
-    wofi --show drun
+    fuzzel
 fi
