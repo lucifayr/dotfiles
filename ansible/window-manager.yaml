@@ -37,6 +37,7 @@
       - i3-gaps 
       - rofi
       - betterlockscreen
+      - brightnessctl
       - nitrogen 
       - polybar
     home_dir: "{{ lookup('ansible.builtin.env', 'HOME') }}"

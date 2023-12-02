@@ -91,9 +91,12 @@ button:hover {
     margin-right: 0;
 }
 
-/* If workspaces is the rightmost module, omit right margin */
 .modules-right > * {
     border-left: solid 1px #ffffff;
+}
+
+.modules-right > widget:first-child {
+    border-left: none;
 }
 
 @keyframes blink {
