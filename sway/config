@@ -1,5 +1,5 @@
-set $fg #ea17b5
-set $bg #470a5b
+set $fg #ffffff
+set $bg #2B303B
 
 set $mod Mod4
 font pango:JetBrains Mono 12
