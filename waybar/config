@@ -1,6 +1,7 @@
 {
   "height": 48,
   "spacing": 8,
+  "margin": 12,
   "modules-left": [
     "sway/workspaces"
   ],
@@ -26,14 +27,18 @@
   },
   "clock": {
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "format": "{:%Y/%m/%d %T}"
+    "format": "{:%F %T}",
+	"format-alt": "{:%F %T}",
+    "interval": 1
   },
   "cpu": {
     "format": "{usage}% ",
-    "tooltip": false
+    "tooltip": false,
+    "interval": 5
   },
   "memory": {
-    "format": "{}% "
+    "format": "{}% ",
+    "interval": 5
   },
   "battery": {
     "states": {
@@ -50,7 +55,8 @@
       "",
       "",
       ""
-    ]
+    ],
+    "interval": 5
   },
   "network": {
     "format-wifi": "{essid} ({signalStrength}%) ",
@@ -58,6 +64,7 @@
     "tooltip-format": "{ifname} via {gwaddr} ",
     "format-linked": "{ifname} (No IP) ",
     "format-disconnected": "Disconnected ⚠",
-    "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    "format-alt": "{ifname}: {ipaddr}/{cidr}",
+    "interval": 5
   }
 }
