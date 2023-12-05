@@ -136,6 +136,7 @@ bindsym $mod+Control+r mode "resize"
 bindsym $mod+f exec firefox
 bindsym $mod+d exec webcord
 bindsym $mod+o exec obsidian
+bindsym $mod+p exec hyprpicker -a
 
 bindsym $mod+b exec kitty -e bashtop 
 
