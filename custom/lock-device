@@ -3,5 +3,30 @@
 if [[ -z $WAYLAND_DISPLAY ]]; then
     betterlockscreen -l --display 1
 else
-    swaylock -i ~/projects/dotfiles/images/background.*
+    swaylock -i ~/projects/dotfiles/images/background.* \
+        --clock \
+        --font "JetBrains Mono" \
+        --indicator-radius 150 \
+        --indicator-thickness 12 \
+        --effect-blur 7x5 \
+        --effect-vignette 0.5:0.5 \
+        --ring-color ffffffbb \
+        --ring-clear-color ffffffbb \
+        --ring-ver-color ffffffbb \
+        --ring-wrong-color ffffffbb \
+        --line-color 00000000 \
+        --line-ver-color 00000000 \
+        --line-clear-color 00000000 \
+        --line-wrong-color 00000000 \
+        --key-hl-color 000000 \
+        --inside-color 00000000 \
+        --inside-clear-color 00000000 \
+        --inside-wrong-color 00000000 \
+        --inside-ver-color 00000000 \
+        --fade-in 0 \
+        --text-color ffffffbb \
+        --text-clear-color ffffffbb \
+        --text-ver-color ffffffbb \
+        --text-wrong-color ffffffbb \
+        --indicator-idle-visible
 fi
