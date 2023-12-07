@@ -5,15 +5,14 @@
   "modules-left": [
     "sway/workspaces"
   ],
-  "modules-center": [
-    "clock"
-  ],
   "modules-right": [
     "tray",
-    "network",
     "cpu",
     "memory",
-    "battery"
+    "wireplumber",
+    "network",
+    "battery",
+    "clock"
   ],
   "sway/workspaces": {
     "disable-scroll": true,
@@ -27,8 +26,8 @@
   },
   "clock": {
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "format": "{:%F %T}",
-	"format-alt": "{:%F %T}",
+    "format": "{:%T}",
+    "format-alt": "{:%F %T}",
     "interval": 1
   },
   "cpu": {
@@ -38,6 +37,22 @@
   },
   "memory": {
     "format": "{}% ",
+    "interval": 5
+  },
+  "wireplumber": {
+    "format": "{icon} {volume}%",
+    "format-muted": "󰝟",
+    "format-icons": {
+      "headphone": "",
+      "default": [
+        "",
+        "",
+        ""
+      ]
+    },
+    "on-click": "wpctl set-mute  @DEFAULT_SINK@ toggle",
+    "on-click-right": "wpctl set-volume @DEFAULT_SINK@ 0.5",
+    "scroll-step": 1,
     "interval": 5
   },
   "battery": {
@@ -59,7 +74,7 @@
     "interval": 5
   },
   "network": {
-    "format-wifi": "{essid} ({signalStrength}%) ",
+    "format-wifi": "{essid} ",
     "format-ethernet": "{ipaddr}/{cidr} ",
     "tooltip-format": "{ifname} via {gwaddr} ",
     "format-linked": "{ifname} (No IP) ",
