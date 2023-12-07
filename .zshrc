@@ -85,6 +85,7 @@ alias cargo-doc="BROWSER=google-chrome-stable cargo doc --all-features --open"
 alias setup-ssh="~/projects/dotfiles/custom/setup-ssh"
 
 alias cb="~/projects/dotfiles/custom/clip-copy"
+alias watch-latex="~/projects/dotfiles/custom/watch-latex"
 alias psp="~/projects/dotfiles/custom/process-picker"
 alias wm="~/projects/dotfiles/custom/wm"
 alias lock="~/projects/dotfiles/custom/lock-device"
