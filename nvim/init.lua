@@ -83,7 +83,10 @@ return require('packer').startup(function(use)
 
     -- Style
     use 'navarasu/onedark.nvim'
-    use 'nvim-tree/nvim-web-devicons'
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+    }
 
     use {
         'brenoprata10/nvim-highlight-colors',
