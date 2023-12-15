@@ -83,7 +83,6 @@ return require('packer').startup(function(use)
 
     -- Style
     use 'navarasu/onedark.nvim'
-    use 'nvim-lualine/lualine.nvim'
     use 'nvim-tree/nvim-web-devicons'
 
     use {
@@ -103,7 +102,6 @@ return require('packer').startup(function(use)
     use 'hrsh7th/nvim-cmp'
     use 'hrsh7th/cmp-nvim-lsp'
     use 'sbdchd/neoformat'
-    use 'vim-test/vim-test'
     use 'L3MON4D3/LuaSnip'
     use 'mfussenegger/nvim-jdtls'
     use 'machakann/vim-highlightedyank'
