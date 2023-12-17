@@ -18,7 +18,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+c kill
 
 # start a program launcher
-bindsym $mod+r exec psp
+bindsym $mod+r exec ~/projects/dotfiles/custom/process-picker
 
 # change focus
 bindsym $mod+h focus left
@@ -146,7 +146,7 @@ bindsym $mod+b exec i3-sensible-terminal -e bashtop
 bindsym $mod+Shift+s exec flameshot gui
 bindsym $mod+Shift+d exec flameshot gui -c -s && ocrdesktop -C -o -n | xclip -selection clip
 
-bindsym $mod+Shift+a exec lock
+bindsym $mod+Shift+a exec ~/projects/dotfiles/custom/lock-device
 bindsym $mod+Control+q exec shutdown now
 bindsym $mod+Control+w exec reboot 
 
@@ -163,5 +163,3 @@ new_window pixel 0
 
 gaps outer 8 
 gaps inner 8
-
-exec ~/projects/dotfiles/custom/wm-style
