@@ -133,3 +133,7 @@ export NDK_HOME=$ANDROID_HOME/ndk/25.1.8937393
 [ -f "/home/lucifer/.ghcup/env" ] && source "/home/lucifer/.ghcup/env" # ghcup-env
 
 source $HOME/.otherrc
+
+# pnpm
+export PNPM_HOME="/home/lucifer/.local/share/pnpm"
+export PATH=$PATH:$PNPM_HOME

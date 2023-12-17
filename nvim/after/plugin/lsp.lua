@@ -10,6 +10,7 @@ local servers = {
     'tailwindcss',
     'texlab',
     'tsserver',
+    'volar',
 }
 
 local home = os.getenv("HOME")
