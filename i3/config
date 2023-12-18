@@ -163,3 +163,5 @@ new_window pixel 0
 
 gaps outer 8 
 gaps inner 8
+
+exec ~/projects/dotfiles/custom/wm-style
