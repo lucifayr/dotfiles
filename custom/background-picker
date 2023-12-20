@@ -1,0 +1,7 @@
+#!/bin/sh
+
+selection=$(echo $HOME/projects/dotfiles/images/backgrounds/* | tr " " "\n" | xargs -I {} basename {} | fzf)
+
+cp $HOME/projects/dotfiles/images/backgrounds/$selection $HOME/.config/background.jpg
+wal -c
+wal -q -i $HOME/.config/background.jpg

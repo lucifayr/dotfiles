@@ -165,3 +165,4 @@ gaps outer 8
 gaps inner 8
 
 exec ~/projects/dotfiles/custom/wm-style
+exec ~/projects/dotfiles/custom/start-polybar.sh 

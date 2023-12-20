@@ -1,8 +1,9 @@
 #!/bin/sh
 
 if [[ -z $WAYLAND_DISPLAY ]]; then
-    nitrogen --restore && wal -n -i ~/projects/dotfiles/images/background.* && sh ~/projects/dotfiles/custom/start-polybar.sh 
+    nitrogen --set-scaled ~/.config/background.jpg && \
+        wal -n -i ~/.config/background.jpg
 else
-    swaybg -i ~/projects/dotfiles/images/background.* -m fill && \
-    wal -n -i ~/projects/dotfiles/images/background.*
+    swaybg ~/.config/background.jpg -m fill && \
+        wal -n -i ~/.config/background.jpg
 fi

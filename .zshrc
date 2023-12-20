@@ -89,6 +89,7 @@ alias watch-latex="~/projects/dotfiles/custom/watch-latex"
 alias psp="~/projects/dotfiles/custom/process-picker"
 alias wm="~/projects/dotfiles/custom/wm"
 alias lock="~/projects/dotfiles/custom/lock-device"
+alias bgp="~/projects/dotfiles/custom/background-picker"
 
 alias awman="~/projects/dotfiles/custom/archwiki-man"
 alias gcn="~/projects/dotfiles/custom/commit_changed_notes"
@@ -113,7 +114,8 @@ export NVM_DIR="$HOME/.nvm"
 # Autorun programms
 if [[ ! -z $DISPLAY ]]
 then 
-    wal -enq -i ~/projects/dotfiles/images/background.png || wal -enq -i ~/projects/dotfiles/images/background.jpg
+    wal -c
+    wal -enq -i ~/.config/background.jpg
 fi
 
 
