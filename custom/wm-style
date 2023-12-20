@@ -4,6 +4,7 @@ if [[ -z $WAYLAND_DISPLAY ]]; then
     nitrogen --set-scaled ~/.config/background.jpg && \
         wal -n -i ~/.config/background.jpg
 else
-    swaybg ~/.config/background.jpg -m fill && \
+    killall swaybg; \
+        (swaybg -i $HOME/.config/background.jpg -m fill &) && \
         wal -n -i ~/.config/background.jpg
 fi

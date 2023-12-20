@@ -4,4 +4,4 @@ selection=$(echo $HOME/projects/dotfiles/images/backgrounds/* | tr " " "\n" | xa
 
 cp $HOME/projects/dotfiles/images/backgrounds/$selection $HOME/.config/background.jpg
 wal -c
-wal -q -i $HOME/.config/background.jpg
+$HOME/projects/dotfiles/custom/wm-style
