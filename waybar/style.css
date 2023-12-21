@@ -63,7 +63,7 @@ button:hover {
 }
 
 #workspaces button.focused {
-    background-color: @color1;
+    background-color: @color2;
 }
 
 #workspaces button.urgent {

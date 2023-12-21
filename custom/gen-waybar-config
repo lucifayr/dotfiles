@@ -3,4 +3,5 @@
 color=$(cat $HOME/.cache/wal/colors.json| jq ".colors.color1" -r)
 pattern="s/icon-color/$color/g"
 
-sed -e $pattern $HOME/projects/dotfiles/waybar/config-template > $HOME/.config/waybar/config
+mkdir $HOME/.config/waybar-theme
+sed -e $pattern $HOME/projects/dotfiles/waybar/config-template > $HOME/.config/waybar-theme/config
