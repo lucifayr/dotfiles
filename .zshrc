@@ -115,7 +115,7 @@ export NVM_DIR="$HOME/.nvm"
 if [[ ! -z $DISPLAY ]]
 then 
     wal -c
-    wal -enq -i ~/.config/background.jpg
+    wal -enq -i ~/.config/background
 fi
 
 
