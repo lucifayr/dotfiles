@@ -3,5 +3,7 @@
 selection=$(echo $HOME/projects/dotfiles/images/backgrounds/* | tr " " "\n" | xargs -I {} basename {} | fzf)
 
 cp $HOME/projects/dotfiles/images/backgrounds/$selection $HOME/.config/background
+
 wal -c
-$HOME/projects/dotfiles/custom/wm-style
+$HOME/projects/dotfiles/custom/wm-style && reset; clear
+
