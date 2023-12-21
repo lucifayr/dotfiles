@@ -26,8 +26,8 @@
   },
   "clock": {
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "format": "<span fgcolor='icon-color'> </span> {:%T}",
-    "format-alt": "<span fgcolor='icon-color'> </span> {:%F}",
+    "format": "{:%T}",
+    "format-alt": "{:%F %T}",
     "interval": 1
   },
   "cpu": {
@@ -63,7 +63,7 @@
     "format": "<span fgcolor='icon-color'>{icon}</span> {capacity}%",
     "format-charging": "<span fgcolor='icon-color'>󰂇</span> {capacity}%",
     "format-plugged": "<span fgcolor='icon-color'></span> {capacity}%",
-    "format-alt": "<span fgcolor='icon-color'>{icon}</span> {time}",
+    "format-alt": "{time} <span fgcolor='icon-color'>{icon}</span>",
     "format-icons": [
       "",
       "",
@@ -74,12 +74,12 @@
     "interval": 5
   },
   "network": {
-    "format-wifi": "<span fgcolor='icon-color'> </span> {essid}",
-    "format-ethernet": "<span fgcolor='icon-color'>󰈀</span> {ipaddr}/{cidr}",
-    "tooltip-format": "{ifname} via {gwaddr}",
-    "format-linked": "<span fgcolor='icon-color'>󱎔</span> {ifname} (No IP)",
-    "format-disconnected": "<span fgcolor='icon-color'>⚠</span> disconnected",
-    "format-alt": "<span fgcolor='icon-color'>󰌷</span> {ifname}: {ipaddr}/{cidr}",
+    "format-wifi": "{essid} <span fgcolor='icon-color'></span>",
+    "format-ethernet": "{ipaddr}/{cidr} <span fgcolor='icon-color'></span>",
+    "tooltip-format": "{ifname} via {gwaddr} <span fgcolor='icon-color'></span>",
+    "format-linked": "{ifname} (No IP) <span fgcolor='icon-color'></span>",
+    "format-disconnected": "Disconnected <span fgcolor='icon-color'>⚠</span>",
+    "format-alt": "{ifname}: {ipaddr}/{cidr}",
     "interval": 5
   }
 }

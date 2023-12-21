@@ -26,6 +26,10 @@
     margin: 0 16px;
 }
 
+#clock {
+    min-width: 200px;
+}
+
 #window,
 #workspaces {
     margin: 0 4px;
