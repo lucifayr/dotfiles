@@ -5,7 +5,6 @@
     font-family: JetBrainsMono;
     font-size: 24px;
 }
-
 #clock,
 #battery,
 #cpu,
@@ -27,7 +26,6 @@
     margin: 0 16px;
 }
 
-
 #window,
 #workspaces {
     margin: 0 4px;
@@ -36,7 +34,6 @@
 
 window#waybar {
     background-color: @background;
-    color: @foreground;
     transition-duration: .5s;
 }
 
@@ -66,7 +63,7 @@ button:hover {
 }
 
 #workspaces button.focused {
-    background-color: @color2;
+    background-color: @color1;
 }
 
 #workspaces button.urgent {

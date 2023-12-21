@@ -31,16 +31,16 @@
     "interval": 1
   },
   "cpu": {
-    "format": "{usage}% <span fgcolor='#BF183D'></span>",
+    "format": "{usage}% <span fgcolor='icon-color'></span>",
     "tooltip": false,
     "interval": 5
   },
   "memory": {
-    "format": "{}% <span fgcolor='#BF183D'></span>",
+    "format": "{}% <span fgcolor='icon-color'></span>",
     "interval": 5
   },
   "wireplumber": {
-    "format": "<span fgcolor='#BF183D'>{icon}</span> {volume}%",
+    "format": "<span fgcolor='icon-color'>{icon}</span> {volume}%",
     "format-muted": "󰝟",
     "format-icons": {
       "headphone": "",
@@ -60,10 +60,10 @@
       "warning": 30,
       "critical": 15
     },
-    "format": "{capacity}% <span fgcolor='#BF183D'>{icon}</span>",
-    "format-charging": "{capacity}% <span fgcolor='#BF183D'>󰂇</span>",
-    "format-plugged": "{capacity}% <span fgcolor='#BF183D'></span>",
-    "format-alt": "{time} <span fgcolor='#BF183D'>{icon}</span>",
+    "format": "{capacity}% <span fgcolor='icon-color'>{icon}</span>",
+    "format-charging": "{capacity}% <span fgcolor='icon-color'>󰂇</span>",
+    "format-plugged": "{capacity}% <span fgcolor='icon-color'></span>",
+    "format-alt": "{time} <span fgcolor='icon-color'>{icon}</span>",
     "format-icons": [
       "",
       "",
@@ -74,11 +74,11 @@
     "interval": 5
   },
   "network": {
-    "format-wifi": "{essid} <span fgcolor='#BF183D'></span>",
-    "format-ethernet": "{ipaddr}/{cidr} <span fgcolor='#BF183D'></span>",
-    "tooltip-format": "{ifname} via {gwaddr} <span fgcolor='#BF183D'></span>",
-    "format-linked": "{ifname} (No IP) <span fgcolor='#BF183D'></span>",
-    "format-disconnected": "Disconnected <span fgcolor='#BF183D'>⚠</span>",
+    "format-wifi": "{essid} <span fgcolor='icon-color'></span>",
+    "format-ethernet": "{ipaddr}/{cidr} <span fgcolor='icon-color'></span>",
+    "tooltip-format": "{ifname} via {gwaddr} <span fgcolor='icon-color'></span>",
+    "format-linked": "{ifname} (No IP) <span fgcolor='icon-color'></span>",
+    "format-disconnected": "Disconnected <span fgcolor='icon-color'>⚠</span>",
     "format-alt": "{ifname}: {ipaddr}/{cidr}",
     "interval": 5
   }

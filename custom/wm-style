@@ -5,8 +5,10 @@ if [[ -z $WAYLAND_DISPLAY ]]; then
         wal -n -i ~/.config/background.jpg && \
         killall polybar; ~/projects/dotfiles/custom/start-polybar.sh 
 else
+
     killall swaybg; \
-        (swaybg -i $HOME/.config/background.jpg -m fill &) && \
+        (swaybg -i ~/.config/background.jpg -m fill &) && \
         wal -n -i ~/.config/background.jpg && \
+        ~/projects/dotfiles/custom/gen-waybar-config && \
         killall waybar; waybar &
 fi
