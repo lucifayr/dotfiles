@@ -3,7 +3,7 @@
 if [[ -z $WAYLAND_DISPLAY ]]; then
     betterlockscreen -l --display 1
 else
-    swaylock -i ~/projects/dotfiles/images/background.* \
+    swaylock -i $HOME/.config/background \
         --clock \
         --font "JetBrains Mono" \
         --indicator-radius 150 \

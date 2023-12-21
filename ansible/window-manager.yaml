@@ -77,8 +77,3 @@
         src: "/etc/X11/xinit/xinitrc"
         dest: "{{ home_dir }}/.xinitrc"
       when: use_wayland != "Y"
-
-    - name: Set X11 Wallpaper
-      command:
-        cmd: "nitrogen --set-auto {{ dotfiles_dir }}/images/background.jpg || nitrogen --set-auto {{ dotfiles_dir }}/images/background.png"
-      when: use_wayland != "Y"

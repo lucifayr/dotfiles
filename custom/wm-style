@@ -1,14 +1,14 @@
 #!/bin/sh
 
 if [[ -z $WAYLAND_DISPLAY ]]; then
-    nitrogen --set-scaled ~/.config/background.jpg && \
-        wal -n -i ~/.config/background.jpg && \
+    nitrogen --set-scaled ~/.config/background && \
+        wal -n -i ~/.config/background && \
         killall polybar; ~/projects/dotfiles/custom/start-polybar.sh 
 else
 
     killall swaybg; \
-        (swaybg -i ~/.config/background.jpg -m fill &) && \
-        wal -n -i ~/.config/background.jpg && \
+        (swaybg -i ~/.config/background -m fill &) && \
+        wal -n -i ~/.config/background && \
         ~/projects/dotfiles/custom/gen-waybar-config && \
         killall waybar; waybar -c ~/.config/waybar-theme/config &
 fi
