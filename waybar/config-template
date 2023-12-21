@@ -41,7 +41,7 @@
   },
   "wireplumber": {
     "format": "<span fgcolor='icon-color'>{icon}</span> {volume}%",
-    "format-muted": "󰝟",
+    "format-muted": "<span fgcolor='icon-color'>󰝟</span>",
     "format-icons": {
       "headphone": "",
       "default": [
@@ -60,10 +60,10 @@
       "warning": 30,
       "critical": 15
     },
-    "format": "<span fgcolor='icon-color'>{icon}</span> {capacity}%",
-    "format-charging": "<span fgcolor='icon-color'>󰂇</span> {capacity}%",
-    "format-plugged": "<span fgcolor='icon-color'></span> {capacity}%",
-    "format-alt": "<span fgcolor='icon-color'>{icon}</span> {time}",
+    "format": "<span fgcolor='icon-color'>{icon} </span> {capacity}%",
+    "format-charging": "<span fgcolor='icon-color'>󰂇 </span> {capacity}%",
+    "format-plugged": "<span fgcolor='icon-color'> </span> {capacity}%",
+    "format-alt": "<span fgcolor='icon-color'>{icon} </span> {time}",
     "format-icons": [
       "",
       "",
@@ -75,11 +75,11 @@
   },
   "network": {
     "format-wifi": "<span fgcolor='icon-color'> </span> {essid}",
-    "format-ethernet": "<span fgcolor='icon-color'>󰈀</span> {ipaddr}/{cidr}",
+    "format-ethernet": "<span fgcolor='icon-color'>󰈀 </span> {ipaddr}/{cidr}",
     "tooltip-format": "{ifname} via {gwaddr}",
-    "format-linked": "<span fgcolor='icon-color'>󱎔</span> {ifname} (No IP)",
-    "format-disconnected": "<span fgcolor='icon-color'>⚠</span> disconnected",
-    "format-alt": "<span fgcolor='icon-color'>󰌷</span> {ifname}: {ipaddr}/{cidr}",
+    "format-linked": "<span fgcolor='icon-color'>󱎔 </span> {ifname} (No IP)",
+    "format-disconnected": "<span fgcolor='icon-color'>⚠ </span> disconnected",
+    "format-alt": "<span fgcolor='icon-color'>󰌷 </span> {ifname}: {ipaddr}/{cidr}",
     "interval": 5
   }
 }
