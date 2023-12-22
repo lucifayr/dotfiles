@@ -13,6 +13,14 @@ local servers = {
     'volar',
 }
 
+local server_settings = {
+    tailwindcss = {
+        tailwindCSS = {
+            classAttributes = { "class", "className", "class:list", "classList", "classes", "ngClass" },
+        }
+    }
+}
+
 local home = os.getenv("HOME")
 require("mason").setup({
     install_root_dir = home .. "/mason/data",
@@ -46,6 +54,7 @@ for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup {
         on_attach = on_attach,
         capabilities = capabilities,
+        settings = server_settings[lsp]
     }
 end
 
