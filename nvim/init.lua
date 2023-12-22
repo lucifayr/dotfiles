@@ -2,9 +2,6 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ';'
 
--- Prettier
-vim.g.neoformat_try_node_exe = 1
-
 -- GitLense
 vim.g.blamer_enabled = 1
 vim.g.blamer_delay = 500
@@ -108,6 +105,31 @@ return require('packer').startup(function(use)
     use 'L3MON4D3/LuaSnip'
     use 'mfussenegger/nvim-jdtls'
     use 'machakann/vim-highlightedyank'
+
+    use {
+        'mhartington/formatter.nvim',
+        config = function()
+            require("formatter").setup {
+                logging = false,
+                filetype = {
+                    javascript = {
+                        require("formatter.filetypes.javascript").prettierd,
+                    },
+                    javascriptreact = {
+                        require("formatter.filetypes.javascriptreact").prettierd,
+                    },
+                    typescript = {
+                        require("formatter.filetypes.typescript").prettierd,
+                    },
+                    typescriptreact = {
+                        require("formatter.filetypes.typescriptreact").prettierd,
+                    },
+                }, ["*"] = {
+                require("formatter.filetypes.any").remove_trailing_whitespace
+            }
+            }
+        end,
+    }
 
     use {
         'numToStr/Comment.nvim',

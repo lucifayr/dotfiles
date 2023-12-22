@@ -3,6 +3,7 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
         "*.rs",
         "*.lua",
         "*.go",
+        "*.svelte",
         "*.java",
     },
     callback = function(_event)
@@ -10,15 +11,10 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
     end,
 })
 
-vim.api.nvim_create_autocmd({ "BufWritePre" }, {
-    pattern = {
-        "*.svelte",
-        "*.jsx",
-        "*.tsx",
-        "*.js",
-        "*.ts",
-    },
-    callback = function(_event)
-        vim.cmd("Neoformat")
-    end,
+local augroup = vim.api.nvim_create_augroup
+local autocmd = vim.api.nvim_create_autocmd
+augroup("__formatter__", { clear = true })
+autocmd("BufWritePost", {
+    group = "__formatter__",
+    command = ":FormatWrite",
 })
